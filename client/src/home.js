@@ -3,6 +3,7 @@ import About from "./components/about";
 // import Feature from "./components/feature";
 // import Work from "./components/work";
 import ScreenShot from "./components/screenshot";
+import Team from "./components/team";
 // import Team from "./components/team";
 // import Blog from "./components/blog";
 // import Price from "./components/price";
@@ -333,7 +334,7 @@ class Home extends React.Component {
         <About />
 
         {/*ScreenShot Component*/}
-        <ScreenShot />
+        <Team />
 
       
         {/*Work Component
