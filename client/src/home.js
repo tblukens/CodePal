@@ -1,8 +1,8 @@
 import React from "react";
-import About from "./components/about";
+// import About from "./components/about";
 // import Feature from "./components/feature";
 // import Work from "./components/work";
-import ScreenShot from "./components/screenshot";
+// import ScreenShot from "./components/screenshot";
 import Team from "./components/team";
 // import Team from "./components/team";
 // import Blog from "./components/blog";
@@ -45,8 +45,8 @@ class Home extends React.Component {
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#about">
-                    About
+                  <a className="nav-link" href="#team">
+                   Potential Matches
                   </a>
                 </li>
                 {/* <li className="nav-item"> 
@@ -56,8 +56,8 @@ class Home extends React.Component {
                 </li> */}
 
                 <li className="nav-item">
-                  <a className="nav-link" href="#screenshots">
-                  Connect
+                  <a className="nav-link" href="#d">
+                  Messages
                   </a>
                 </li>
 
@@ -129,18 +129,27 @@ class Home extends React.Component {
                 </li>*/}
                 <li className="nav-item">
                   <a className="nav-link" href="#contact">
-                    Contact us
+                    Contact Us
                   </a>
                 </li>
+
+                  <li className="nav-item">
+                      <Link
+                        className="nav-link"
+                        to={`${process.env.PUBLIC_URL}/sign-in`}
+                      >
+                        Sign In
+                      </Link>
+                    </li>
                 <li className="nav-item dropdown">
-                  <a
+                  {/* <a 
                     className="nav-link dropdown-toggle"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
                     Other Pages (Demo only)
-                  </a>
+                  </a> */}
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
@@ -331,7 +340,7 @@ class Home extends React.Component {
         {/* Home One Section End */}
 
         {/* About Component*/}
-        <About />
+        {/* <About /> */}
 
         {/*ScreenShot Component*/}
         <Team />
