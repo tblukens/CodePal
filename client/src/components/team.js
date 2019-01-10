@@ -79,7 +79,7 @@ class Team extends React.Component {
                 <div className="row">
                     <div className="col-md-12 text-center">
                         <div className="section-title">
-                            <h2>Our Team</h2>
+                            <h2>Potential Matches</h2>
                             <img src="assets/images/title-line.png" alt="title-line" className="img-fluid"/>
                         </div>
                     </div>
@@ -115,6 +115,7 @@ class Team extends React.Component {
                                             </div>
                                         </div>
                                     </div>
+                             
                                 </div>
                             </div>
                         </div>

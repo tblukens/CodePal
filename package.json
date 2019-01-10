@@ -30,5 +30,9 @@
     "express": "^4.16.4",
     "if-env": "^1.0.4",
     "mongoose": "^5.4.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0"
   }
 }

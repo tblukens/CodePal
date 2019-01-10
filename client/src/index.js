@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import NoMatch from './pages/404';
-import App from './demo_page/index';
+import App from './not_logged_in/index';
 import Home from './home';
 import BlogDetails from './blog/blog-details';
 import BlogList from './blog/blog-list';

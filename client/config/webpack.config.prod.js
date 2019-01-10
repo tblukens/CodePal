@@ -128,6 +128,8 @@ module.exports = {
         ],
         include: paths.appSrc,
       },
+      // TESTING TO SEE IF THIS WORKS IN PRODUCTION
+      // { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'], },
       {
         // "oneOf" will traverse all following loaders until one will
         // match the requirements. When no loader matches it will fall
