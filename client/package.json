@@ -2,7 +2,7 @@
   "name": "codepal-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mjbenefiel.github.io/codepal-demo",
+  "homepage": "http://codepal-plm.herokuapp.com/",
   "basename": "/",
   "dependencies": {
     "autoprefixer": "7.1.6",
