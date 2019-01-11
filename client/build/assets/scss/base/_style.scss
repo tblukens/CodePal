@@ -115,6 +115,19 @@ ul {
 .theme-bg{
     background: $bg_gradiant;
 }
+
+#background-video{
+
+    height: auto;
+    width: cover;
+    // float: left;
+    top: 0;
+    padding: none;
+    position: absolute; /* optional depending on what you want to do in your app */
+    
+    
+    }
+
 .owl-theme{
     &.owl-carousel{
         .owl-nav{
