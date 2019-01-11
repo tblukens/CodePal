@@ -199,7 +199,7 @@ class App extends React.Component {
           
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-12">
                 <div className="home-contain">
                   <div className="fadeInLeft-land-caption">
                     <h2 className="landing-caption text-white">
@@ -209,7 +209,7 @@ class App extends React.Component {
                       CodePal is perfect lorem ipsum dummy app to code with
                       peers throughout the world!{" "}
                     </p>
-                    <div>
+                    <div class="landing-btn">
                       <a
                         href={`${process.env.PUBLIC_URL}/sign-up`}
                         className="btn btn-inverse mt-2 mr-3"
@@ -223,11 +223,7 @@ class App extends React.Component {
               <div className="col-md-6 right">
                 <div className="home-right">
                   <div className="mobile-slid">
-                    <img
-                      src="assets/images/demo/home/main.png"
-                      alt="top1"
-                      className="img-fluid"
-                    />
+               
                   </div>
                   {/* <div className="photo"> 
 									<img src="assets/images/demo/home/photo-Editing-app.png" alt="top2" className="img-fluid" />
