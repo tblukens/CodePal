@@ -9,7 +9,7 @@ import Team from "./components/team";
 // import Price from "./components/price";
 // import Testimonial from "./components/testimonial";
 // import FAQ from "./components/faq";
-import Contact from "./components/contact";
+// import Contact from "./components/contact";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
@@ -46,7 +46,7 @@ class Home extends React.Component {
                 </li>
                 <li className="nav-item">
                   <a className="nav-link" href="#team">
-                   Potential Matches
+                    Potential Matches
                   </a>
                 </li>
                 {/* <li className="nav-item"> 
@@ -57,7 +57,7 @@ class Home extends React.Component {
 
                 <li className="nav-item">
                   <a className="nav-link" href="#d">
-                  Messages
+                    Messages
                   </a>
                 </li>
 
@@ -133,14 +133,14 @@ class Home extends React.Component {
                   </a>
                 </li>
 
-                  <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/sign-in`}
-                      >
-                        Sign In
-                      </Link>
-                    </li>
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to={`${process.env.PUBLIC_URL}/sign-in`}
+                  >
+                    Sign In
+                  </Link>
+                </li>
                 <li className="nav-item dropdown">
                   {/* <a 
                     className="nav-link dropdown-toggle"
@@ -345,7 +345,6 @@ class Home extends React.Component {
         {/*ScreenShot Component*/}
         <Team />
 
-      
         {/*Work Component
         <Work /> */}
 
@@ -415,11 +414,11 @@ class Home extends React.Component {
         </section>
         {/*end download section*/}
 
-        {/*Contact Component*/}
-        <Contact />
-
         {/*Subscription Component*/}
         <Subscribe />
+
+        {/*Contact Component*/}
+        {/* <Contact /> */}
 
         {/*Footer Component*/}
         <Footer />
