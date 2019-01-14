@@ -191,7 +191,17 @@ button:focus {
 }
 .section-title {
   margin-bottom: 50px;
+
 }
+
+.coders-nearby {
+  color:$primary_color;
+  opacity: .7;
+  font-size: 48px;
+  
+}
+
+
 .theme-text {
   color: $secondary_color !important;
 }
@@ -2657,7 +2667,7 @@ li.nav-item.dropdown {
     top: 0;
     z-index: 9;
     width: 100%;
-    background-color: rgb(3, 3, 8);
+    background-color: #0b3656;
     opacity: 0.8;
   }
   .grab-img {

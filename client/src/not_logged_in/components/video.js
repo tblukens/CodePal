@@ -5,13 +5,13 @@ class Video extends Component {
         super(props);
 
         this.state = {
-            videoURL: 'https://app.coverr.co/s3/mp4/City-Nights.mp4'
+            videoURL: 'https://app.coverr.co/s3/mp4/Behind-the-screen.mp4'
         }
     }
 
     render () {
         return (
-            <video id="background-video" loop autoPlay>
+            <video id="background-video" autoPlay>
                 <source src={this.state.videoURL} type="video/mp4" />
                 <source src={this.state.videoURL} type="video/ogg" />
                 Your browser does not support the video tag.
