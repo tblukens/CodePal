@@ -1713,10 +1713,11 @@
   }
   @media(max-width: 1199px) {
     .landing-caption {
-      font-size: 37px;
+      font-size: 42px;
+      text-align: center;
     }
     p {
-      font-size: 16px;
+      font-size: 18px;
     }
     .tapl-title {
       font-size: 28px;
@@ -1821,6 +1822,7 @@
     }
     .landing-caption {
       font-size: 30px;
+      text-align: center;
     }
     .gym {
       top: 150px;

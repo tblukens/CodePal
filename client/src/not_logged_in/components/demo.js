@@ -11,8 +11,8 @@ class Demo extends React.Component {
 		      <div className="row">
 		         <div className="col-md-8 offset-md-2 text-center">
 		            <div className="section-title">
-		               <h2>How CodePal Works</h2>
-		               <img src="assets/images/title-line.png" alt="white-line" className="img-fluid"/>
+		               <h2 className="coders-nearby">How CodePal Works</h2>
+		               {/* <img src="assets/images/title-line.png" alt="white-line" className="img-fluid"/> */}
 		               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati!
 		                  ipsum dolor sit Rem autem voluptatem obcaecati</p>
 		            </div>

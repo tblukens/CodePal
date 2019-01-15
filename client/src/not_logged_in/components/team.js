@@ -79,8 +79,8 @@ class Team extends React.Component {
                 <div className="row">
                     <div className="col-md-12 text-center">
                         <div className="section-title">
-                            <h2>Coders Nearby</h2>
-                            <img src="assets/images/title-line.png" alt="title-line" className="img-fluid"/>
+                            <h2 className="coders-nearby">Coders Nearby</h2>
+                            {/* <img src="assets/images/title-line.png" alt="title-line" className="img-fluid"/> */}
                         </div>
                     </div>
                     <div className="col-md-12">
