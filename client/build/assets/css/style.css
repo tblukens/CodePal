@@ -2304,7 +2304,9 @@ li.nav-item.dropdown:first-child .dropdown-menu {
   border-radius: 5px;
   padding: 10px 30px;
   letter-spacing: 1px;
-  font-weight: 600; }
+  font-weight: 600; 
+
+}
 .landing-page .features-bg {
   background-color: #fbfbfb; }
   .landing-page .features-bg ul {
@@ -2338,6 +2340,7 @@ li.nav-item.dropdown:first-child .dropdown-menu {
   font-size: 40px;
   line-height: 1.5;
   font-weight: bold;
+  text-align: center;
   text-transform: capitalize; }
 .landing-page .pt-70 {
   padding-top: 70px; }
@@ -4060,7 +4063,9 @@ li.nav-item.dropdown:first-child .dropdown-menu {
   .landing-page .home-contain {
     padding-top: 20px; }
   .landing-page .landing-caption {
-    font-size: 30px; }
+    font-size: 30px;
+    text-align: center;
+   }
   .landing-page .gym {
     top: 150px; }
   .landing-page .msg {
