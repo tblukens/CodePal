@@ -117,7 +117,7 @@ ul {
 
 #background-video {
   height: auto;
-  width: cover;
+  width: 100%;
   // float: left;
   top: 0;
   padding: none;
@@ -196,7 +196,7 @@ button:focus {
 
 .coders-nearby {
   color:$primary_color;
-  opacity: .7;
+  // opacity: .7;
   font-size: 48px;
   
 }
@@ -2667,7 +2667,7 @@ li.nav-item.dropdown {
     top: 0;
     z-index: 9;
     width: 100%;
-    background-color: #0b3656;
+    background-color: $primary_color;
     opacity: 0.8;
   }
   .grab-img {
