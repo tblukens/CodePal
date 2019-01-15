@@ -12,9 +12,24 @@ import Contact from "./components/contact";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
+import Auth from "./utility/Auth";
 
-class Home extends React.Component {
+
+
+class Home extends React.Component { 
+  componentDidMount(){
+    const auth = new Auth();
+    auth.handleAuthentication();
+  }
   render() {
+  let userInfo=this.props.userInfo;
+  let userMeta=this.props;
+  
+  console.log(userMeta);
+  // console.log(userMeta);
+  // let meta = JSON.parse(userMeta.response.body)
+let userPicture 
+// = (meta.user_metadata.picture);
     document.body.classList.remove("inner-page");
     return (
       <div>
@@ -241,6 +256,8 @@ class Home extends React.Component {
                 <div className="d-flex-1">
                   <div className="slide-text">
                     <div>
+                      <img src={userPicture}></img>
+                      <h1>Hello {userInfo.nickname}</h1>
                       <h1>
                         Begin your coding journey with
                         <br />
