@@ -53,12 +53,12 @@ class Team extends React.Component {
                         <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid"/>
                         <div className="team-overlay">
                                 <div className="social-icon">
-                                    <ul>
-                                      <li><a href={val.mongo}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-mongodb-plain-wordmark"></i>' }}></a></li>
-                                      <li><a href={val.express} dangerouslySetInnerHTML={{ __html: '<i class="devicon-express-original"></i>' }}></a></li>
-                                      <li><a href={val.react}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-react-original-wordmark"></i>' }}></a></li>
-                                      <li><a href={val.node}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-nodejs-plain-wordmark"></i>' }}></a></li>
-                                      <li><a href={val.javascript}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-javascript-plain"></i>' }}></a></li>
+                                      <ul>
+                                      <li><a href={val.mongo}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-mongodb-plain-wordmark" style="font-size: 1.5em;"></i>' }}></a></li>
+                                      <li><a href={val.express} dangerouslySetInnerHTML={{ __html: '<i class="devicon-express-original" style="font-size: 1.5em;"></i>' }}></a></li>
+                                      <li><a href={val.react}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-react-original-wordmark" style="font-size: 1.5em;"></i>' }}></a></li>
+                                      <li><a href={val.node}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-nodejs-plain-wordmark" style="font-size: 1.5em;"></i>' }}></a></li>
+                                      <li><a href={val.javascript}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-javascript-plain" style="font-size: 1.5em;"></i>' }}></a></li>
                                     </ul>
                                 </div>
                             </div>

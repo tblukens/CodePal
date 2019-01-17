@@ -456,7 +456,7 @@ section {
 }
 .slide-bg {
   background: $bg_gradiant;
-  height: 100vh;
+  height: 50vh;
   padding-bottom: 0;
   padding-top: 80px;
   .container {
@@ -1146,7 +1146,8 @@ section {
     a {
       color: $white;
       transition: all 0.2s ease-in;
-    }
+      }
+ 
   }
 }
 
@@ -2549,6 +2550,10 @@ li.nav-item.dropdown {
     line-height: 1.5;
     font-weight: bold;
     text-transform: capitalize;
+    text-align: center;
+  }
+
+  .landing-text {
     text-align: center;
   }
   .pt-70 {

@@ -31,14 +31,14 @@ class Team extends React.Component {
             }
 		};
 
-    // Dynamic Team Members Easy to Update
+     // Dynamic Team Members Easy to Update
     let data = [
-        {name: 'mark jkcno', designation:'designer', photo:'1.jpg', facebook:'#', google:'#', twitter:'#', instagram:'#', rss:'#'},
-        {name: 'john doe', designation:'devloper', photo:'4.jpg', facebook:'#', google:'#', twitter:'#', instagram:'#', rss:'#'},
-        {name: 'johanson let', designation:'ux designer', photo:'3.jpg', facebook:'#', google:'#', twitter:'#', instagram:'#', rss:'#'},
-        {name: 'Walo Boni', designation:'app devloper', photo:'2.jpg', facebook:'#', google:'#', twitter:'#', instagram:'#', rss:'#'},
-        {name: 'John Shipmen', designation:'app designer', photo:'4.jpg', facebook:'#', google:'#', twitter:'#', instagram:'#', rss:'#'},
-        {name: 'Robert Tomkins', designation:'ceo', photo:'3.jpg', facebook:'#', google:'#', twitter:'#', instagram:'#', rss:'#'},
+        {name: 'Tim Lukens', designation:'Back End Developer', photo:'tim.jpg', mongo:'https://www.mongodb.com/', express:'https://expressjs.com/', react:'https://reactjs.org/', node:'https://nodejs.org/en/', javascript:'https://www.javascript.com/'},
+        {name: 'Spencer Knoll', designation:'Front End Developer', photo:'spencer.jpg', mongo:'https://www.mongodb.com/', express:'https://expressjs.com/', react:'https://reactjs.org/', node:'https://nodejs.org/en/', javascript:'https://www.javascript.com/'},
+        {name: 'Dustin Watkins', designation:'Back End Developer', photo:'dustin.jpg', mongo:'https://www.mongodb.com/', express:'https://expressjs.com/', react:'https://reactjs.org/', node:'https://nodejs.org/en/', javascript:'https://www.javascript.com/'},
+        {name: 'Michael Benefiel', designation:'Front End Developer', photo:'mike.jpg', mongo:'https://www.mongodb.com/', express:'https://expressjs.com/', react:'https://reactjs.org/', node:'https://nodejs.org/en/', javascript:'https://www.javascript.com/'},
+        {name: 'Pirate Dude', designation:'Captain', photo:'4.jpg', mongo:'https://www.mongodb.com/', express:'https://expressjs.com/', react:'https://reactjs.org/', node:'https://nodejs.org/en/', javascript:'https://www.javascript.com/'},
+        {name: 'Black Hat Ninja', designation:'Backroom Dealer', photo:'3.jpg', mongo:'https://www.mongodb.com/', express:'https://expressjs.com/', react:'https://reactjs.org/', node:'https://nodejs.org/en/', javascript:'https://www.javascript.com/'},
         ];
 
     // Dynamic Team Members Data Loop
@@ -53,12 +53,12 @@ class Team extends React.Component {
                         <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid"/>
                         <div className="team-overlay">
                                 <div className="social-icon">
-                                    <ul >
-                                      <li><a href={val.facebook} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-facebook" aria-hidden="true"></i>' }}></a></li>
-                                      <li><a href={val.google} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-google-plus" aria-hidden="true"></i>' }}></a></li>
-                                      <li><a href={val.twitter}  dangerouslySetInnerHTML={{ __html: '<i class="fa fa-twitter" aria-hidden="true"></i>' }}></a></li>
-                                      <li><a href={val.instagram}  dangerouslySetInnerHTML={{ __html: '<i class="fa fa-instagram" aria-hidden="true"></i>' }}></a></li>
-                                      <li><a href={val.rss}  dangerouslySetInnerHTML={{ __html: '<i class="fa fa-rss" aria-hidden="true"></i>' }}></a></li>
+                                    <ul>
+                                      <li><a href={val.mongo}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-mongodb-plain-wordmark" style="font-size: 1.5em;"></i>' }}></a></li>
+                                      <li><a href={val.express} dangerouslySetInnerHTML={{ __html: '<i class="devicon-express-original" style="font-size: 1.5em;"></i>' }}></a></li>
+                                      <li><a href={val.react}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-react-original-wordmark" style="font-size: 1.5em;"></i>' }}></a></li>
+                                      <li><a href={val.node}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-nodejs-plain-wordmark" style="font-size: 1.5em;"></i>' }}></a></li>
+                                      <li><a href={val.javascript}  dangerouslySetInnerHTML={{ __html: '<i class="devicon-javascript-plain" style="font-size: 1.5em;"></i>' }}></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -79,8 +79,8 @@ class Team extends React.Component {
                 <div className="row">
                     <div className="col-md-12 text-center">
                         <div className="section-title">
-                            <h2>Potential Matches</h2>
-                            <img src="assets/images/title-line.png" alt="title-line" className="img-fluid"/>
+                            <h2 className="coders-nearby">Potential Matches</h2>
+                            
                         </div>
                     </div>
                     <div className="col-md-12">
