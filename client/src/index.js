@@ -20,7 +20,7 @@ import Faq from './pages/faq';
 import Request from './pages/request';
 import Download from './pages/download';
 import ComingSoon from './pages/coming-soon';
-import Profile from './components/profile'; // for testing
+import Profiles from './pages/profiles'; // for testing
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
@@ -68,7 +68,7 @@ window.setState = (changes) => {
 						<Route path={`${process.env.PUBLIC_URL}/request`} component={Request} />
 						<Route path={`${process.env.PUBLIC_URL}/download`} component={Download} />
 						<Route path={`${process.env.PUBLIC_URL}/coming-soon`} component={ComingSoon} />
-						<Route path={`${process.env.PUBLIC_URL}/profile`} component={Profile} />
+			<Route path={`${process.env.PUBLIC_URL}/profile`} render={(props) => <Profiles {...state} userInfo={userInfo} userMeta={userMeta} />} />
 						<Route component={NoMatch} />
 					</Switch>
 				</BrowserRouter>

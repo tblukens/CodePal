@@ -78,17 +78,35 @@ export default class Auth {
         return request(options, function (error, response, body) {
             if (error) throw new Error(error);
 
-            console.log( "patch : " + response);
+            console.log("patch : " + response);
             return response;
         });
     }
+    getToken(cb) {
+        console.log("getToken");
+        var options = {
+            method: 'POST',
+            url: 'https://codepal.auth0.com/oauth/token',
+            headers: { 'content-type': 'application/json' },
+            body: '{"client_id":"9Y1fr7w39W3w93XxNMtJho5Y4wrWnAvF","client_secret":"Tl4DG2J1ffH47xIrwoGFor7FAr_uBLRqio6KLhUMuDhysAXB5viEgNuEsS9zBtOb","audience":"https://codepal.auth0.com/api/v2/","grant_type":"client_credentials"}'
+        };
 
+        request(options, function (error, response, body) {
+            if (error) throw new Error(error);
+            body = (JSON.parse(body));
+            const token = ((body.access_token));
+            cb(token);
+        });
+
+    }
     getMetaData(user, accessToken, callback) {
-        var options = { method: 'GET',
-  url: 'https://codepal.auth0.com/api/v2/users/' + user,
-  headers: {authorization: 'Bearer ' + accessToken} };
+        var options = {
+            method: 'GET',
+            url: 'https://codepal.auth0.com/api/v2/users/' + user,
+            headers: { authorization: 'Bearer ' + accessToken }
+        };
 
-        return  request(options, function (error, response, body) {
+        return request(options, function (error, response, body) {
             if (error) throw new Error(error);
 
             callback(body);
