@@ -7,7 +7,7 @@ let auth = new Auth();
 
 class Profiles extends React.Component {
    state = {
-      //  props:  this.props,
+      props: this.props,
       token: 'test'
    }
 
