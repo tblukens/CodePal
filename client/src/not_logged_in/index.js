@@ -205,9 +205,8 @@ class App extends React.Component {
                     <h2 className="landing-caption text-white">
                       The P2P coding experience
                     </h2>
-                    <p className="text-white">
-                      CodePal is perfect lorem ipsum dummy app to code with
-                      peers throughout the world!{" "}
+                    <p className="landing-text text-white">
+                      CodePal is a journey, not a destination{" "}
                     </p>
                     <div class="landing-btn">
                       <a

@@ -14,6 +14,7 @@ import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
 
+
 class Home extends React.Component {
   render() {
     document.body.classList.remove("inner-page");
@@ -149,7 +150,7 @@ class Home extends React.Component {
                     aria-expanded="false"
                   >
                     Other Pages (Demo only)
-                  </a> */}
+                  </a> 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
@@ -231,9 +232,9 @@ class Home extends React.Component {
                         404
                       </Link>
                     </li>
-                  </ul>
+                  </ul> */}
                 </li>
-              </ul>
+              </ul> 
             </div>
           </div>
         </nav>
@@ -247,20 +248,17 @@ class Home extends React.Component {
           </div>
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-12">
                 <div className="d-flex-1">
                   <div className="slide-text">
                     <div>
                       <h1>
-                        Begin your coding journey with
+                        Connect with coders in your area, or across the globe.
                         <br />
-                        <span className="main-title">CodePal!</span>
+                     
                       </h1>
-                      <h4>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry.{" "}
-                      </h4>
-                      <div className="slid-btn">
+                    
+                      {/* <div className="slid-btn"> 
                         <a href="">
                           <img
                             src="assets/images/app1.png"
@@ -283,20 +281,12 @@ class Home extends React.Component {
                             data-tilt-max="1.8"
                           />
                         </a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
-                <div className="home-right">
-                  <div className="mobile-slid">
-                    <img
-                      src="assets/images/top-mobile.png"
-                      alt="top1"
-                      className="img-fluid"
-                    />
-                  </div>
+    
                   {/* <div className="profile-msg"> 
                     <img
                       src="assets/images/top2.png"
@@ -333,9 +323,9 @@ class Home extends React.Component {
                     />
                   </div>*/}
                 </div>
-              </div>
-            </div>
-          </div>
+            </div> 
+             
+         
         </section>
         {/* Home One Section End */}
 

@@ -10,7 +10,7 @@ class Subscribe extends React.Component {
                 <div className="row">
                     <div className="col-sm-12 col-lg-4">
                         <div className="subscribe">
-                            <h3>Subscribe to Newsletter</h3>
+                            <h3>What should we put here?</h3>
                         </div>
                     </div>
                     <div className="col-sm-12 col-lg-8">
