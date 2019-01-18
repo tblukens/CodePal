@@ -1,38 +1,10 @@
-import React from 'react';
-import OwlCarousel from 'react-owl-carousel';
-import Card from './card';
+import React from "react";
 
-class Team extends React.Component {
+class Card extends React.Component {
   render() {
-    // OwlCarousel Option for Team Members
-		const options = {
-            0:{
-                items:1
-            },
-            576:{
-                items:2,
-                margin:12
-            },
-            600:{
-                items:2
-            },
-            767:{
-                items:2
-            },
-            768:{
-                items:2,
-                margin:15
-            },
-            992:{
-                items:3
-            },
-            1000:{
-                items:3
-            }
-		};
 
-    // Dynamic Team Members Easy to Update
-    let data = [
+
+  let data = [
         {name: 'Michael Benefiel', designation:'Front End Developer', photo:'mike.jpg', mongo:'https://www.mongodb.com/', express:'https://expressjs.com/', react:'https://reactjs.org/', node:'https://nodejs.org/en/', javascript:'https://www.javascript.com/'},
         {name: 'Spencer Knoll', designation:'Front End Developer', photo:'spencer.jpg', mongo:'https://www.mongodb.com/', express:'https://expressjs.com/', react:'https://reactjs.org/', node:'https://nodejs.org/en/', javascript:'https://www.javascript.com/'},
         {name: 'Dustin Watkins', designation:'Back End Developer', photo:'dustin.jpg', mongo:'https://www.mongodb.com/', express:'https://expressjs.com/', react:'https://reactjs.org/', node:'https://nodejs.org/en/', javascript:'https://www.javascript.com/'},
@@ -67,52 +39,37 @@ class Team extends React.Component {
             </div>
         );
     });
-		
-  	return (
-        <section className="team-bg" id="team">
-            <div className="animation-circle-inverse">
-                <i></i>
-                <i></i>
-                <i></i>
+
+
+    return (
+      <div className="col-md-12">
+        <div className="team-hover">
+          <div className="row">
+            <div className="col-md-4">
+              <div className="team-profile">
+               { <img src="assets/images/1.jpg" alt="1" className="img-fluid" />}
+              </div>
             </div>
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-12 text-center">
-                        <div className="section-title">
-                            <h2 className="coders-nearby">Coders Nearby</h2>
-                            {/* <img src="assets/images/title-line.png" alt="title-line" className="img-fluid"/> */}
-                        </div>
-                    </div>
-                    <div className="col-md-12">
-                           <OwlCarousel
-                                className="team-slider-rtl owl-carousel owl-theme"
-                                loop={true}
-                                margin={30}
-                                nav={false}
-                                dots={false}
-                                responsive={options}
-                            >
-                              {DataList}
-                           </OwlCarousel>
-                   <Card>
-                  
-                   </Card>
-                    </div>
+            <div className="col-md-8">
+              <div className="d-flex-1">
+              
+                <div className="hover-text">
+                {DataList}
+                  <div className="team-close-btn">
+                    <a
+                      dangerouslySetInnerHTML={{
+                        __html: '<i class="fa fa-times" aria-hidden="true"></i>'
+                      }}
+                    />
+                  </div>
+                 
                 </div>
+              </div>
             </div>
-        </section>
-  	);
-
-
-// ENTER NEW INNERDATA BELOW HERE
- 
-
-
-
-
-
-  }
+          </div>
+        </div>
+      </div>
+    );
+  };
 }
-
-
-export default Team;
+export default Card;

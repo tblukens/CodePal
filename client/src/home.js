@@ -14,6 +14,7 @@ import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
 
+
 class Home extends React.Component {
   render() {
     document.body.classList.remove("inner-page");
