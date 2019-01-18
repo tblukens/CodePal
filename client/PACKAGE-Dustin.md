@@ -25,14 +25,13 @@
   },
   "homepage": "https://github.com/tblukens/CodePal#readme",
   "dependencies": {
+    "auth0-js": "^9.8.2",
     "axios": "^0.18.0",
     "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
-    "mongoose": "^5.4.2"
-  },
-  "devDependencies": {
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0"
+    "jwt-decode": "^2.2.0",
+    "mongoose": "^5.4.2",
+    "request": "^2.88.0"
   }
 }
