@@ -24,8 +24,8 @@ class Home extends React.Component {
   render() {
   let userInfo=this.props.userInfo;
   let userMeta=this.props;
-  
-  console.log(userMeta);
+  console.log(userInfo);
+  // console.log("userMeta: " + userMeta);
   // console.log(userMeta);
   // let meta = JSON.parse(userMeta.response.body)
 let userPicture 
