@@ -13,24 +13,10 @@ import Team from "./components/team";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
-import Auth from "./utility/Auth";
-
 
 
 class Home extends React.Component {
-  componentDidMount() {
-    const auth = new Auth();
-    auth.handleAuthentication();
-  }
   render() {
-    let userInfo = this.props.userInfo;
-    let userMeta = this.props;
-    console.log(userInfo);
-    // console.log("userMeta: " + userMeta);
-    // console.log(userMeta);
-    // let meta = JSON.parse(userMeta.response.body)
-    let userPicture
-    // = (meta.user_metadata.picture);
     document.body.classList.remove("inner-page");
     return (
       <div>
@@ -62,7 +48,7 @@ class Home extends React.Component {
                 <li className="nav-item">
                   <a className="nav-link" href="#team">
                     Potential Matches
-                                  </a>
+                  </a>
                 </li>
                 {/* <li className="nav-item"> 
                   <a className="nav-link" href="#feature">
@@ -157,14 +143,14 @@ class Home extends React.Component {
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
-                  {/*<a
+                  {/* <a 
                     className="nav-link dropdown-toggle"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
                     Other Pages (Demo only)
-                  </a>
+                  </a> 
                   <ul className="dropdown-menu">
                     <li className="nav-item">
                       <Link
@@ -248,7 +234,7 @@ class Home extends React.Component {
                     </li>
                   </ul> */}
                 </li>
-              </ul>
+              </ul> 
             </div>
           </div>
         </nav>
@@ -269,9 +255,9 @@ class Home extends React.Component {
                       <h1>
                         Connect with coders in your area, or across the globe.
                         <br />
-
+                     
                       </h1>
-
+                    
                       {/* <div className="slid-btn"> 
                         <a href="">
                           <img
@@ -296,13 +282,12 @@ class Home extends React.Component {
                           />
                         </a>
                       </div> */}
-
                     </div>
                   </div>
                 </div>
               </div>
-
-              {/* <div className="profile-msg"> 
+    
+                  {/* <div className="profile-msg"> 
                     <img
                       src="assets/images/top2.png"
                       alt="top2"
@@ -337,11 +322,11 @@ class Home extends React.Component {
                       className="img-fluid"
                     />
                   </div>*/}
-            </div>
-          </div>
-
-
-        </section >
+                </div>
+            </div> 
+             
+         
+        </section>
         {/* Home One Section End */}
 
         {/* About Component*/}
@@ -434,7 +419,7 @@ class Home extends React.Component {
             <i className="fa fa-angle-up" aria-hidden="true" />
           </div>
         </div>
-      </div >
+      </div>
     );
   }
 }
