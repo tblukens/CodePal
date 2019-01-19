@@ -1,6 +1,6 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
-
+import Card from './card';
 
 class Team extends React.Component {
   render() {
@@ -65,6 +65,8 @@ class Team extends React.Component {
                     </div>
                 </div>
             </div>
+
+            
         );
     });
 		
@@ -94,30 +96,7 @@ class Team extends React.Component {
                             >
                               {DataList}
                            </OwlCarousel>
-                        <div className="col-md-12">
-                            <div className="team-hover">
-                                <div className="row">
-                                    <div className="col-md-4">
-                                        <div  className="team-profile">
-                                            <img src="assets/images/1.jpg" alt="1" className="img-fluid"/>
-                                        </div>
-                                    </div>
-                                    <div className="col-md-8">
-                                        <div className="d-flex-1">
-                                            <div className="hover-text">
-                                                <div className="team-close-btn">
-                                                    <a dangerouslySetInnerHTML={{ __html: '<i class="fa fa-times" aria-hidden="true"></i>' }}></a>
-                                                </div>
-                                                <h3>Mark Jecno</h3>
-                                                <h4 className="m-0 text-muted">Devloper & Designer</h4>
-                                                <h5>PHP, Laravel, Cake , Wordpress, HTML5 </h5>
-                                                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text,</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                  <Card></Card>
                     </div>
                 </div>
             </div>

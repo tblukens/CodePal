@@ -95,7 +95,7 @@ class Team extends React.Component {
                               {DataList}
                            </OwlCarousel>
                    <Card>
-                  
+                 
                    </Card>
                     </div>
                 </div>
