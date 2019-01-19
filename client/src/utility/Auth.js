@@ -32,6 +32,7 @@ export default class Auth {
                 localStorage.setItem("access_token", authResults.accessToken);
                 localStorage.setItem("id_token", authResults.idToken);
                 localStorage.setItem("expires_at", expiresAt);
+                localStorage.setItem("auth_results", authResults);
                 location.hash = "";
                 location.pathname = LOGIN_SUCCESS_PAGE;
             }

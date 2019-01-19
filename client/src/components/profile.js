@@ -1,7 +1,7 @@
 import React from 'react';
 import Auth from "../utility/Auth";
-import request from "request";
-let auth = new Auth();
+// import request from "request";
+// let auth = new Auth();
 
 
 class Profile  {
