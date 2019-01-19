@@ -43,12 +43,13 @@ class Team extends React.Component {
 
     // Dynamic Team Members Data Loop
     let DataList = data.map((val, i) => {
+      
         return (
             <div className="item" key={i}>
                 <div className="team-box">
                     <div className="team-under-box">
                         <div className="team-under-box-button text-white">
-                            <i className="fa fa-plus" aria-hidden="true"></i>
+                            <i className="fa fa-plus" aria-hidden="true"></i> 
                         </div>
                         <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid"/>
                         <div className="team-overlay">
@@ -91,6 +92,8 @@ class Team extends React.Component {
                                 nav={false}
                                 dots={false}
                                 responsive={options}
+                                info={true}
+                              
                             >
                               {DataList}
                            </OwlCarousel>
