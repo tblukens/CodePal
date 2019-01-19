@@ -6,8 +6,21 @@ import Features from "./components/feature";
 import Team from "./components/team";
 import Video from "./components/video";
 
+import Auth from "../utility/Auth";
+
+
 class App extends React.Component {
+  componentDidMount(){
+		const auth = new Auth();
+		auth.handleAuthentication();
+  }
+  
   render() {
+
+    let userInfo=this.props.userInfo;
+		let userMeta=this.props.userMeta;
+
+
     document.body.classList.remove("inner-page");
     document.body.classList.add("landing-page");
     /*
@@ -70,7 +83,7 @@ class App extends React.Component {
                 <li className="nav-item ">
                   <a
                     className="nav-link"
-                    href={`${process.env.PUBLIC_URL}/sign-up`}
+                    onClick={this.props.auth.login}
                   >
                     Sign up
                   </a>
@@ -107,7 +120,7 @@ class App extends React.Component {
                     <li className="nav-item">
                       <a
                         className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/sign-in`}
+                        onClick={this.props.auth.login}
                       >
                         Sign In
                       </a>
@@ -115,8 +128,9 @@ class App extends React.Component {
                     <li className="nav-item">
                       <a
                         className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/sign-up`}
+                        onClick={this.props.auth.login}
                       >
+                      
                         Sign Up
                       </a>
                     </li>
@@ -210,7 +224,7 @@ class App extends React.Component {
                     </p>
                     <div class="landing-btn">
                       <a
-                        href={`${process.env.PUBLIC_URL}/sign-up`}
+                       onClick={this.props.auth.login}
                         className="btn btn-inverse mt-2 mr-3"
                       >
                         Sign up today
