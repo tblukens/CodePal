@@ -2,6 +2,7 @@
 import auth0 from 'auth0-js';
 import jwtDecode from 'jwt-decode';
 import request from "request";
+import axios from 'axios';
 
 const LOGIN_SUCCESS_PAGE = "/home";
 const LOGIN_FAILURE_PAGE = "/";
@@ -58,7 +59,18 @@ export default class Auth {
 
     getProfile() {
         if (localStorage.getItem("id_token")) {
-            return jwtDecode(localStorage.getItem("id_token"))
+            let idToken = jwtDecode(localStorage.getItem("id_token"));
+            const URL = 'http://localhost:3001/api/users/add'
+            axios.post(URL, {
+                user_id: idToken,
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+            return idToken
         }
         else return {};
     }
