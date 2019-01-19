@@ -1,19 +1,37 @@
 const axios = require('axios');
 let request = require("request");
 let auth0 = require('auth0-js');
+const db = require('../models');
+
 
 module.exports = {
 
+    getUsers: function (req, res) {
+        console.log(req.body);
+        db.User.find({})
+            .then(dbUsers => res.json(dbUsers))
+            .catch(err => console.log(err));
+
+
+    },
+    postUser: function (req,res) {
+        console.log(req.body);
+        db.User.create(req.body)
+          .then(dbUser => res.json(dbUser))
+          .catch(err => console.log(err));
+     },
+
+
     //working fine, get user id from `req.body` rather than from api url
     updateMetaData: function (req, res) {
-        
+
         //extract the following from the request: 
         let user = req.body.user_id;
         let newData = req.body.new_data;
-        
+
         //get access token
         getTokenPromise.then(function (accessToken) {
-        
+
             //get current profile info
             getCurrentProfile(user, accessToken).then(function (profile) {
                 const newProfile = Object.assign(profile, newData); // this will start with the current Profile, and overwrite the values that need updated.
@@ -55,6 +73,8 @@ module.exports = {
             });
         })
     },
+
+
 
     //not working, 400 error 
     createUser: function (req, res) {
@@ -114,7 +134,7 @@ let getCurrentProfile = function (user, accessToken) {
 
         request(options, function (error, response, body) {
             if (error) throw new Error(error);
-           let profile = (JSON.parse(body).user_metadata);
+            let profile = (JSON.parse(body).user_metadata);
             resolve(profile)
         });
     })
