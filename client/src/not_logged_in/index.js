@@ -16,9 +16,10 @@ class App extends React.Component {
   }
   
   render() {
-
-    let userInfo=this.props.userInfo;
-		let userMeta=this.props.userMeta;
+    
+    // THESE TWO OBJECTS CONTAIN INFORMATION ABOUT THE CURRENT USER 
+    // let userInfo=this.props.userInfo;   //Auth0 sets this 
+		// let userMeta=this.props.userMeta;  //CodePal allows users to set this Profile Info
 
 
     document.body.classList.remove("inner-page");
