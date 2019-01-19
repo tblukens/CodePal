@@ -1,7 +1,7 @@
 import React from 'react';
 import Auth from "../utility/Auth";
-import Profile from "../components/profile";
-import request from "request";
+// import Profile from "../components/profile";
+// import request from "request";
 let auth = new Auth();
 
 
