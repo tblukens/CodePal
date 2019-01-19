@@ -456,7 +456,7 @@ section {
 }
 .slide-bg {
   background: $bg_gradiant;
-  height: 100vh;
+  height: 50vh;
   padding-bottom: 0;
   padding-top: 80px;
   .container {
@@ -1044,6 +1044,30 @@ section {
 /*=====================
     09.Team section start
 ==========================*/
+.inner-social {
+  
+  display: inline-block;
+  font-size: 22px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  
+  // color: $white;
+  line-height: 35px;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:hover {
+   color: red;
+  }
+ 
+}
+
+
 .team-hover {
   border: 1px solid $primary_color;
   border-radius: 5px;
@@ -1106,6 +1130,8 @@ section {
     }
   }
 }
+
+
 .team-under-box-button {
   position: absolute;
   height: 35px;
@@ -1146,7 +1172,8 @@ section {
     a {
       color: $white;
       transition: all 0.2s ease-in;
-    }
+      }
+ 
   }
 }
 
@@ -2551,6 +2578,10 @@ li.nav-item.dropdown {
     text-transform: capitalize;
     text-align: center;
   }
+
+  .landing-text {
+    text-align: center;
+  }
   .pt-70 {
     padding-top: 70px;
   }
@@ -2587,6 +2618,7 @@ li.nav-item.dropdown {
       background-position: center 100% !important;
     }
   }
+
   .img-scroll {
     transition: all 9s ease-out 0s;
     background-position: center 0;
