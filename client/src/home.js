@@ -1,14 +1,15 @@
 import React from "react";
-import About from "./components/about";
+// import About from "./components/about";
 // import Feature from "./components/feature";
 // import Work from "./components/work";
-import ScreenShot from "./components/screenshot";
+// import ScreenShot from "./components/screenshot";
+import Team from "./components/team";
 // import Team from "./components/team";
 // import Blog from "./components/blog";
 // import Price from "./components/price";
 // import Testimonial from "./components/testimonial";
 // import FAQ from "./components/faq";
-import Contact from "./components/contact";
+// import Contact from "./components/contact";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
@@ -16,20 +17,20 @@ import Auth from "./utility/Auth";
 
 
 
-class Home extends React.Component { 
-  componentDidMount(){
+class Home extends React.Component {
+  componentDidMount() {
     const auth = new Auth();
     auth.handleAuthentication();
   }
   render() {
-  let userInfo=this.props.userInfo;
-  let userMeta=this.props;
-  console.log(userInfo);
-  // console.log("userMeta: " + userMeta);
-  // console.log(userMeta);
-  // let meta = JSON.parse(userMeta.response.body)
-let userPicture 
-// = (meta.user_metadata.picture);
+    let userInfo = this.props.userInfo;
+    let userMeta = this.props;
+    console.log(userInfo);
+    // console.log("userMeta: " + userMeta);
+    // console.log(userMeta);
+    // let meta = JSON.parse(userMeta.response.body)
+    let userPicture
+    // = (meta.user_metadata.picture);
     document.body.classList.remove("inner-page");
     return (
       <div>
@@ -59,9 +60,9 @@ let userPicture
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#about">
-                    About
-                  </a>
+                  <a className="nav-link" href="#team">
+                    Potential Matches
+                                  </a>
                 </li>
                 {/* <li className="nav-item"> 
                   <a className="nav-link" href="#feature">
@@ -70,8 +71,8 @@ let userPicture
                 </li> */}
 
                 <li className="nav-item">
-                  <a className="nav-link" href="#screenshots">
-                  Connect
+                  <a className="nav-link" href="#d">
+                    Messages
                   </a>
                 </li>
 
@@ -143,11 +144,20 @@ let userPicture
                 </li>*/}
                 <li className="nav-item">
                   <a className="nav-link" href="#contact">
-                    Contact us
+                    Contact Us
                   </a>
                 </li>
+
+                <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to={`${process.env.PUBLIC_URL}/sign-in`}
+                  >
+                    Sign In
+                  </Link>
+                </li>
                 <li className="nav-item dropdown">
-                  <a
+                  {/*<a
                     className="nav-link dropdown-toggle"
                     data-toggle="dropdown"
                     aria-haspopup="true"
@@ -236,7 +246,7 @@ let userPicture
                         404
                       </Link>
                     </li>
-                  </ul>
+                  </ul> */}
                 </li>
               </ul>
             </div>
@@ -252,22 +262,17 @@ let userPicture
           </div>
           <div className="container">
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md-12">
                 <div className="d-flex-1">
                   <div className="slide-text">
                     <div>
-                      <img src={userPicture}></img>
-                      <h1>Hello {userInfo.nickname}</h1>
                       <h1>
-                        Begin your coding journey with
+                        Connect with coders in your area, or across the globe.
                         <br />
-                        <span className="main-title">CodePal!</span>
+
                       </h1>
-                      <h4>
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry.{" "}
-                      </h4>
-                      <div className="slid-btn">
+
+                      {/* <div className="slid-btn"> 
                         <a href="">
                           <img
                             src="assets/images/app1.png"
@@ -290,21 +295,14 @@ let userPicture
                             data-tilt-max="1.8"
                           />
                         </a>
-                      </div>
+                      </div> */}
+
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="col-md-6">
-                <div className="home-right">
-                  <div className="mobile-slid">
-                    <img
-                      src="assets/images/top-mobile.png"
-                      alt="top1"
-                      className="img-fluid"
-                    />
-                  </div>
-                  {/* <div className="profile-msg"> 
+
+              {/* <div className="profile-msg"> 
                     <img
                       src="assets/images/top2.png"
                       alt="top2"
@@ -339,20 +337,19 @@ let userPicture
                       className="img-fluid"
                     />
                   </div>*/}
-                </div>
-              </div>
             </div>
           </div>
-        </section>
+
+
+        </section >
         {/* Home One Section End */}
 
         {/* About Component*/}
-        <About />
+        {/* <About /> */}
 
         {/*ScreenShot Component*/}
-        <ScreenShot />
+        <Team />
 
-      
         {/*Work Component
         <Work /> */}
 
@@ -422,11 +419,11 @@ let userPicture
         </section>
         {/*end download section*/}
 
-        {/*Contact Component*/}
-        <Contact />
-
         {/*Subscription Component*/}
         <Subscribe />
+
+        {/*Contact Component*/}
+        {/* <Contact /> */}
 
         {/*Footer Component*/}
         <Footer />
@@ -437,7 +434,7 @@ let userPicture
             <i className="fa fa-angle-up" aria-hidden="true" />
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }
