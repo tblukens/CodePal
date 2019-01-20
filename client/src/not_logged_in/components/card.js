@@ -1,23 +1,23 @@
 import React from "react";
 
+  let data = [
+        {id: 1, name: 'Michael Benefiel', designation:'Front End Developer', photo:'mike.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 2, name: 'Spencer Knoll', designation:'Front End Developer', photo:'spencer.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 3, name: 'Dustin Watkins', designation:'Back End Developer', photo:'dustin.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 4, name: 'Tim Lukens', designation:'Back End Developer', photo:'tim.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 5, name: 'Pirate Dude', designation:'Captain', photo:'4.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 6, name: 'Black Hat Ninja', designation:'Backroom Dealer', photo:'3.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        ];
 
 class Card extends React.Component {
   render() {
-
-
-  let data = [
-        {name: 'Michael Benefiel', designation:'Front End Developer', photo:'mike.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {name: 'Spencer Knoll', designation:'Front End Developer', photo:'spencer.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {name: 'Dustin Watkins', designation:'Back End Developer', photo:'dustin.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {name: 'Tim Lukens', designation:'Back End Developer', photo:'tim.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {name: 'Pirate Dude', designation:'Captain', photo:'4.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {name: 'Black Hat Ninja', designation:'Backroom Dealer', photo:'3.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        ];
-
     // Dynamic Team Members Data Loop
     let DataList = data.map((val, i) => {
+     if (val.id === 1) {
+         
         return (
-        <div className="col-md-12">
+         
+        <div className="col-md-12" key={i}>
                             <div className="team-hover">
                                 <div className="row">
                                     <div className="col-md-4">
@@ -51,17 +51,18 @@ class Card extends React.Component {
                                 </div>
                             </div>
                         </div>
-          
-        );
+    
+        )}  
+        
+            
+    
     });
 
-
     return (
-      <div className="col-md-12">
         
-           {DataList}            
-                 
-          
+      <div className="col-md-12">
+  {DataList}
+            
       </div>
     );
   };
