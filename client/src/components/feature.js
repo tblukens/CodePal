@@ -44,7 +44,7 @@ class Feature extends React.Component {
                     </div>
                  </div>
                  <div className="col-md-4 future-mobile">
-                    <img src="assets/images/feature-mob.png" alt="feature-mob" className="img-fluid"/>
+                    {/* <img src="assets/images/screen2.png" alt="feature-mob" className="img-fluid"/> */}
                  </div>
                  <div className="col-lg-4 col-sm-6">
                     <div className="future-box">
