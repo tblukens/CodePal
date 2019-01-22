@@ -62,7 +62,7 @@ class App extends React.Component {
     return (
       <div>
         {/*home section*/}
-        <nav className="navbar navbar-expand-lg  theme-nav">
+        <nav className="navbar navbar-expand-lg  theme-nav fixed-top" id="landing-nav">
           <div className="container">
             <a className="navbar-brand" href={`${process.env.PUBLIC_URL}/`}>
               <img src="assets/images/codepal-logo-white-sm.png" alt="logo" />
@@ -360,6 +360,11 @@ class App extends React.Component {
           </div>
         </div>
         {/*Footer Section End*/}
+          <div className="tap-top">
+          <div>
+            <i className="fa fa-angle-up" aria-hidden="true" />
+          </div>
+        </div>
       </div>
     );
   }
