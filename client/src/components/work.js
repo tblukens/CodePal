@@ -30,7 +30,7 @@ class Work extends React.Component {
 		         <div className="col-lg-4 text-center">
 		            <div className="process-box">
 		               <img src="assets/images/icon/2.png" alt=""/>
-		               <h3>conect people</h3>
+		               <h3>connect people</h3>
 		               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias non nulla placeat, odio</p>
 		               <img src="assets/images/icon/2.png" alt="" className="bg-icon"/>
 		            </div>
