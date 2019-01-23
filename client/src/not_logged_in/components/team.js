@@ -3,6 +3,7 @@ import OwlCarousel from 'react-owl-carousel';
 import Card from './card';
 import Icon from './icon';
 
+
 class Team extends React.Component {
   render() {
     // OwlCarousel Option for Team Members
@@ -49,7 +50,7 @@ class Team extends React.Component {
                 <div className="team-box">
                     <div className="team-under-box">
                         <div className="team-under-box-button text-white">
-                            <Icon></Icon>
+                            <i className="fa fa-plus"></i>
                         </div>
                         <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid"/>
                         <div className="team-overlay">
@@ -97,7 +98,7 @@ class Team extends React.Component {
                             >
                               {DataList}
                            </OwlCarousel>
-                  {/* <Card></Card> */}
+                  <Card></Card>
                     </div>
                 </div>
             </div>

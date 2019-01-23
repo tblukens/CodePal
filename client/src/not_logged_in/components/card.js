@@ -1,19 +1,20 @@
 import React from "react";
 
   let data = [
-        {id: 1, name: 'Michael Benefiel', designation:'Front End Developer', photo:'mike.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {id: 2, name: 'Spencer Knoll', designation:'Front End Developer', photo:'spencer.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {id: 3, name: 'Dustin Watkins', designation:'Back End Developer', photo:'dustin.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {id: 4, name: 'Tim Lukens', designation:'Back End Developer', photo:'tim.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {id: 5, name: 'Pirate Dude', designation:'Captain', photo:'4.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
-        {id: 6, name: 'Black Hat Ninja', designation:'Backroom Dealer', photo:'3.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 1, foreign: 1, name: 'Michael Benefiel', designation:'Front End Developer', photo:'mike.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 2, foreign: 2, name: 'Spencer Knoll', designation:'Front End Developer', photo:'spencer.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 3, foreign: 3, name: 'Dustin Watkins', designation:'Back End Developer', photo:'dustin.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 4, foreign: 4, name: 'Tim Lukens', designation:'Back End Developer', photo:'tim.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 5, foreign: 5, name: 'Pirate Dude', designation:'Captain', photo:'4.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
+        {id: 6, foreign: 6, name: 'Black Hat Ninja', designation:'Backroom Dealer', photo:'3.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
         ];
 
 class Card extends React.Component {
   render() {
     // Dynamic Team Members Data Loop
     let DataList = data.map((val, i) => {
-    
+    if (val.foreign === 1) {
+  
          
         return (
          
@@ -52,7 +53,7 @@ class Card extends React.Component {
                             </div>
                         </div>
     
-        ) 
+        )} 
         
             
     

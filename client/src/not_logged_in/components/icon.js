@@ -9,7 +9,21 @@ import React from "react";
         {id: 6, name: 'Black Hat Ninja', designation:'Backroom Dealer', photo:'3.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
         ];
 class Icon extends React.Component {
- 
+   constructor(props) {
+    super(props);
+
+    this.state = {
+      isClicked: false,
+      message: "Not clicked"
+    };
+  }
+
+    handleClick() {
+    this.setState({
+      isClicked: !this.state.isClicked,
+      message: this.state.isClicked ? "🔬 Not clicked" : "🎬 Show Movies"
+    });
+  }
   removeItems(val, i){
     if (data.id === 1) {
       return (
@@ -57,7 +71,7 @@ class Icon extends React.Component {
   render() {
     return (
       <div>
-        <i className="fa fa-plus" onClick={this.removeItems}></i>
+        <i className="fa fa-plus" onClick={this.state.handleClick}></i>
       </div>
     );
   }
