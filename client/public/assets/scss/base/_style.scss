@@ -1529,14 +1529,14 @@ section {
 .email-box {
   padding: 20px 40px;
   .form-control {
-    display: inline-block;
-    width: 60% !important;
+    display: inline-bloack;
+    width: 100% !important;
     color: $white;
     background-color: transparent;
     background-clip: padding-box;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 5px;
-    padding: 10px 25px;
+    // padding: 10px 25px;
   }
   ::-webkit-input-placeholder {
     color: $white;
@@ -1556,8 +1556,10 @@ section {
   padding: 10px 35px;
   background-color: $white;
   color: $secondary_color;
-  margin-left: 15px;
-  margin-top: -5px;
+  margin-left: -5px;
+  margin-top: 18px;
+  // display: inline;
+  // float: left;
   &:hover {
     color: $primary_color;
   }
@@ -1916,6 +1918,7 @@ section {
     border: 2px solid $color_gallery_approx;
     font-size: 12px;
     text-align: center;
+    display: inline;
   }
   input::-webkit-input-placeholder {
     color: $color_silver_chalice_approx !important;
