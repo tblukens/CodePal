@@ -1,5 +1,6 @@
 import React from 'react';
-
+// import ThankYou from './pages/thank-you';
+// import { Link } from "react-router-dom";
 
 class Subscribe extends React.Component {
   render() {
@@ -8,19 +9,25 @@ class Subscribe extends React.Component {
         <section className="subscribe-bg">
             <div className="container">
                 <div className="row">
-                    <div className="col-sm-12 col-lg-4">
+                    <div className="col-sm-12 col-lg-5">
                         <div className="subscribe">
-                            <h3>What should we put here?</h3>
+                            <h3>Sign up for coding tips, tricks and tutorials</h3>
                         </div>
                     </div>
-                    <div className="col-sm-12 col-lg-8">
+                    <div className="col-sm-12 col-lg-6 d-inline">
                         <div className="email-box">
-                            <form action="https://pixelstrap.us19.list-manage.com/subscribe/post?u=5a128856334b598b395f1fc9b&amp;id=082f74cbda"  className="auth-form needs-validation" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank">
+                          <form action= "/thank-you"  className="auth-form needs-validation" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
                                   <input className="form-control" name="EMAIL" id="mce-EMAIL" placeholder="Your email address:" type="email" required="required" />
-                                  <button type="submit" className="btn btn-email" id="mc-submit">Subscribe</button>
-                            </form>
-                        </div>
+                             
+                             </form>
+                           </div>   
+                          
+                        
                     </div>
+                     <div className="col-sm-12 col-lg-1 d-inline">
+                                 <a href="/thank-you"> <button type="submit" className="btn btn-email" id="mc-submit" a href="/thank-you">Subscribe</button></a>
+                            </div>
+                            
                 </div>
             </div>
         </section>
