@@ -8,16 +8,12 @@ import React from "react";
         {id: 5, name: 'Pirate Dude', designation:'Captain', photo:'4.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
         {id: 6, name: 'Black Hat Ninja', designation:'Backroom Dealer', photo:'3.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
         ];
-
-class Card extends React.Component {
-  render() {
-    // Dynamic Team Members Data Loop
-    let DataList = data.map((val, i) => {
-    
-         
-        return (
-         
-        <div className="col-md-12" key={i}>
+class Icon extends React.Component {
+ 
+  removeItems(val, i){
+    if (data.id === 1) {
+      return (
+   <div className="col-md-12" key={i}>
                             <div className="team-hover">
                                 <div className="row">
                                     <div className="col-md-4">
@@ -51,20 +47,19 @@ class Card extends React.Component {
                                 </div>
                             </div>
                         </div>
-    
-        ) 
-        
-            
-    
-    });
 
+
+
+      )
+    }
+  }
+
+  render() {
     return (
-        
-      <div className="col-md-12">
-  {DataList}
-            
+      <div>
+        <i className="fa fa-plus" onClick={this.removeItems}></i>
       </div>
     );
-  };
+  }
 }
-export default Card;
+export default Icon;
