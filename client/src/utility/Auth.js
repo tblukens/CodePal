@@ -44,17 +44,18 @@ export default class Auth {
             }
         })
     }
-
+    
     isAuthenticated() {
         let expiresAt = JSON.parse(localStorage.getItem("expires_at"));
         return new Date().getTime() < expiresAt;
     }
-
+    
     logout() {
         alert("logging out");
         localStorage.removeItem("access_token");
         localStorage.removeItem("id_token");
         localStorage.removeItem("expires_at");
+        localStorage.removeItem("auth_results");
         location.pathname = LOGIN_FAILURE_PAGE;
     }
 
@@ -65,12 +66,13 @@ export default class Auth {
             axios.post(URL, {
                 user_id: idToken,
             })
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+            localStorage.setItem("Auth0_Id", idToken.sub);
             return idToken
         }
         else return {};

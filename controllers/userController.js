@@ -24,7 +24,7 @@ module.exports = {
 
     //working fine, get user id from `req.body` rather than from api url
     updateMetaData: function (req, res) {
-
+console.log(req.body);
         //extract the following from the request: 
         let user = req.body.user_id;
         let newData = req.body.new_data;
@@ -59,7 +59,8 @@ module.exports = {
 
     //working fine
     getMetaData: function (req, res) {
-        let user = req.body.user_id;
+        console.log(req.params);
+        let user = req.params.user_id;
         getTokenPromise.then(function (accessToken) {
             let options = {
                 method: 'GET',
@@ -69,7 +70,7 @@ module.exports = {
 
             request(options, function (error, response, body) {
                 if (error) throw new Error(error);
-                res.send(response)
+                res.json(response)
             });
         })
     },
