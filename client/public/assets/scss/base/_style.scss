@@ -115,14 +115,17 @@ ul {
   background: $bg_gradiant;
 }
 
-#background-video {
+.background-video {
   height: auto;
   width: 100%;
   // float: left;
   top: 0;
   padding: none;
   position: absolute; /* optional depending on what you want to do in your app */
+
+  opacity: 0.6;
 }
+
 
 .owl-theme {
   &.owl-carousel {
@@ -364,12 +367,15 @@ section {
 /*=====================
     03.Home page css start
 ==========================*/
+
+
 .theme-nav {
   padding-top: 0px;
   padding-bottom: 0px;
   transition: all 0.3s ease;
   .navbar {
     background-color: transparent;
+   
   }
   .nav-link {
     display: block;
@@ -428,7 +434,7 @@ section {
 }
 .navbar-nav {
   .nav-item .nav-link {
-    color: rgba(255, 255, 255, 0.6);
+    color: white
   }
   > li.dropdown {
     position: relative;
@@ -1523,14 +1529,14 @@ section {
 .email-box {
   padding: 20px 40px;
   .form-control {
-    display: inline-block;
-    width: 60% !important;
+    display: inline-bloack;
+    width: 100% !important;
     color: $white;
     background-color: transparent;
     background-clip: padding-box;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-radius: 5px;
-    padding: 10px 25px;
+    // padding: 10px 25px;
   }
   ::-webkit-input-placeholder {
     color: $white;
@@ -1550,8 +1556,10 @@ section {
   padding: 10px 35px;
   background-color: $white;
   color: $secondary_color;
-  margin-left: 15px;
-  margin-top: -5px;
+  margin-left: -5px;
+  margin-top: 18px;
+  // display: inline;
+  // float: left;
   &:hover {
     color: $primary_color;
   }
@@ -1784,9 +1792,9 @@ section {
     padding-top: 80px;
     padding-bottom: 80px;
   }
-  .navbar {
-    background: $bg_gradiant;
-  }
+ 
+  
+
   .media h5 {
     color: $theme-gray;
     font-weight: 600;
@@ -1910,6 +1918,7 @@ section {
     border: 2px solid $color_gallery_approx;
     font-size: 12px;
     text-align: center;
+    display: inline;
   }
   input::-webkit-input-placeholder {
     color: $color_silver_chalice_approx !important;
@@ -2519,6 +2528,8 @@ li.nav-item.dropdown {
  22.landing page css
 ==========================*/
 
+
+
 .landing-page {
   .theme-bg {
     min-height: 100vh;
@@ -2530,6 +2541,7 @@ li.nav-item.dropdown {
     &.grab {
       min-height: auto;
     }
+  
   }
   .btn-inverse {
     background: $white;
@@ -2695,13 +2707,15 @@ li.nav-item.dropdown {
     filter: brightness(0) invert(1);
   }
   .navbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     z-index: 9;
     width: 100%;
-    background-color: $primary_color;
-    opacity: 0.8;
+    background-color: transparent;
+    // opacity: 0.8;
   }
+
+
   .grab-img {
     height: 450px;
     overflow: hidden;
