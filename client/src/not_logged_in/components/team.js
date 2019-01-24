@@ -3,7 +3,6 @@ import OwlCarousel from 'react-owl-carousel';
 import Card from './card';
 import Icon from './icon';
 
-
 class Team extends React.Component {
   render() {
     // OwlCarousel Option for Team Members
@@ -45,12 +44,13 @@ class Team extends React.Component {
 
     // Dynamic Team Members Data Loop
     let DataList = data.map((val, i) => {
+      
         return (
             <div className="item" key={i}>
                 <div className="team-box">
                     <div className="team-under-box">
                         <div className="team-under-box-button text-white">
-                            <i className="fa fa-plus"></i>
+                           <Icon />
                         </div>
                         <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid"/>
                         <div className="team-overlay">
@@ -67,8 +67,6 @@ class Team extends React.Component {
                     </div>
                 </div>
             </div>
-
-            
         );
     });
 		
@@ -95,15 +93,28 @@ class Team extends React.Component {
                                 nav={false}
                                 dots={false}
                                 responsive={options}
+                                info={true}
+                              
                             >
                               {DataList}
                            </OwlCarousel>
-                  <Card></Card>
+                   <Card>
+                 
+                   </Card>
                     </div>
                 </div>
             </div>
         </section>
   	);
+
+
+// ENTER NEW INNERDATA BELOW HERE
+ 
+
+
+
+
+
   }
 }
 
