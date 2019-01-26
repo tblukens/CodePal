@@ -68,6 +68,15 @@ class Home extends React.Component {
                   </a>
                 </li>
 
+                  <li className="nav-item">
+                  <Link
+                    className="nav-link"
+                    to={`${process.env.PUBLIC_URL}/profiles`}
+                  >
+                    Profile
+                  </Link>
+                </li>
+
                 {/* <li className="nav-item">
                   <a className="nav-link" href="#team">
                     team
