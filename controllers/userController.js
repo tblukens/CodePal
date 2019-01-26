@@ -14,17 +14,21 @@ module.exports = {
 
 
     },
-    postUser: function (req,res) {
+    postUser: function (req, res) {
         console.log(req.body);
-        db.User.create(req.body)
-          .then(dbUser => res.json(dbUser))
-          .catch(err => console.log("Error creating user."));
-     },
+userExists = db.User.findOne(req.body);
+console.log(userExists);
+        if (!userExists) {
+            db.User.create(req.body)
+                .then(dbUser => res.json(dbUser))
+                .catch(err => console.log("Error creating user."));
+        }
+    },
 
 
     //working fine, get user id from `req.body` rather than from api url
     updateMetaData: function (req, res) {
-console.log(req.body);
+        console.log(req.body);
         //extract the following from the request: 
         let user = req.body.user_id;
         let newData = req.body.new_data;

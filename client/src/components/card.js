@@ -21,7 +21,7 @@ class Card extends React.Component {
             let teamMember = localStorage.getItem("teamMemberOwl");
             console.log(teamMember);
             console.log(this.props.memberName);
-            if (val.name == teamMember) {
+            if (val.name === teamMember) {
 
                 return (
                     <div className="col-md-12" key={i}>
