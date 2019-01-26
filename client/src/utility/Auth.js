@@ -6,13 +6,13 @@ import axios from 'axios';
 
 const LOGIN_SUCCESS_PAGE = "/home";
 const LOGIN_FAILURE_PAGE = "/";
-const callback = process.env.callback;
+const callbackURL = process.env.CALLBACK;
 
 export default class Auth {
     auth0 = new auth0.WebAuth({
         domain: 'codepal.auth0.com',
         clientID: 'xJDY4HM4Lv2zcmqzMlzjhUz1YpjbzBKc',
-        redirectUri: callback||'http://localhost:3000/callback',
+        redirectUri: callbackURL||'http://localhost:3000/callback',
         audience: 'https://codepal.auth0.com/userinfo',
         responseType: 'token id_token',
         scope: 'openid profile'
