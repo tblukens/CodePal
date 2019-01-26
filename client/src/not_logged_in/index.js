@@ -60,7 +60,7 @@ class App extends React.Component {
                 </li>
 
                  <li className="nav-item ">
-                  <p className="nav-link">
+                  <p className="nav-link" id="bar">
                     | 
                   </p>
                 </li>
