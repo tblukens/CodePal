@@ -1,6 +1,7 @@
 import React from 'react';
 import Auth from "../utility/Auth";
 import axios from "axios";
+import _ from "underscore";
 // import Profile from "../components/profile";
 // import request from "request";
 let auth = new Auth();
@@ -13,14 +14,18 @@ class Profiles extends React.Component {
    }
 
    componentDidMount() {
-      var self = this;
-      console.log("Component Did Mount");
       let callback = (token) => {
          this.setState({ token: token })
-         console.log(token);
       }
       auth.getToken(callback);
+      this.getUser();
 
+      // prom.then((value) => {
+      //  })
+
+   }
+   getUser() {
+      let self = this;
       let currentUserId = localStorage.getItem("Auth0_Id")
       axios({
          url: '/api/users/usermeta/' + currentUserId,
@@ -29,79 +34,78 @@ class Profiles extends React.Component {
          .then(function (response) {
             let body = JSON.parse(response.data.body);
             let info = (body.user_metadata);
-            self.setState({ currentUser: info })
+let userDetails = _.map(info, function(value, key){
+   return `${key}  :  ${value} _________________________________`
+}) 
+            self.setState({ currentUser: userDetails })
 
          })
          .catch(function (error) {
             console.log(error);
          });
-
-
-      // prom.then((value) => {
-      //  })
-
    }
    handleInputChange() {
 
    }
 
-   render() {
+   profileSubmit(e) {
+      /* eslint no-restricted-globals: 0*/
       let user = localStorage.getItem("Auth0_Id");
       const $ = window.$;
-      let profileSubmit = (e) => {
-         e.preventDefault();
-         let profile = {}
-         function update(value) {
-            let id = `#${value}`;
-            let data = $(id).val().trim();
-            if (data) {
-               profile[value] = data;
-            }
-         }
+      e.preventDefault();
+      let profile = {}
 
-         let values = [
-            'firstName',
-            'lastName',
-            'skills',
-            'location',
-            'socketIoId',
-            'shortBio',
-            'joinDate',
-            'lastLogin',
-            'logOfActivity',
-            'linkedIn',
-            'gitHub',
-            'google',
-            'portfolio',
-            'currentMentor',
-            'currentStudent',
-            'experienceLevel'
-         ]
+      let values = [
+         'firstName',
+         'lastName',
+         'skills',
+         'location',
+         'socketIoId',
+         'shortBio',
+         'joinDate',
+         'lastLogin',
+         'logOfActivity',
+         'linkedIn',
+         'gitHub',
+         'google',
+         'portfolio',
+         'currentMentor',
+         'currentStudent',
+         'experienceLevel'
+      ]
 
-         values.forEach(value => {
-            update(value)
-         });
+      values.forEach(value => {
+         update(value)
+      });
 
-         let updateObject = {
-            "user_id": user,
-            "new_data": profile
-         }
-
-         axios({
-            url: '/api/users/update',
-            method: 'post',
-            data: updateObject
-         })
-            .then(function (response) {
-               console.log(response);
-               alert("Profile Updated Successfully!")
-
-            })
-            .catch(function (error) {
-               console.log(error);
-            });
-
+      let updateObject = {
+         "user_id": user,
+         "new_data": profile
       }
+
+      axios({
+         url: '/api/users/update',
+         method: 'post',
+         data: updateObject
+      })
+         .then((response) => {
+            alert("Profile Updated Successfully!")
+            this.getUser();
+
+         })
+         .catch(function (error) {
+            console.log(error);
+         });
+      function update(value) {
+         let id = `#${value}`;
+         let data = $(id).val().trim();
+         if (data) {
+            profile[value] = data;
+         }
+      }
+   }
+
+   render() {
 
       return (
          <section className="contact" id="contact">
@@ -207,14 +211,14 @@ class Profiles extends React.Component {
                         </div>
 
                         <div className="form-group mb-0">
-                           <button className="btn-theme" onClick={profileSubmit} type="submit">Update Profile</button>
+                           <button className="btn-theme" onClick={this.profileSubmit.bind(this)} type="submit">Update Profile</button>
                         </div>
                      </form>
                   </div>
                   <div className="col-md-6">
                      "Current User Info with ZERO styling"
                      <p>
-                        {JSON.stringify(this.state.currentUser)}
+                        {(this.state.currentUser)}
                      </p>
                   </div>
                </div>
