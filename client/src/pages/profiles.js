@@ -228,7 +228,12 @@ class Profiles extends React.Component {
 
                         <div className="form-group mb-0">
                            <button className="btn-theme" onClick={this.profileSubmit.bind(this)} type="submit">Update Profile</button>
-                        </div>
+                           </div>
+                          
+                            <div className="form-group mb-0">
+                           <a href={`${process.env.PUBLIC_URL}/home`} className="btn-theme" id="prof-home-btn">Go Back</a>
+                           </div>
+                        
                  </form>
               </div>
                <div className="col-md-6">
