@@ -16,8 +16,8 @@ module.exports = {
     },
     postUser: function (req, res) {
         console.log(req.body);
-userExists = db.User.findOne(req.body);
-console.log(userExists);
+        userExists = db.User.findOne(req.body);
+        console.log(userExists);
         if (!userExists) {
             db.User.create(req.body)
                 .then(dbUser => res.json(dbUser))
