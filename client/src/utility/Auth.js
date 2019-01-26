@@ -63,7 +63,7 @@ export default class Auth {
         if (localStorage.getItem("id_token")) {
             let idToken = jwtDecode(localStorage.getItem("id_token"));
             const URL = 'http://localhost:3001/api/users/add'
-            axios.post(URL, {
+             axios.post(URL, {
                 user_id: idToken,
             })
             .then(function (response) {
