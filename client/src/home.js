@@ -73,7 +73,7 @@ class Home extends React.Component {
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" onClick={this.props.auth.login}>
+                      <a className="nav-link" onClick={this.props.auth.logout}>
                         Sign Out
                       </a>
                     </li>
