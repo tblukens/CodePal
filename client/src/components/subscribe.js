@@ -25,7 +25,7 @@ class Subscribe extends React.Component {
                         
                     </div>
                      <div className="col-sm-12 col-lg-1 d-inline">
-                                 <a href="/thank-you"> <button type="submit" className="btn btn-email" id="mc-submit" a href="/thank-you">Subscribe</button></a>
+                                 <a href="/thank-you"> <button type="submit" className="btn btn-email" id="mc-submit"  href="/thank-you">Subscribe</button></a>
                             </div>
                             
                 </div>

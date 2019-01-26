@@ -36,9 +36,9 @@ class Profiles extends React.Component {
          .then(function (response) {
             let body = JSON.parse(response.data.body);
             let info = (body.user_metadata);
-let userDetails = _.map(info, function(value, key){
-   return `${key}  :  ${value} _________________________________`
-}) 
+            let userDetails = _.map(info, function (value, key) {
+               return `${key}  :  ${value} _________________________________`
+            })
             self.setState({ currentUser: userDetails })
 
          })
