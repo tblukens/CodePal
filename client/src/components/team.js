@@ -52,6 +52,7 @@ class Team extends React.Component {
             { name: 'Black Hat Ninja', designation: 'Backroom Dealer', photo: '3.jpg', mongo: 'https://www.mongodb.com/', express: 'https://expressjs.com/', react: 'https://reactjs.org/', node: 'https://nodejs.org/en/', javascript: 'https://www.javascript.com/' },
         ];
 
+<<<<<<< HEAD
         // Dynamic Team Members Data Loop
         let DataList = data.map((val, i) => {
             return (
@@ -63,6 +64,20 @@ class Team extends React.Component {
                             </div>
                             <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid" />
                             <div className="team-overlay">
+=======
+    // Dynamic Team Members Data Loop
+    let DataList = data.map((val, i) => {
+      
+        return (
+            <div className="item" key={i}>
+                <div className="team-box">
+                    <div className="team-under-box">
+                        <div className="team-under-box-button text-white">
+                            <i className="fa fa-plus" aria-hidden="true"></i> 
+                        </div>
+                        <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid"/>
+                        <div className="team-overlay">
+>>>>>>> ea60770ca357b45d18800f38b2cecc9edc66c063
                                 <div className="social-icon">
                                     <ul>
                                         <li><a href={val.mongo} dangerouslySetInnerHTML={{ __html: '<i class="devicon-mongodb-plain-wordmark" style="font-size: 1.5em;"></i>' }}></a></li>
@@ -102,6 +117,8 @@ class Team extends React.Component {
                                 nav={false}
                                 dots={false}
                                 responsive={options}
+                                info={true}
+                              
                             >
                                 {DataList}
                             </OwlCarousel>

@@ -14,7 +14,7 @@ class ThankYou extends React.Component {
             <div className="thanks-bg">
                 <div className="thank-you">
                     <img src="assets/images/thanks.gif" alt="thanks" className="img-fluid"/>
-                        <h3 className="mb-4">Thank you for Downloading the CodePal!</h3>
+                        <h3 className="mb-4">Thank you for subscribing!</h3>
                 </div>
             </div>
         </section>

@@ -19,17 +19,18 @@ class Card extends React.Component {
         // Dynamic Team Members Data Loop
         let DataList = data.map((val, i) => {
             let teamMember = localStorage.getItem("teamMemberOwl");
-           console.log(teamMember);
-           console.log(this.props.memberName);
+            console.log(teamMember);
+            console.log(this.props.memberName);
             if (val.name == teamMember) {
 
                 return (
-                    <div className="col-md-12">
+                    <div className="col-md-12" key={i}>
                         <div className="team-hover">
                             <div className="row">
                                 <div className="col-md-4">
                                     <div className="team-profile">
                                         <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid inner-img" height="332" width="450" />
+
                                     </div>
                                 </div>
                                 <div className="col-md-8">
