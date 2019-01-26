@@ -14,10 +14,15 @@ class Card extends React.Component {
         {name: 'Black Hat Ninja', designation:'Backroom Dealer', photo:'3.jpg', facebook:'https://www.facebook.com/', twitter:'https://twitter.com/', linkedin:'https://linkedin.com/', github:'https://github.com/', desc: 'Coding ninja, skilled in the art and craft of guruing and slicing fruit'},
         ];
 
+
+
     // Dynamic Team Members Data Loop
+   
     let DataList = data.map((val, i) => {
+       
         return (
-        <div className="col-md-12">
+
+        <div className="col-md-12" key={i}>
                             <div className="team-hover">
                                 <div className="row">
                                     <div className="col-md-4">
@@ -53,6 +58,8 @@ class Card extends React.Component {
                         </div>
           
         );
+
+      
     });
 
 
