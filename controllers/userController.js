@@ -18,7 +18,7 @@ module.exports = {
         console.log(req.body);
         db.User.create(req.body)
           .then(dbUser => res.json(dbUser))
-          .catch(err => console.log(err));
+          .catch(err => console.log("Error creating user."));
      },
 
 
