@@ -4,14 +4,14 @@ import Card from './card';
 
 class Team extends React.Component {
 
-    state={
-        memberName:''
+    state = {
+        memberName: ''
     }
     profileClick(e) {
         let $ = window.$;
         let target = (e.target);
         let name = $(target).data("name")
-        this.setState("memberName", name)
+        this.setState({"memberName": name})
         console.log(name);
     }
     render() {
@@ -103,7 +103,7 @@ class Team extends React.Component {
                                 dots={false}
                                 responsive={options}
                                 info={true}
-                              
+
                             >
                                 {DataList}
                             </OwlCarousel>
