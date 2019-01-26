@@ -1,15 +1,5 @@
 import React from "react";
-// import About from "./components/about";
-// import Feature from "./components/feature";
-// import Work from "./components/work";
-// import ScreenShot from "./components/screenshot";
 import Team from "./components/team";
-// import Team from "./components/team";
-// import Blog from "./components/blog";
-// import Price from "./components/price";
-// import Testimonial from "./components/testimonial";
-// import FAQ from "./components/faq";
-// import Contact from "./components/contact";
 import Subscribe from "./components/subscribe";
 import Footer from "./components/footer";
 import { Link } from "react-router-dom";
@@ -76,73 +66,7 @@ class Home extends React.Component {
                     Profile
                   </Link>
                 </li>
-
-                {/* <li className="nav-item">
-                  <a className="nav-link" href="#team">
-                    team
-                  </a>
-                </li>*/}
-                {/* <li className="nav-item dropdown"> 
-                  <a
-                    href="#news"
-                    className="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Blog
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/blog-list`}
-                      >
-                        blog list
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/blog-details`}
-                      >
-                        blog details
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/blog-leftside`}
-                      >
-                        leftsidebar
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/blog-rightside`}
-                      >
-                        rightsidebar
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/blog-left-sidebar`}
-                      >
-                        details leftsidebar
-                      </Link>
-                    </li>
-                    <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/blog-right-sidebar`}
-                      >
-                        details rightsidebar
-                      </Link>
-                    </li>
-                  </ul>
-                </li>*/}
+               
                 <li className="nav-item">
                   <a className="nav-link" href="#contact">
                     Contact Us
@@ -157,97 +81,91 @@ class Home extends React.Component {
                     Sign In
                   </Link>
                 </li>
-                <li className="nav-item dropdown">
-                  {/* <a 
+               <li className="nav-item dropdown">
+                  <a
                     className="nav-link dropdown-toggle"
                     data-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    Other Pages (Demo only)
-                  </a> 
+                    Other Pages (demo only)
+                  </a>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/sign-in`}
-                      >
+                      <a className="nav-link" onClick={this.props.auth.login}>
                         Sign In
-                      </Link>
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <Link
-                        className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/sign-up`}
-                      >
+                      <a className="nav-link" onClick={this.props.auth.login}>
                         Sign Up
-                      </Link>
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <Link
+                      <a
                         className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/forget-password`}
+                        href={`${process.env.PUBLIC_URL}/forget-password`}
                       >
                         Forget Password
-                      </Link>
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <Link
+                      <a
                         className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/thank-you`}
+                        href={`${process.env.PUBLIC_URL}/thank-you`}
                       >
                         Thank You
-                      </Link>
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <Link
+                      <a
                         className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/review`}
+                        href={`${process.env.PUBLIC_URL}/review`}
                       >
                         Review
-                      </Link>
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <Link
+                      <a
                         className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/faq`}
+                        href={`${process.env.PUBLIC_URL}/faq`}
                       >
                         FAQ
-                      </Link>
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <Link
+                      <a
                         className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/coming-soon`}
+                        href={`${process.env.PUBLIC_URL}/coming-soon`}
                       >
                         Coming Soon
-                      </Link>
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <Link
+                      <a
                         className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/download`}
+                        href={`${process.env.PUBLIC_URL}/download`}
                       >
                         Download
-                      </Link>
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <Link
+                      <a
                         className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/request`}
+                        href={`${process.env.PUBLIC_URL}/request`}
                       >
                         Request Demo
-                      </Link>
+                      </a>
                     </li>
                     <li className="nav-item">
-                      <Link
+                      <a
                         className="nav-link"
-                        to={`${process.env.PUBLIC_URL}/404`}
+                        href={`${process.env.PUBLIC_URL}/404`}
                       >
                         404
-                      </Link>
+                      </a>
                     </li>
-                  </ul> */}
+                  </ul>
                 </li>
               </ul> 
             </div>

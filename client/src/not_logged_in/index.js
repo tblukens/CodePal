@@ -1,7 +1,5 @@
 import React from "react";
 import Demo from "./components/demo";
-
-// import Blog from './components/blog';
 import Features from "./components/feature";
 import Team from "./components/team";
 import Video from "./components/video";
