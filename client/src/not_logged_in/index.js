@@ -223,7 +223,7 @@ class App extends React.Component {
                     <p className="landing-text text-white">
                       CodePal is a journey, not a destination{" "}
                     </p>
-                    <div class="landing-btn">
+                    <div className="landing-btn">
                       <a
                        onClick={this.props.auth.login}
                         className="btn btn-inverse mt-2 mr-3"
