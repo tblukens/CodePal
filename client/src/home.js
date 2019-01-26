@@ -35,46 +35,25 @@ class Home extends React.Component {
             </button>
             <div className="collapse navbar-collapse" id="mainmenu">
               <ul className="navbar-nav ml-auto" id="mymenu">
-                <li className="nav-item ">
-                  <a className="nav-link" href="#home">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#team">
-                    Potential Matches
-                  </a>
-                </li>
-
-                <li className="nav-item">
+             
+              <li className="nav-item">
                   <a className="nav-link" href="#d">
                     Messages
                   </a>
                 </li>
 
                 <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to={`${process.env.PUBLIC_URL}/profiles`}
-                  >
-                    Profile
-                  </Link>
-                </li>
-
-                <li className="nav-item">
-                  <a className="nav-link" href="#contact">
-                    Contact Us
+                  <a className="nav-link" href="#d">
+                    Forum
                   </a>
                 </li>
 
-                <li className="nav-item">
-                  <Link
-                    className="nav-link"
-                    to={`${process.env.PUBLIC_URL}/sign-in`}
-                  >
-                    Sign In
-                  </Link>
+                  <li className="nav-item ">
+                  <p className="nav-link">
+                    | 
+                  </p>
                 </li>
+            
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
@@ -82,83 +61,24 @@ class Home extends React.Component {
                     aria-haspopup="true"
                     aria-expanded="false"
                   >
-                    Other Pages (demo only)
+                    Account
                   </a>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
+                       <a
+                        className="nav-link"
+                        href={`${process.env.PUBLIC_URL}/profiles`}
+                      >
+                        Profile
+                      </a>
+                    </li>
+                    <li className="nav-item">
                       <a className="nav-link" onClick={this.props.auth.login}>
-                        Sign In
+                        Sign Out
                       </a>
                     </li>
-                    <li className="nav-item">
-                      <a className="nav-link" onClick={this.props.auth.login}>
-                        Sign Up
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/forget-password`}
-                      >
-                        Forget Password
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/thank-you`}
-                      >
-                        Thank You
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/review`}
-                      >
-                        Review
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/faq`}
-                      >
-                        FAQ
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/coming-soon`}
-                      >
-                        Coming Soon
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/download`}
-                      >
-                        Download
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/request`}
-                      >
-                        Request Demo
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/404`}
-                      >
-                        404
-                      </a>
-                    </li>
+                    
+                   
                   </ul>
                 </li>
               </ul>

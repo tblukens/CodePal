@@ -40,105 +40,41 @@ class App extends React.Component {
             </button>
             <div className="collapse navbar-collapse" id="mainmenu">
               <ul className="navbar-nav ml-auto" id="mymenu">
-                <li className="nav-item ">
-                  <a className="nav-link" onClick={this.props.auth.login}>
-                    Sign up
+                   <li className="nav-item ">
+                  <a
+                    className="nav-link" href="#team">
+                    Coders Nearby
+                  </a>
+                </li>
+                  <li className="nav-item ">
+                  <a
+                    className="nav-link" href="#feature" >
+                    Features
                   </a>
                 </li>
                 <li className="nav-item ">
                   <a
-                    className="nav-link"
-                    href={`${process.env.PUBLIC_URL}/home`}
-                  >
-                    Connect
+                    className="nav-link" href="#work" >
+                    How it works
                   </a>
                 </li>
 
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Other Pages (demo only)
+                 <li className="nav-item ">
+                  <p className="nav-link">
+                    | 
+                  </p>
+                </li>
+
+                <li className="nav-item ">
+                  <a className="nav-link" onClick={this.props.auth.login}>
+                   Sign up
                   </a>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item">
-                      <a className="nav-link" onClick={this.props.auth.login}>
-                        Sign In
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a className="nav-link" onClick={this.props.auth.login}>
-                        Sign Up
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/forget-password`}
-                      >
-                        Forget Password
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/thank-you`}
-                      >
-                        Thank You
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/review`}
-                      >
-                        Review
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/faq`}
-                      >
-                        FAQ
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/coming-soon`}
-                      >
-                        Coming Soon
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/download`}
-                      >
-                        Download
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/request`}
-                      >
-                        Request Demo
-                      </a>
-                    </li>
-                    <li className="nav-item">
-                      <a
-                        className="nav-link"
-                        href={`${process.env.PUBLIC_URL}/404`}
-                      >
-                        404
-                      </a>
-                    </li>
-                  </ul>
+                </li>
+
+                <li className="nav-item ">
+                  <a className="nav-link" onClick={this.props.auth.login}>
+                    Log in
+                  </a>
                 </li>
               </ul>
             </div>
