@@ -52,7 +52,7 @@ window.setState = (changes) => {
 //======================================
 //Authentication
 //======================================
-let username = auth.getProfile().given_name || "Dustin Willis";
+let username = auth.getProfile().given_name || "";
 
 let initialState = {
 	name: username,
