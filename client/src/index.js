@@ -7,6 +7,10 @@ import Home from './home';
 import Profiles from './pages/profiles'; // for testing
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Chat from './pages/chat/Layout'
+import './pages/chat/index.css'
+
+import axios from 'axios';
 
 //======================================
 //Authentication
@@ -29,6 +33,11 @@ window.setState = (changes) => {
 	/* eslint no-restricted-globals: 0*/
 	//======================================
 	class Root extends React.Component {
+		componentWillMount() {
+			axios.get("http://tbl-chat1.herokuapp.com")
+			.then(res => console.log(`${res.data.toUpperCase()}!!!`))
+			.catch(err => console.log(err))
+		  }
 		render() {
 			let userInfo = this.props.auth.getProfile();
 			let userMeta = meta;
@@ -39,6 +48,7 @@ window.setState = (changes) => {
 						<Route path={`${process.env.PUBLIC_URL}/callback`} render={(props) => <Home {...state} userInfo={userInfo} userMeta={userMeta} />} />
 						<Route path={`${process.env.PUBLIC_URL}/home`} render={(props) => <Home {...state} userInfo={userInfo} userMeta={userMeta} />} />
 						<Route path={`${process.env.PUBLIC_URL}/profiles`} render={(props) => <Profiles {...state} userInfo={userInfo} userMeta={userMeta} />} />
+						<Route path={`${process.env.PUBLIC_URL}/chat`} render={(props) => <Chat {...state} userInfo={userInfo} userMeta={userMeta} />} />
 						<Route component={NoMatch} />
 					</Switch>
 				</BrowserRouter>

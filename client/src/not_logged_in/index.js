@@ -4,8 +4,15 @@ import Features from "./components/feature";
 import Team from "./components/team";
 import Video from "./components/video";
 import Auth from "../utility/Auth";
+// import axios from "axios";
 
 class App extends React.Component {
+// componentWillMount() {
+//   axios.get("http://tbl-chat1.herokuapp.com")
+//   .then(res => console.log(`${res.data.toUpperCase()}!!!`))
+//   .catch(err => console.log(err))
+// }
+
   componentDidMount() {
     const auth = new Auth();
     auth.handleAuthentication();
