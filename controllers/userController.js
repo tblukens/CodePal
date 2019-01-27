@@ -7,7 +7,7 @@ const db = require('../models');
 module.exports = {
 
     getUsers: function (req, res) {
-        console.log(req.body);
+        // console.log(req.body);
         db.User.find({})
             .then(dbUsers => res.json(dbUsers))
             .catch(err => console.log(err));
@@ -15,20 +15,20 @@ module.exports = {
 
     },
     postUser: function (req, res) {
-        console.log(req.body);
-        userExists = db.User.findOne(req.body);
-        console.log(userExists);
-        if (!userExists) {
+        // console.log(req.body);
+        // userExists = db.User.findOne(req.body);
+        // console.log(userExists);
+        // if (!userExists) {
             db.User.create(req.body)
                 .then(dbUser => res.json(dbUser))
-                .catch(err => console.log("Error creating user."));
-        }
+                .catch(err => err);
+        // }
     },
 
 
     //working fine, get user id from `req.body` rather than from api url
     updateMetaData: function (req, res) {
-        console.log(req.body);
+        // console.log(req.body);
         //extract the following from the request: 
         let user = req.body.user_id;
         let newData = req.body.new_data;
@@ -63,7 +63,7 @@ module.exports = {
 
     //working fine
     getMetaData: function (req, res) {
-        console.log(req.params);
+        // console.log(req.params);
         let user = req.params.user_id;
         getTokenPromise.then(function (accessToken) {
             let options = {
@@ -102,7 +102,7 @@ module.exports = {
                 request(options, function (error, response, body) {
                     if (error) throw new Error(error);
 
-                    console.log(response.body);
+                    // console.log(response.body);
                     res.send(response)
                 })
             })
