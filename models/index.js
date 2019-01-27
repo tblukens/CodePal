@@ -2,5 +2,7 @@
 
 module.exports = {
   Message: require('./Message'),
-  User: require('./User')
+  User: require('./User'),
+  ForumThread: require('./ForumThread'),
+  ThreadPost: require('./ThreadPost')
 };
