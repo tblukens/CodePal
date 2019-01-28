@@ -37,8 +37,8 @@ class Home extends React.Component {
               <ul className="navbar-nav ml-auto" id="mymenu">
              
               <li className="nav-item">
-                  <a className="nav-link" href="#d">
-                    Messages
+                  <a className="nav-link" href={`${process.env.PUBLIC_URL}/chat`}>
+                    Chat
                   </a>
                 </li>
 
