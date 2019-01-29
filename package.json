@@ -31,11 +31,15 @@
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "if-env": "^1.0.4",
+    "lodash": "^4.17.11",
     "mongoose": "^5.4.2",
     "request": "^2.88.0",
-    "underscore": "^1.9.1"
+    "socket.io": "^2.0.3",
+    "underscore": "^1.9.1",
+    "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "json-loader": "^0.5.7",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0"
   }

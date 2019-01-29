@@ -6,14 +6,15 @@ import _ from "underscore";
 // import request from "request";
 let auth = new Auth();
 
+
 class Profiles extends React.Component {
-   state = {
+ state = {
       props: this.props,
       token: 'test',
 
    }
 
-   componentDidMount() {
+     componentDidMount() {
       let callback = (token) => {
          this.setState({ token: token })
       }
@@ -24,7 +25,8 @@ class Profiles extends React.Component {
       //  })
 
    }
-   getUser() {
+
+    getUser() {
       let self = this;
       let currentUserId = localStorage.getItem("Auth0_Id")
       axios({
@@ -34,9 +36,9 @@ class Profiles extends React.Component {
          .then(function (response) {
             let body = JSON.parse(response.data.body);
             let info = (body.user_metadata);
-let userDetails = _.map(info, function(value, key){
-   return `${key}  :  ${value} _________________________________`
-}) 
+            let userDetails = _.map(info, function (value, key) {
+               return `${key}  :  ${value} _________________________________`
+            })
             self.setState({ currentUser: userDetails })
 
          })
@@ -44,11 +46,12 @@ let userDetails = _.map(info, function(value, key){
             console.log(error);
          });
    }
+
    handleInputChange() {
 
    }
 
-   profileSubmit(e) {
+    profileSubmit(e) {
       /* eslint no-restricted-globals: 0*/
       let user = localStorage.getItem("Auth0_Id");
       const $ = window.$;
@@ -105,19 +108,32 @@ let userDetails = _.map(info, function(value, key){
       }
    }
 
-   render() {
 
-      return (
-         <section className="contact" id="contact">
-            <div className="container">
-               <div className="row">
-                  <div className="col-md-6">
-                     <div className="section-title">
-                        <h2>Update your Profile</h2>
-                     </div>
-                     <form className="auth-form">
 
-                        <div className="form-group">
+  render() {
+      document.body.classList.remove('inner-page');
+
+  	return (
+        <section className="auth-page">
+           <div className="animation-circle-inverse">
+              <i></i>
+              <i></i>
+              <i></i>
+           </div>
+           <div className="animation-circle">
+              <i></i>
+              <i></i>
+              <i></i>
+           </div>
+           <div className="auth-card">
+              <div className="text-center">
+                 <h2>Update Your Profile</h2>
+                
+                    <p>Welcome to CodePal. Please complete your profile information to begin connecting with coders from around the world.</p>
+              </div>
+              <div className="main">
+                 <form className="auth-form">
+                     <div className="form-group">
                            <label htmlFor="firstName">First name</label>
                            <i className="fa fa-user"></i>
                            <input required="" name="firstName" type="text" className="form-control" id="firstName" placeholder="First name" />
@@ -212,20 +228,24 @@ let userDetails = _.map(info, function(value, key){
 
                         <div className="form-group mb-0">
                            <button className="btn-theme" onClick={this.profileSubmit.bind(this)} type="submit">Update Profile</button>
-                        </div>
-                     </form>
-                  </div>
-                  <div className="col-md-6">
+                           </div>
+                          
+                            <div className="form-group mb-0">
+                           <a href={`${process.env.PUBLIC_URL}/home`} className="btn-theme" id="prof-home-btn">Go Back</a>
+                           </div>
+                        
+                 </form>
+              </div>
+               <div className="col-md-6">
                      "Current User Info with ZERO styling"
                      <p>
-                        {(this.state.currentUser)}
+                        {(this.statecurrentUser)}
                      </p>
                   </div>
-               </div>
-            </div>
-         </section>
-      );
-   }
+           </div>
+        </section>
+  	);
+  }
 }
 
 
