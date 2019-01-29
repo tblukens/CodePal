@@ -1,7 +1,7 @@
 import React from "react";
 import Demo from "./components/demo";
 import Features from "./components/feature";
-import Team from "./components/team";
+import Team from "../components/team";
 import Video from "./components/video";
 import Auth from "../utility/Auth";
 // import axios from "axios";
