@@ -4,6 +4,7 @@ import { USER_CONNECTED, LOGOUT, VERIFY_USER } from '../../utility/Events'
 import LoginForm from './LoginForm'
 import ChatContainer from '../../components/chat/chats/ChatContainer'
 import './index.css';
+import './index.scss';
 import {Redirect} from 'react-router';
 
 
