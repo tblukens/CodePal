@@ -8,6 +8,7 @@ import Messages from '../messages/Messages'
 import MessageInput from '../messages/MessageInput'
 import { values, difference, differenceBy } from 'lodash'
 
+
 export default class ChatContainer extends Component {
 	constructor(props) {
 	  super(props);	
@@ -175,7 +176,7 @@ export default class ChatContainer extends Component {
 		const { user, logout } = this.props
 		const { chats, activeChat, users } = this.state
 		return (
-			<div className="container">
+			<div className="container-chat">
 				<SideBar
 					logout={logout}
 					chats={chats}

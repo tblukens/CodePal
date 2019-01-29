@@ -97,7 +97,7 @@ export default class Layout extends Component {
 			return <Redirect to='/home' />
 		}
 		return (
-			<div className="container">
+			<div className="container-chat">
 				{
 					!user ?	
 					<LoginForm socket={socket} setUser={this.setUser} registeredUser={this.state.registeredUser} />

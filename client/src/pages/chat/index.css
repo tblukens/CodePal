@@ -46,7 +46,7 @@ textarea {
   padding: 5px 10px;
   color: #c92c43;
 }
-.container {
+.container-chat {
   color: #cac8ee;
   display: flex;
   flex-direction: row;
