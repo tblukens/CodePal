@@ -9,5 +9,5 @@ router.use('/users', userRoutes);
 router.use('/messages', messageRoutes);
 router.use('/thread', threadRoutes);
 router.use('/post', postRoutes);
-router.use('/account', accountRoutes);
+router.use('/accounts', accountRoutes);
 module.exports = router;

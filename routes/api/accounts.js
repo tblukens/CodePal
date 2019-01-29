@@ -8,14 +8,12 @@ router.get('/', (req, res) => {
     res.render('index', { user : req.user });
 });
 
-router.get('/register', (req, res) => {
-    res.render('register', { });
-});
 
 router.post('/register', (req, res, next) => {
+    console.log(req.body);
     Account.register(new Account({ username : req.body.username }), req.body.password, (err, account) => {
         if (err) {
-          return res.render('register', { error : err.message });
+          return res.json(err);
         }
 
         passport.authenticate('local')(req, res, () => {
@@ -34,12 +32,12 @@ router.get('/login', (req, res) => {
     res.render('login', { user : req.user, error : req.flash('error')});
 });
 
-router.post('/login', passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }), (req, res, next) => {
+router.post('/login', passport.authenticate('local', { failureRedirect: '/error', failureFlash: true }), (req, res, next) => {
     req.session.save((err) => {
         if (err) {
             return next(err);
         }
-        res.redirect('/');
+        res.send('authenticated');
     });
 });
 

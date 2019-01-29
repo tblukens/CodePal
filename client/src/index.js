@@ -9,6 +9,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Chat from './pages/chat/Layout';
 import Forum from './pages/forum/forum';
+import Passport from './pages/passport/passport-page';
 import ThreadView from './pages/forum/thread'
 import './pages/chat/index.css';
 
@@ -82,6 +83,12 @@ window.setState = changes => {
               path={`${process.env.PUBLIC_URL}/forum`}
               render={props => (
                 <Forum {...state} userInfo={userInfo} userMeta={userMeta} />
+              )}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/passport`}
+              render={props => (
+                <Passport {...state} userInfo={userInfo} userMeta={userMeta} />
               )}
             />
             <Route
