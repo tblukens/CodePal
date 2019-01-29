@@ -1,4 +1,5 @@
 const express = require('express');
+require('./utility/passport')
 const app = express();
 // const server = require('http').Server(app)
 // const io = require('socket.io')(server)
@@ -27,7 +28,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 // Add routes, both API and view
 app.use(routes);
-
+//Add Passport Auth Route
+const auth = require('./routes/auth');
+app.use('/auth', auth);
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/CodePal');
 
