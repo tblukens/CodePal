@@ -75,7 +75,7 @@ class Login extends React.Component {
                     <div className="text-center">
                         <h2>Login To Your Account</h2>
 
-                        <p>Welcome to CodePal. Please log-in here.</p>
+                        <p>Don't have an account?  <a onClick={()=>this.props.toggleUser(this.props.self)}>Please register here. </a></p>
                     </div>
                     <div className="main">
                         <form className="auth-form" >

@@ -4,34 +4,24 @@ import Register from '../../components/passport/register'
 
 
 
-// extends layout
-
-// block content
-//   .container
-//     if (!user)
-//       a(href="/login") Login
-//       br
-//       a(href="/register") Register
-//     if (user)
-//       p You are currently logged in as #{user.username}
-//       a(href="/logout") Logout
-
-
 
 class passportPage extends React.Component {
+
+    state = {
+        isExistingUser: false
+    }
+
+    toggleUser(self) {
+        let user= !self.state.isExistingUser
+        self.setState({ isExistingUser: user });
+    }
     render() {
+        const isExistingUser = this.state.isExistingUser;
+
         document.body.classList.remove('inner-page');
-        return (
-            <section className="p-0">
-                2 COMPONENTS:
-
-                LOGIN:
-                <Login />
-
-
-                REGISTER: 
-                <Register />
-            </section>
+        return (<div>
+            {isExistingUser ? <Login toggleUser={this.toggleUser} self={this} /> : <Register toggleUser={this.toggleUser} self={this} />}
+        </div>
         );
     }
 }
