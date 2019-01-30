@@ -73,13 +73,13 @@ class App extends React.Component {
                 </li>
 
                 <li className="nav-item ">
-                  <a className="nav-link" onClick={this.props.auth.login}>
+                  <a className="nav-link" href="/passport">
                    Sign up
                   </a>
                 </li>
 
                 <li className="nav-item ">
-                  <a className="nav-link" onClick={this.props.auth.login}>
+                  <a className="nav-link" href="/passport">
                     Log in
                   </a>
                 </li>
