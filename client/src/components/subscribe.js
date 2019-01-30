@@ -16,7 +16,7 @@ class Subscribe extends React.Component {
                     </div>
                     <div className="col-sm-12 col-lg-6 d-inline">
                         <div className="email-box">
-                          <form action= "/thank-you"  className="auth-form needs-validation" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
+                          <form action= "#"  className="auth-form needs-validation" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form">
                                   <input className="form-control" name="EMAIL" id="mce-EMAIL" placeholder="Your email address:" type="email" required="required" />
                              
                              </form>
@@ -25,7 +25,7 @@ class Subscribe extends React.Component {
                         
                     </div>
                      <div className="col-sm-12 col-lg-1 d-inline">
-                                 <a href="/thank-you"> <button type="submit" className="btn btn-email" id="mc-submit"  href="/thank-you">Subscribe</button></a>
+                                 <a href="http://eepurl.com/gfwwWT"> <button type="submit" className="btn btn-email" id="mc-submit"  href="/thank-you">Subscribe</button></a>
                             </div>
                             
                 </div>
