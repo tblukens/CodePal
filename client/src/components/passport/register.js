@@ -26,6 +26,7 @@ class Register extends React.Component {
             data: user
         })
             .then((response) => {
+                console.log(response)
                 alert('User is now registered')
                 self.props.toggleUser(self.props.self)
 
