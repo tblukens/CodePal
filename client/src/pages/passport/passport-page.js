@@ -1,6 +1,8 @@
 import React from 'react';
 import Login from '../../components/passport/login'
 import Register from '../../components/passport/register'
+import RegisterProfile from '../../components/passport/registerProfile'
+
 
 
 
@@ -20,7 +22,7 @@ class passportPage extends React.Component {
 
         document.body.classList.remove('inner-page');
         return (<div>
-            {isExistingUser ? <Login toggleUser={this.toggleUser} self={this} /> : <Register toggleUser={this.toggleUser} self={this} />}
+            {isExistingUser ? <Login login={this.props.login} toggleUser={this.toggleUser} self={this} /> : <RegisterProfile toggleUser={this.toggleUser} self={this} />}
         </div>
         );
     }
