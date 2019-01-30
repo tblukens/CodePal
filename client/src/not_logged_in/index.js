@@ -73,13 +73,13 @@ class App extends React.Component {
                 </li>
 
                 <li className="nav-item ">
-                  <a className="nav-link" onClick={this.props.auth.login}>
+                  <a className="nav-link" href="/passport">
                    Sign up
                   </a>
                 </li>
 
                 <li className="nav-item ">
-                  <a className="nav-link" onClick={this.props.auth.login}>
+                  <a className="nav-link" href="/passport">
                     Log in
                   </a>
                 </li>
@@ -106,7 +106,7 @@ class App extends React.Component {
                     </p>
                     <div className="landing-btn">
                       <a
-                        onClick={this.props.auth.login}
+                        href="/passport"
                         className="btn btn-inverse mt-2 mr-3"
                       >
                         Sign up today

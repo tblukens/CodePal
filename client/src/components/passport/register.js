@@ -3,44 +3,46 @@ import React from 'react';
 import axios from 'axios';
 
 class Register extends React.Component {
-    userSubmit(e) {
+    userSubmit=(e)=> {
+        let self = this;
         /* eslint no-restricted-globals: 0*/
         const $ = window.$;
         e.preventDefault();
         let user = {}
-  
+
         let values = [
-           'username',
-           'password'
+            'username',
+            'password'
         ]
-  
+
         values.forEach(value => {
-           update(value)
+            update(value)
         });
-  
-  
+
+
         axios({
-           url: '/api/accounts/register',
-           method: 'post',
-           data: user
+            url: '/api/accounts/register',
+            method: 'post',
+            data: user
         })
-           .then((response) => {
-              alert("User Registered")
-  
-           })
-           .catch(function (error) {
-              console.log(error);
-           });
+            .then((response) => {
+                alert('User is now registered')
+                self.props.toggleUser(self.props.self)
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
         function update(value) {
-           let id = `#${value}`;
-           let data = $(id).val().trim();
-           if (data) {
-              user[value] = data;
-           }
+            let id = `#${value}`;
+            let data = $(id).val().trim();
+            if (data) {
+                user[value] = data;
+            }
         }
-     }
-  
-  
+    }
+
+
 
     render() {
 
@@ -60,7 +62,7 @@ class Register extends React.Component {
                     <div className="text-center">
                         <h2>Register Your Account</h2>
 
-                        <p>Welcome to CodePal. Please register here.</p>
+                        <p>Already have an account?  <a onClick={()=>this.props.toggleUser(this.props.self)}>Please login here. </a></p>
                     </div>
                     <div className="main">
                         <form className="auth-form" >
@@ -77,13 +79,14 @@ class Register extends React.Component {
                             </div>
 
                             <div className="form-group mb-0">
-                                <button className="btn-theme" onClick={this.userSubmit}  type="submit">Register</button>
+                                <button className="btn-theme" onClick={this.userSubmit} type="submit">Register</button>
                             </div>
- 
+
                         </form>
-                            <div className="form-group mb-0">
-                                <button className="btn-theme" href="/">Cancel</button>
-                            </div>
+                        <br></br>
+                        <div className="form-group mb-0">
+                            <button className="btn-theme" href="/">Cancel</button>
+                        </div>
 
 
                     </div>
