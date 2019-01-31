@@ -79,7 +79,7 @@ class App extends React.Component {
                 </li>
 
                 <li className="nav-item ">
-                  <a className="nav-link" href="/passport">
+                  <a className="nav-link" href="/passport-login">
                     Log in
                   </a>
                 </li>

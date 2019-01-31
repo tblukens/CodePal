@@ -56,6 +56,8 @@ export default class Auth {
         localStorage.removeItem("id_token");
         localStorage.removeItem("expires_at");
         localStorage.removeItem("auth_results");
+        localStorage.removeItem("Auth0_Id");
+        localStorage.removeItem("username");
         location.pathname = LOGIN_FAILURE_PAGE;
     }
 
@@ -67,7 +69,7 @@ export default class Auth {
                 user_id: idToken,
             })
             .then(function (response) {
-                console.log(response);
+                // console.log(response);
             })
             .catch(function (error) {
                 console.log(error);

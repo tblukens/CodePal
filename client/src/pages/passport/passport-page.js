@@ -23,7 +23,10 @@ class passportPage extends React.Component {
     }
 
     render() {
-        const isExistingUser = this.state.isExistingUser;
+        let isExistingUser = this.state.isExistingUser;
+        if(this.props.login){
+            isExistingUser = true;
+        }
 
         document.body.classList.remove('inner-page');
         return (<div>

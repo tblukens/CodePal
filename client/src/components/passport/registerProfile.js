@@ -1,9 +1,9 @@
 
 import React from 'react';
-import axios from 'axios';
+import Passport from '../../utility/Passport'
 
 class Register extends React.Component {
-    userSubmit=(e)=> {
+    userSubmit = (e) => {
         let self = this;
         /* eslint no-restricted-globals: 0*/
         const $ = window.$;
@@ -28,7 +28,7 @@ class Register extends React.Component {
             'portfolio',
             'currentMentor',
             'currentStudent',
-            'experienceLevel'   
+            'experienceLevel'
         ]
 
         values.forEach(value => {
@@ -36,14 +36,10 @@ class Register extends React.Component {
         });
 
 
-        axios({
-            url: '/api/accounts/register',
-            method: 'post',
-            data: user
-        })
-        .then((response) => {
+        Passport.register(user)
+            .then((response) => {
 
-                if(response.data.name === "UserExistsError"){
+                if (response.data.name === "UserExistsError") {
                     alert('User already exists.  Please choose another username')
                     return
                 }
@@ -83,7 +79,7 @@ class Register extends React.Component {
                     <div className="text-center">
                         <h2>Register Your Account</h2>
 
-                        <p>Already have an account?  <a onClick={()=>this.props.toggleUser(this.props.self)}>Please login here. </a></p>
+                        <p>Already have an account?  <a onClick={() => this.props.toggleUser(this.props.self)}>Please login here. </a></p>
                     </div>
                     <div className="main">
                         <form className="auth-form" >
@@ -98,100 +94,100 @@ class Register extends React.Component {
                                 <i className="fa fa-user"></i>
                                 <input required="" name="password" type="text" className="form-control" id="password" placeholder="Password" />
                             </div>
-                            <p>Change your mind?  <a onClick={()=>this.props.toggleProfile(this.props.self)}>Click here to register with Username and Password only. </a></p>
+                            <p>Change your mind?  <a onClick={() => this.props.toggleProfile(this.props.self)}>Click here to register with Username and Password only. </a></p>
 
                             <div className="form-group">
-                           <label htmlFor="firstName">First name</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="firstName" type="text" className="form-control" id="firstName" placeholder="First name" />
-                        </div>
+                                <label htmlFor="firstName">First name</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="firstName" type="text" className="form-control" id="firstName" placeholder="First name" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="lastName">Last name</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="lastName" type="text" className="form-control" id="lastName" placeholder="Last name" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="lastName">Last name</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="lastName" type="text" className="form-control" id="lastName" placeholder="Last name" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="skills">Skills</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="skills" type="text" className="form-control" id="skills" placeholder="Skills" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="skills">Skills</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="skills" type="text" className="form-control" id="skills" placeholder="Skills" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="location">Location</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="location" type="text" className="form-control" id="location" placeholder="Location" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="location">Location</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="location" type="text" className="form-control" id="location" placeholder="Location" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="socketIoId.io ID">socket.io ID</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="socketIoId" type="text" className="form-control" id="socketIoId" placeholder="socket.io ID" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="socketIoId.io ID">socket.io ID</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="socketIoId" type="text" className="form-control" id="socketIoId" placeholder="socket.io ID" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="shortBio Bio">Short Bio</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="shortBio" type="text" className="form-control" id="shortBio" placeholder="Short Bio" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="shortBio Bio">Short Bio</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="shortBio" type="text" className="form-control" id="shortBio" placeholder="Short Bio" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="joinDate Date">Join Date</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="joinDate" type="text" className="form-control" id="joinDate" placeholder="Join Date" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="joinDate Date">Join Date</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="joinDate" type="text" className="form-control" id="joinDate" placeholder="Join Date" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="lastLogin Log-in">Last Log-in</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="lastLogin" type="text" className="form-control" id="lastLogin" placeholder="Last Log-in" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="lastLogin Log-in">Last Log-in</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="lastLogin" type="text" className="form-control" id="lastLogin" placeholder="Last Log-in" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="logOfActivity of activity (just log-in timestamps for now)">Log of activity</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="logOfActivity" type="text" className="form-control" id="logOfActivity" placeholder="Log of activity (just log-in timestamps for now)" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="logOfActivity of activity (just log-in timestamps for now)">Log of activity</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="logOfActivity" type="text" className="form-control" id="logOfActivity" placeholder="Log of activity (just log-in timestamps for now)" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="linkedIn"> LinkedIn</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="linkedIn" type="text" className="form-control" id="linkedIn" placeholder=" LinkedIn" />
-                        </div>
-                        <div className="form-group">
-                           <label htmlFor="gitHub"> GitHub</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="gitHub" type="text" className="form-control" id="gitHub" placeholder=" GitHub" />
-                        </div>
-                        <div className="form-group">
-                           <label htmlFor="google">Google</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="google" type="text" className="form-control" id="google" placeholder="Google" />
-                        </div>
-                        <div className="form-group">
-                           <label htmlFor="portfolio">Portfolio</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="portfolio" type="text" className="form-control" id="portfolio" placeholder="Portfolio" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="linkedIn"> LinkedIn</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="linkedIn" type="text" className="form-control" id="linkedIn" placeholder=" LinkedIn" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="gitHub"> GitHub</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="gitHub" type="text" className="form-control" id="gitHub" placeholder=" GitHub" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="google">Google</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="google" type="text" className="form-control" id="google" placeholder="Google" />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="portfolio">Portfolio</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="portfolio" type="text" className="form-control" id="portfolio" placeholder="Portfolio" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="currentMentor">Current Mentor</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="currentMentor" type="text" className="form-control" id="currentMentor" placeholder="Current Mentor" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="currentMentor">Current Mentor</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="currentMentor" type="text" className="form-control" id="currentMentor" placeholder="Current Mentor" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="currentStudent">Current Student</label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="currentStudent" type="text" className="form-control" id="currentStudent" placeholder="Current Student" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="currentStudent">Current Student</label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="currentStudent" type="text" className="form-control" id="currentStudent" placeholder="Current Student" />
+                            </div>
 
-                        <div className="form-group">
-                           <label htmlFor="experienceLevel">experience level (edited) </label>
-                           <i className="fa fa-user"></i>
-                           <input required="" name="experienceLevel" type="text" className="form-control" id="experienceLevel" placeholder="Experience Level" />
-                        </div>
+                            <div className="form-group">
+                                <label htmlFor="experienceLevel">experience level (edited) </label>
+                                <i className="fa fa-user"></i>
+                                <input required="" name="experienceLevel" type="text" className="form-control" id="experienceLevel" placeholder="Experience Level" />
+                            </div>
 
 
                             <div className="form-group mb-0">
