@@ -41,8 +41,9 @@ class Register extends React.Component {
             method: 'post',
             data: user
         })
-            .then((response) => {
-                if(response.data.name == "UserExistsError"){
+        .then((response) => {
+
+                if(response.data.name === "UserExistsError"){
                     alert('User already exists.  Please choose another username')
                     return
                 }
@@ -97,6 +98,7 @@ class Register extends React.Component {
                                 <i className="fa fa-user"></i>
                                 <input required="" name="password" type="text" className="form-control" id="password" placeholder="Password" />
                             </div>
+                            <p>Change your mind?  <a onClick={()=>this.props.toggleProfile(this.props.self)}>Click here to register with Username and Password only. </a></p>
 
                             <div className="form-group">
                            <label htmlFor="firstName">First name</label>

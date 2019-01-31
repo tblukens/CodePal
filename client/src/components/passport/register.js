@@ -26,7 +26,10 @@ class Register extends React.Component {
             data: user
         })
             .then((response) => {
-                console.log(response)
+                if(response.data.name === "UserExistsError"){
+                    alert('User already exists.  Please choose another username')
+                    return
+                }
                 alert('User is now registered')
                 self.props.toggleUser(self.props.self)
 
@@ -88,6 +91,8 @@ class Register extends React.Component {
                         <div className="form-group mb-0">
                             <button className="btn-theme" href="/">Cancel</button>
                         </div>
+
+                        <p>Why not register with a profile too?  <a onClick={()=>this.props.toggleProfile(this.props.self)}>Click here. </a></p>
 
 
                     </div>

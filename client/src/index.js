@@ -40,7 +40,7 @@ window.setState = changes => {
       username: null
     }
 
-    logIn=(user)=> {
+    logIn = (user) => {
       console.log(user);
       this.setState({ username: user })
     }
