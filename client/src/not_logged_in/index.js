@@ -6,13 +6,23 @@ import Video from "./components/video";
 import Auth from "../utility/Auth";
 // import axios from "axios";
 
-class App extends React.Component {
-// componentWillMount() {
-//   axios.get("http://tbl-chat1.herokuapp.com")
-//   .then(res => console.log(`${res.data.toUpperCase()}!!!`))
-//   .catch(err => console.log(err))
-// }
 
+
+class App extends React.Component {
+  // componentWillMount() {
+  //   axios.get("http://tbl-chat1.herokuapp.com")
+  //   .then(res => console.log(`${res.data.toUpperCase()}!!!`))
+  //   .catch(err => console.log(err))
+  // }
+  state = {
+    showUser: false
+  }
+
+  componentWillMount() {
+    if (localStorage.getItem("username")) {
+      this.setState({ showUser: true })
+    }
+  }
   componentDidMount() {
     const auth = new Auth();
     auth.handleAuthentication();
@@ -47,13 +57,13 @@ class App extends React.Component {
             </button>
             <div className="collapse navbar-collapse" id="mainmenu">
               <ul className="navbar-nav ml-auto" id="mymenu">
-                   <li className="nav-item ">
+                <li className="nav-item ">
                   <a
                     className="nav-link" href="#team">
                     Coders Nearby
                   </a>
                 </li>
-                  <li className="nav-item ">
+                <li className="nav-item ">
                   <a
                     className="nav-link" href="#feature" >
                     Features
@@ -66,23 +76,31 @@ class App extends React.Component {
                   </a>
                 </li>
 
-                 <li className="nav-item ">
+                <li className="nav-item ">
                   <p className="nav-link" id="bar">
-                    | 
+                    |
                   </p>
                 </li>
-
-                <li className="nav-item ">
-                  <a className="nav-link" href="/passport">
-                   Sign up
+                {this.state.showUser ? (
+                  <li className="nav-item ">
+                    <a className="nav-link" href="/home">
+                      Logged in as {this.props.userInfo}
+                    </a>
+                  </li>
+                ) : null}
+                {!this.state.showUser ? (
+                  <li className="nav-item ">
+                    <a className="nav-link" href="/passport">
+                      Sign up
                   </a>
-                </li>
-
-                <li className="nav-item ">
-                  <a className="nav-link" href="/passport-login">
-                    Log in
+                  </li>) : null}
+                {!this.state.showUser ? (
+                  <li className="nav-item ">
+                    <a className="nav-link" href="/passport-login">
+                      Log in
                   </a>
-                </li>
+                  </li>
+                ) : null}
               </ul>
             </div>
           </div>
@@ -104,14 +122,24 @@ class App extends React.Component {
                     <p className="landing-text text-white">
                       CodePal is a journey, not a destination{" "}
                     </p>
-                    <div className="landing-btn">
-                      <a
-                        href="/passport"
-                        className="btn btn-inverse mt-2 mr-3"
-                      >
-                        Sign up today
+                    {!this.state.showUser ? (
+                      <div className="landing-btn">
+                        <a
+                          href="/passport"
+                          className="btn btn-inverse mt-2 mr-3"
+                        >
+                          Sign up today
                       </a>
-                    </div>
+                      </div>) : (
+                        <div className="landing-btn">
+                          <a
+                            href="/home"
+                            className="btn btn-inverse mt-2 mr-3"
+                          >
+                            Welcome back {this.props.userInfo}!
+                  </a>
+                        </div>)
+                    }
                   </div>
                 </div>
               </div>

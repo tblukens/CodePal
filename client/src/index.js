@@ -45,7 +45,10 @@ window.setState = changes => {
       this.setState({ username: user })
     }
     componentWillMount() {
-
+      let username = localStorage.getItem("username")
+      if (username) {
+        this.setState({ username: username })
+      }
       axios
         .get('http://tbl-chat1.herokuapp.com')
         .then(res => console.log(`${res.data.toUpperCase()}!!!`))
@@ -63,9 +66,8 @@ window.setState = changes => {
           }
           )
           .catch(err => console.log(err));
-
       }
-      let userInfo = this.props.auth.getProfile();
+      let userInfo = this.state.username;
       let userMeta = meta;
       return (
         <BrowserRouter basename={'/'}>
