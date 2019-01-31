@@ -11,17 +11,24 @@ module.exports = {
         db.User.find({})
             .then(dbUsers => res.json(dbUsers))
             .catch(err => console.log(err));
-
-
     },
+    getUserById: function(req, res) {
+        console.log(req.params);
+        db.User.find({
+          username: req.params.id
+        })
+          .then(dbUser => res.json(dbUser))
+          .catch(err => console.log(err));
+      },
+    
     postUser: function (req, res) {
         // console.log(req.body);
         // userExists = db.User.findOne(req.body);
         // console.log(userExists);
         // if (!userExists) {
-            db.User.create(req.body)
-                .then(dbUser => res.json(dbUser))
-                .catch(err => err);
+        db.User.create(req.body)
+            .then(dbUser => res.json(dbUser))
+            .catch(err => err);
         // }
     },
 
@@ -82,32 +89,14 @@ module.exports = {
 
 
     //not working, 400 error 
-    createUser: function (req, res) {
-        getTokenPromise.then(
-            function (accessToken) {
-                console.log("hello")
-                let options = {
-                    method: "POST",
-                    url: 'https://codepal.auth0.com/api/v2/users/',
-                    headers:
-                    {
-                        'content-type': 'application/json',
+    createUser:  (req, res)=> {
+        console.log("Inside API createUser");
+        console.log(req.body);
+        db.User.create(req.body)
+            .then(dbUser => res.json(dbUser))
+            .catch(err => console.log(err));
 
-                        authorization: 'Bearer ' + accessToken
-                    },
-                    body: req.body,
-                    json: true
-                };
-
-                request(options, function (error, response, body) {
-                    if (error) throw new Error(error);
-
-                    // console.log(response.body);
-                    res.send(response)
-                })
-            })
-    }
-
+    },
 }
 
 //revised to function with .then()

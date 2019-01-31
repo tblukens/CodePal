@@ -6,6 +6,7 @@ router.route('/usermeta/:user_id').get(userController.getMetaData)
 router.route('/update').post(userController.updateMetaData)
 
 router.route('/allusers').get(userController.getUsers)
+router.route('/getuser/:id').get(userController.getUserById)
 router.route('/add').post(userController.postUser)
 
 

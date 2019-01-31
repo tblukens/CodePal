@@ -36,13 +36,35 @@ window.setState = changes => {
   /* eslint no-restricted-globals: 0*/
   //======================================
   class Root extends React.Component {
+    state = {
+      username: null
+    }
+
+    logIn = (user) => {
+      console.log(user);
+      this.setState({ username: user })
+    }
     componentWillMount() {
+
       axios
         .get('http://tbl-chat1.herokuapp.com')
         .then(res => console.log(`${res.data.toUpperCase()}!!!`))
         .catch(err => console.log(err));
     }
     render() {
+      console.log("render with user: " + this.state.username);
+      if (this.state.username != null) {
+        axios
+          .get(`api/users/getuser/${this.state.username}`)
+          .then((res) => {
+            console.log(res.data[0].username);
+            let username = (res.data[0].username);
+            localStorage.setItem("username", username)
+          }
+          )
+          .catch(err => console.log(err));
+
+      }
       let userInfo = this.props.auth.getProfile();
       let userMeta = meta;
       return (
@@ -64,7 +86,7 @@ window.setState = changes => {
             <Route
               path={`${process.env.PUBLIC_URL}/home`}
               render={props => (
-                <Home {...state} userInfo={userInfo} userMeta={userMeta} />
+                <Home {...state} userInfo={userInfo} userMeta={userMeta} user={this.state.username} />
               )}
             />
             <Route
@@ -88,7 +110,13 @@ window.setState = changes => {
             <Route
               path={`${process.env.PUBLIC_URL}/passport`}
               render={props => (
-                <Passport {...state} userInfo={userInfo} userMeta={userMeta} />
+                <Passport {...state} userInfo={userInfo} userMeta={userMeta} login={this.logIn} />
+              )}
+            />
+            <Route
+              path={`${process.env.PUBLIC_URL}/passport-login`}
+              render={props => (
+                <Passport {...state} login={true} userInfo={userInfo} userMeta={userMeta} login={this.logIn} />
               )}
             />
             <Route
@@ -110,10 +138,9 @@ window.setState = changes => {
 //======================================
 //Authentication
 //======================================
-let username = auth.getProfile().given_name || '';
+
 
 let initialState = {
-  name: username,
   location: location.pathname.replace(/^\/?|\/$/g, ''),
   meta: meta,
   auth
