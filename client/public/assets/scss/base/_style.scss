@@ -373,6 +373,10 @@ section {
 /*=====================
     03.Home page css start
 ==========================*/
+#navbar-forum {
+  background-color: $primary_color;
+   
+}
 
 
 .theme-nav {
@@ -383,6 +387,8 @@ section {
     background-color: transparent;
    
   }
+
+   
   .nav-link {
     display: block;
     padding: 25px 1rem;
@@ -432,6 +438,7 @@ section {
     height: 100%;
   }
 }
+
 .navbar-toggler {
   padding-right: 0;
   .navbar-toggler-icon {
@@ -2718,6 +2725,15 @@ li.nav-item.dropdown {
     z-index: 9;
     width: 100%;
     background-color: transparent;
+    // opacity: 0.8;
+  }
+
+  .navbar-forum {
+    position: fixed;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    background-color: $primary_color;
     // opacity: 0.8;
   }
 

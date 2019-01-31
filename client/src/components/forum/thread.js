@@ -1,16 +1,42 @@
 import React from 'react';
 import Moment from 'react-moment';
+import { Card } from 'react-bootstrap';
+// import './assets/styles.css'
+import NavbarForum from './component/navbar'
+// import { Button } from 'react-bootstrap';
+
 
 const Thread = props => {
-    const { title, posts, updatedAt, user, _id } = props.thread;
-    return (
-        <div>
-            <h1 style={{ fontSize: 30}}><a href="false" onClick={(e) => {e.preventDefault(); props.setThread(_id)}}>{title}</a></h1>
-            <h2 style={{ fontSize: 20 }}>Created by: {user}</h2>
-            <p>Number of posts: {posts.length}</p>
-            <p>Last Updated: <Moment format="DD-MM-YY hh:mm a">{updatedAt}</Moment></p>
+ 
 
-        </div>
+ 
+    const { title, posts, updatedAt, user, _id } = props.thread;
+     
+    return (
+   
+   <div>
+
+<NavbarForum />
+
+
+       <Card style={{ width: '50rem', margin: '5rem 2rem 2rem 2rem' }}>
+ 
+  <Card.Body>
+    <Card.Title><a href="false" onClick={(e) => {e.preventDefault(); props.setThread(_id)}}><h3>{title}</h3></a></Card.Title>
+    <Card.Text>
+      Created by: {user}
+    </Card.Text>
+       <Card.Text>
+      Number of posts: {posts.length}
+    </Card.Text>
+       <Card.Text>
+      Last Updated: <Moment format="DD-MM-YY hh:mm a">{updatedAt}</Moment>
+    </Card.Text>
+    
+  </Card.Body>
+</Card>
+</div>
+
     )
 }
 
