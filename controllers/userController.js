@@ -12,15 +12,15 @@ module.exports = {
             .then(dbUsers => res.json(dbUsers))
             .catch(err => console.log(err));
     },
-    getUserById: function(req, res) {
+    getUserById: function (req, res) {
         console.log(req.params);
         db.User.find({
-          username: req.params.id
+            username: req.params.id
         })
-          .then(dbUser => res.json(dbUser))
-          .catch(err => console.log(err));
-      },
-    
+            .then(dbUser => res.json(dbUser))
+            .catch(err => console.log(err));
+    },
+
     postUser: function (req, res) {
         // console.log(req.body);
         // userExists = db.User.findOne(req.body);
@@ -37,15 +37,26 @@ module.exports = {
     updateMetaData: function (req, res) {
         // console.log(req.body);
         //extract the following from the request: 
-        let user = req.body.user_id;
+        let user = req.body.username;
         let newData = req.body.new_data;
 
+        db.User.findOne({ username: user })
+            .then(dbUser => {
+                console.log(dbUser)
+                const newProfile = Object.assign(dbUser, newData); // this will start with the current Profile, and overwrite the values that need updated.
+                db.User.updateOne({ username: user },
+                    newProfile)
+                    .then(dbUser => res.json(dbUser))
+                    .catch(err => err);
+            })
+            .catch(err => err);
+
+        //AUTH0 CODE
         //get access token
         getTokenPromise.then(function (accessToken) {
 
             //get current profile info
             getCurrentProfile(user, accessToken).then(function (profile) {
-                const newProfile = Object.assign(profile, newData); // this will start with the current Profile, and overwrite the values that need updated.
                 let options = {
                     method: "PATCH",
                     url: 'https://codepal.auth0.com/api/v2/users/' + user,
@@ -89,7 +100,7 @@ module.exports = {
 
 
     //not working, 400 error 
-    createUser:  (req, res)=> {
+    createUser: (req, res) => {
         console.log("Inside API createUser");
         console.log(req.body);
         db.User.create(req.body)
