@@ -118,7 +118,7 @@ window.setState = changes => {
             <Route
               path={`${process.env.PUBLIC_URL}/passport-login`}
               render={props => (
-                <Passport {...state} login={true} userInfo={userInfo} userMeta={userMeta} login={this.logIn} />
+                <Passport {...state} loginPage={true} userInfo={userInfo} userMeta={userMeta} login={this.logIn} />
               )}
             />
             <Route

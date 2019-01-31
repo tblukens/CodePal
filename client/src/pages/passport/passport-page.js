@@ -24,7 +24,7 @@ class passportPage extends React.Component {
 
     render() {
         let isExistingUser = this.state.isExistingUser;
-        if(this.props.login){
+        if(this.props.logginPage){
             isExistingUser = true;
         }
 
