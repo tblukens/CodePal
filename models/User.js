@@ -4,13 +4,24 @@ var Schema = mongoose.Schema;
 
 var UserSchema = new Schema(
   {
-    user_id: {
-      type: String,
-      required: true,
-      unique: true
-    },
-  },
-  { timestamps: true }
+    username: String,
+    firstName: String,
+    lastName: String,
+    skills: String,
+    location: String,
+    socketIoId: String,
+    shortBio: String,
+    joinDate: String,
+    lastLogin: String,
+    logOfActivity: String,
+    linkedIn: String,
+    gitHub: String,
+    google: String,
+    portfolio: String,
+    currentMentor: String,
+    currentStudent: String,
+    experienceLevel: String
+  }
 );
 
 // This creates our model from the above schema, using mongoose's model method

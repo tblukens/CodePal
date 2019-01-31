@@ -1,9 +1,10 @@
 
 import React from 'react';
-import axios from 'axios';
+import Passport from '../../utility/Passport'
+
 
 class Register extends React.Component {
-    userSubmit=(e)=> {
+    userSubmit = (e) => {
         let self = this;
         /* eslint no-restricted-globals: 0*/
         const $ = window.$;
@@ -19,14 +20,12 @@ class Register extends React.Component {
             update(value)
         });
 
-
-        axios({
-            url: '/api/accounts/register',
-            method: 'post',
-            data: user
-        })
+        Passport.register(user)
             .then((response) => {
-                console.log(response)
+                if (response.data.name === "UserExistsError") {
+                    alert('User already exists.  Please choose another username')
+                    return
+                }
                 alert('User is now registered')
                 self.props.toggleUser(self.props.self)
 
@@ -63,7 +62,7 @@ class Register extends React.Component {
                     <div className="text-center">
                         <h2>Register Your Account</h2>
 
-                        <p>Already have an account?  <a onClick={()=>this.props.toggleUser(this.props.self)}>Please login here. </a></p>
+                        <p>Already have an account?  <a onClick={() => this.props.toggleUser(this.props.self)}>Please login here. </a></p>
                     </div>
                     <div className="main">
                         <form className="auth-form" >
@@ -88,6 +87,8 @@ class Register extends React.Component {
                         <div className="form-group mb-0">
                             <button className="btn-theme" href="/">Cancel</button>
                         </div>
+
+                        <p>Why not register with a profile too?  <a onClick={() => this.props.toggleProfile(this.props.self)}>Click here. </a></p>
 
 
                     </div>

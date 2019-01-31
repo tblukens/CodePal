@@ -35,8 +35,8 @@ class Home extends React.Component {
             </button>
             <div className="collapse navbar-collapse" id="mainmenu">
               <ul className="navbar-nav ml-auto" id="mymenu">
-             
-              <li className="nav-item">
+
+                <li className="nav-item">
                   <a className="nav-link" href={`${process.env.PUBLIC_URL}/chat`}>
                     Chat
                   </a>
@@ -48,12 +48,12 @@ class Home extends React.Component {
                   </a>
                 </li>
 
-                  <li className="nav-item ">
+                <li className="nav-item ">
                   <p className="nav-link" id="bar">
-                    | 
+                    |
                   </p>
                 </li>
-            
+
                 <li className="nav-item dropdown">
                   <a
                     className="nav-link dropdown-toggle"
@@ -65,7 +65,7 @@ class Home extends React.Component {
                   </a>
                   <ul className="dropdown-menu">
                     <li className="nav-item">
-                       <a
+                      <a
                         className="nav-link"
                         href={`${process.env.PUBLIC_URL}/profiles`}
                       >
@@ -77,8 +77,8 @@ class Home extends React.Component {
                         Sign Out
                       </a>
                     </li>
-                    
-                   
+
+
                   </ul>
                 </li>
               </ul>
@@ -100,7 +100,7 @@ class Home extends React.Component {
                   <div className="slide-text">
                     <div>
                       <h1>
-Hello {this.props.user}.
+                        Hello {this.props.user}.
                         <br />
                       </h1>
                       <h1>
