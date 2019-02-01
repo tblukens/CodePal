@@ -25,7 +25,7 @@ const ThreadView = props => {
 <NavbarForum />
 
 
-       <Card style={{ width: '50rem', margin: '5rem 2rem 2rem 2rem' }}>
+       <Card style={{ width: '50rem', margin: '10rem 2rem -7rem 2rem' }}>
 
   <Card.Body>
     {/* <Card.Title><a href="false" onClick={(e) => {e.preventDefault(); props.setThread(_id)}}>{title}</a></Card.Title> */}
@@ -41,7 +41,7 @@ const ThreadView = props => {
   </Card.Body>
   
 </Card>
-<Button variant="secondary" style={{margin: '0rem 2rem 0rem 2rem' }} onClick={(e) => {e.preventDefault(); props.goBack()}}>GO BACK</Button>
+<Button variant="secondary" style={{margin: '8rem 2rem 0rem 2rem' }} onClick={(e) => {e.preventDefault(); props.goBack()}}>GO BACK</Button>
 </div>
 
 
