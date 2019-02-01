@@ -100,7 +100,7 @@ class Home extends React.Component {
                   <div className="slide-text">
                     <div>
                       <h1>
-                        Hello {this.props.user}.
+                        Hello, {this.props.user}.
                         <br />
                       </h1>
                       <h1>
