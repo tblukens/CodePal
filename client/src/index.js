@@ -103,7 +103,7 @@ window.setState = changes => {
             <Route
               path={`${process.env.PUBLIC_URL}/chat`}
               render={props => (
-                <Chat {...state} userInfo={userInfo}  />
+                <Chat {...state} userName={this.state.username}  />
               )}
             />
             <Route
