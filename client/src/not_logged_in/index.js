@@ -136,7 +136,7 @@ class App extends React.Component {
                             href="/home"
                             className="btn btn-inverse mt-2 mr-3"
                           >
-                            Welcome back {this.props.userInfo}!
+                            Welcome back, {this.props.userInfo}!
                   </a>
                         </div>)
                     }

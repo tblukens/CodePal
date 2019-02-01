@@ -18,7 +18,7 @@ class NavbarForum extends React.Component {
         {/* Navbar Section*/}
         <nav
           className="navbar navbar-expand-lg  theme-nav fixed-top"
-          id="navbar-forum"
+          id="navbar-forum" 
         >
           <div className="container">
             <a className="navbar-brand" href={`${process.env.PUBLIC_URL}/`}>

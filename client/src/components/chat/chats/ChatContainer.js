@@ -8,8 +8,9 @@ import Messages from '../messages/Messages'
 import MessageInput from '../messages/MessageInput'
 import { values, difference, differenceBy } from 'lodash'
 
-
+document.body.classList.remove("inner-page");
 export default class ChatContainer extends Component {
+	
 	constructor(props) {
 	  super(props);	
 	
