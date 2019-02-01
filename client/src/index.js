@@ -37,17 +37,32 @@ window.setState = changes => {
   //======================================
   class Root extends React.Component {
     state = {
-      username: null
+      username: null,
+      userInfo: null
     }
-
+    
     logIn = (user) => {
       console.log(user);
-      this.setState({ username: user })
-    }
-    componentWillMount() {
-      let username = localStorage.getItem("username")
-      if (username) {
-        this.setState({ username: username })
+      this.setState(
+        {
+          username: user,
+        })
+      }
+      componentWillMount() {
+        let username = localStorage.getItem("username");
+        if (username) {
+          console.log("Getting User Info for " + username);
+        axios
+        .get(`api/users/getuser/${username}`)
+        .then((res) => {
+            console.log(res.data);
+            this.setState({
+              username: username,
+              userInfo: res.data[0]
+            })
+          }
+          )
+          .catch(err => console.log(err));
       }
       axios
         .get('http://tbl-chat1.herokuapp.com')
@@ -55,20 +70,8 @@ window.setState = changes => {
         .catch(err => console.log(err));
     }
     render() {
-      console.log("render with user: " + this.state.username);
-      if (this.state.username != null) {
-        axios
-          .get(`api/users/getuser/${this.state.username}`)
-          .then((res) => {
-            console.log(res.data[0].username);
-            let username = (res.data[0].username);
-            localStorage.setItem("username", username)
-          }
-          )
-          .catch(err => console.log(err));
-      }
+      
       let userInfo = this.state.username;
-      let userMeta = meta;
       return (
         <BrowserRouter basename={'/'}>
           <Switch>
@@ -76,55 +79,55 @@ window.setState = changes => {
               exact
               path={`${process.env.PUBLIC_URL}/`}
               render={props => (
-                <App {...state} userInfo={userInfo} userMeta={userMeta} />
+                <App {...this.state.userInfo} userInfo={userInfo}  />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/callback`}
               render={props => (
-                <Home {...state} userInfo={userInfo} userMeta={userMeta} />
+                <Home {...state} userInfo={userInfo}  />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/home`}
               render={props => (
-                <Home {...state} userInfo={userInfo} userMeta={userMeta} user={this.state.username} />
+                <Home {...state} userInfo={userInfo}  user={this.state.username} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/profiles`}
               render={props => (
-                <Profiles {...state} userInfo={userInfo} userMeta={userMeta} />
+                <Profiles {...state} userInfo={userInfo}  />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/chat`}
               render={props => (
-                <Chat {...state} userInfo={userInfo} userMeta={userMeta} />
+                <Chat {...state} userInfo={userInfo}  />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/forum`}
               render={props => (
-                <Forum {...state} userInfo={userInfo} userMeta={userMeta} />
+                <Forum {...state} userInfo={userInfo}  />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/passport`}
               render={props => (
-                <Passport {...state} userInfo={userInfo} userMeta={userMeta} login={this.logIn} />
+                <Passport {...state} userInfo={userInfo}  login={this.logIn} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/passport-login`}
               render={props => (
-                <Passport {...state} loginPage={true} userInfo={userInfo} userMeta={userMeta} login={this.logIn} />
+                <Passport {...state} loginPage={true} userInfo={userInfo}  login={this.logIn} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/thread/:id`}
               render={props => (
-                <ThreadView {...state} userInfo={userInfo} userMeta={userMeta} />
+                <ThreadView {...state} userInfo={userInfo}  />
               )}
             />
             <Route component={NoMatch} />

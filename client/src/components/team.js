@@ -1,13 +1,34 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import Card from './card';
+import axios from 'axios';
 
 class Team extends React.Component {
 
     state = {
         currentUser: null,
+        allUsers: {}
     }
+    componentWillMount(){
+        this.populateUsers()
+    }
+populateUsers(){
+    axios({
+        url: '/api/users/allusers/',
+        method: 'get',
+     })
+        .then((response) => {
 
+           this.setState({ allUsers: response.data })
+           // map((detail,i)=>{
+           //    console.log(detail);
+           // })
+
+        })
+        .catch(function (error) {
+           console.log(error);
+        });
+}
     exitHandler(self){
         self.setState({"currentUser":null})
     }

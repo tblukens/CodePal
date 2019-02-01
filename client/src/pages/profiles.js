@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 import Auth from "../utility/Auth";
 import axios from "axios";
 import Fields from '../components/Fields'
@@ -11,6 +12,7 @@ let auth = new Auth();
 class Profiles extends React.Component {
    state = {
       props: this.props,
+      redirect: false,
       token: 'test',
       username: null,
       userDetails: null,
@@ -128,7 +130,7 @@ class Profiles extends React.Component {
          .then((response) => {
             alert("Profile Updated Successfully!")
             this.getUser();
-
+            this.setState({ redirect: true })
          })
          .catch(function (error) {
             console.log(error);
@@ -142,13 +144,18 @@ class Profiles extends React.Component {
       }
    }
 
-
+   renderRedirect() {
+      if (this.state.redirect) {
+         return <Redirect to='/home' />
+      }
+   }
 
    render() {
       document.body.classList.remove('inner-page');
 
       return (
-         <section className="auth-page">
+         < section className = "auth-page" >
+         { this.renderRedirect() }
             <div className="animation-circle-inverse">
                <i></i>
                <i></i>
@@ -274,7 +281,7 @@ class Profiles extends React.Component {
                   </form>
                </div>
             </div>
-         </section>
+         </section >
       );
    }
 }
