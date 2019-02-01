@@ -9,8 +9,8 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Chat from './pages/chat/Layout';
 import Forum from './pages/forum/forum';
+import CreateThread from './pages/forum/create'
 import Passport from './pages/passport/passport-page';
-import ThreadView from './pages/forum/thread'
 import './pages/chat/index.css';
 
 import axios from 'axios';
@@ -122,9 +122,9 @@ window.setState = changes => {
               )}
             />
             <Route
-              path={`${process.env.PUBLIC_URL}/thread/:id`}
+              path={`${process.env.PUBLIC_URL}/createthread`}
               render={props => (
-                <ThreadView {...state} userInfo={userInfo} userMeta={userMeta} />
+                <CreateThread {...state} userInfo={userInfo} userMeta={userMeta} />
               )}
             />
             <Route component={NoMatch} />
