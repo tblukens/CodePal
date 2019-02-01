@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Thread from '../../components/forum/thread';
 import ThreadView from '../../components/forum/threadview';
+import ForumAPI from '../../utility/ForumAPI'
 
 let address;
 
@@ -21,9 +22,7 @@ export default class Forum extends React.Component {
     this.loadThreads();
   }
   loadThreads() {
-    console.log(`${address}/api/thread/get/all`);
-    axios
-      .get(`${address}/api/thread/get/all`)
+    ForumAPI.getThreads()
       .then(res => this.setState({ threads: res.data }))
       .catch(err => console.log(err));
   }
@@ -47,6 +46,7 @@ export default class Forum extends React.Component {
     return <ThreadView info={thread} key={thread._id} goBack={this.clearCurrentThread}/>
   }
   render() {
-    return <div>{this.state.currentThread !== null ? this.loadThread(this.state.currentThread) : this.renderThreads()}</div>;
+    return <div>
+    {this.state.currentThread !== null ? this.loadThread(this.state.currentThread) : this.renderThreads()}</div>;
   }
 }

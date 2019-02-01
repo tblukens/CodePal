@@ -6,4 +6,5 @@ router.route('/create').post(threadController.createThread);
 router.route('/delete/:id').delete(threadController.deleteThread);
 router.route('/edit/:id').put(threadController.editThread);
 router.route('/get/:id').get(threadController.getThreadWithPosts);
+
 module.exports = router;
