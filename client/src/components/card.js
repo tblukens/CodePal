@@ -24,7 +24,7 @@ const Card = (props) => {
                                     <div className="team-close-btn">
                                         <a onClick={() => props.exitHandler(props.self)} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-times" aria-hidden="true"></i>' }}></a>
                                     </div>
-                                    <h3>{val.name}</h3>
+                                    <h3>{val.firstName} {val.lastName}</h3>
                                     <h4 className="m-0 text-muted">{val.designation}</h4>
                                     <h3>
 
