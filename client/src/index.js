@@ -71,7 +71,7 @@ window.setState = changes => {
         .catch(err => console.log(err));
     }
     render() {
-      // if (this.state.userInfo === null) { return false };
+      if (this.state.userInfo === null) { return false };
       let userName = this.state.username;
       let userInfo = this.state.username;
       return (
