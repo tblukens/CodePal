@@ -204,7 +204,6 @@ db.User
     db.User.insertMany(userSeed)
       .then(data => {
         console.log(data);
-        console.log(data.result.n + " records inserted!");
         process.exit(0);
       })
       .catch(err => {
