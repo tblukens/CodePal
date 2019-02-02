@@ -21,7 +21,7 @@ import axios from 'axios';
     state = {
       username: null,
       userInfo: null
-    }
+    } 
 
     logIn = (user) => {
       console.log(user);
