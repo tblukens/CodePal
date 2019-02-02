@@ -1,7 +1,7 @@
 
 import React from 'react';
 import Passport from '../../utility/Passport'
-
+import axios from 'axios'
 class Register extends React.Component {
     userSubmit = (e) => {
         let self = this;
@@ -46,8 +46,24 @@ class Register extends React.Component {
                     alert('User already exists.  Please choose another username')
                     return
                 }
+
+           
+                axios({
+                    url: '/api/users/add',
+                    method: 'post',
+                    data: user
+                 })
+                    .then((response) => {
+                       alert("Profile Updated Successfully!")
+                       self.props.toggleUser(self.props.self)
+                       return
+                    })
+                    .catch(function (error) {
+                       console.log(error);
+                    });
+           
+
                 // alert('User is now registered')
-                self.props.toggleUser(self.props.self)
 
             })
             .catch(function (error) {

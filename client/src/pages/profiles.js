@@ -66,7 +66,6 @@ class Profiles extends React.Component {
          .then((response) => {
             let fields = self.state.fields;
             let userDetails = response.data[0];
-            self.setState({ userDetails: userDetails })
 
             Object.keys(userDetails).map((detail, index) => {
                fields.forEach((field, i) => {
@@ -76,7 +75,10 @@ class Profiles extends React.Component {
                })
             })
 
-            this.setState({ fields: fields })
+            this.setState({
+               userDetails: userDetails,
+               fields: fields
+            })
             // map((detail,i)=>{
             //    console.log(detail);
             // })
