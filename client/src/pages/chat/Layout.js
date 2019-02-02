@@ -24,7 +24,8 @@ export default class Layout extends Component {
 	  	socket:null,
 		  user:null,
 		  redirect: false,
-		  registeredUser: this.props.userName
+		  registeredUser: this.props.userInfo
+	  };
 	}
 
 	componentWillMount() {

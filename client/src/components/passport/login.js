@@ -33,8 +33,8 @@ class Login extends React.Component {
         })
             .then((response) => {
                 if (response.data === "authenticated") {
-                    self.props.login(user.username)
                     self.setState({ redirect: true })
+                    self.props.login(user.username)
                 }
                 else{
                     self.setState({ loginError: true })

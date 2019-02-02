@@ -13,28 +13,24 @@ class passportPage extends React.Component {
     }
 
     toggleUser(self) {
-        let user = !self.state.isExistingUser
+        let user= !self.state.isExistingUser
         self.setState({ isExistingUser: user });
     }
-
+    
     toggleRegisterProfile(self) {
-        let register = !self.state.registerWithProfile
+        let register= !self.state.registerWithProfile
         self.setState({ registerWithProfile: register });
-    }
-
-    toggleExistingUser() {
-        this.setState({ isExistingUser: true })
     }
 
     render() {
         let isExistingUser = this.state.isExistingUser;
-        if (this.props.loginPage) {
+        if(this.props.logginPage){
             isExistingUser = true;
         }
 
         document.body.classList.remove('inner-page');
         return (<div>
-            {isExistingUser ? <Login toggleExistingUser={this.toggleExistingUser} login={this.props.login} toggleUser={this.toggleUser} self={this} /> : <Registration register={this.state.registerWithProfile} toggleUser={this.toggleUser} toggleProfile={this.toggleRegisterProfile} self={this} />}
+            {isExistingUser ? <Login login={this.props.login} toggleUser={this.toggleUser} self={this} /> : <Registration register={this.state.registerWithProfile} toggleUser={this.toggleUser} toggleProfile={this.toggleRegisterProfile} self={this} />}
         </div>
         );
     }

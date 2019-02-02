@@ -29,7 +29,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     document.body.classList.remove("inner-page");
     document.body.classList.add("landing-page");
 

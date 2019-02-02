@@ -23,12 +23,11 @@ export default class Auth {
     };
 
     login() {
-        console.log("AUTH/login()");
         this.auth0.authorize();
     }
 
     handleAuthentication() {
-console.log("AUTH/handleAuthentication()");
+
         this.auth0.parseHash((err, authResults) => {
             if (authResults && authResults.accessToken && authResults.idToken) {
                 let expiresAt = JSON.stringify((authResults.expiresIn) * 1000 + new Date().getTime());
@@ -47,13 +46,11 @@ console.log("AUTH/handleAuthentication()");
     }
     
     isAuthenticated() {
-        console.log("AUTH/isAuthenticated()");
         let expiresAt = JSON.parse(localStorage.getItem("expires_at"));
         return new Date().getTime() < expiresAt;
     }
     
     logout() {
-        console.log("AUTH/logout()");
         alert("logging out");
         localStorage.removeItem("access_token");
         localStorage.removeItem("id_token");
@@ -63,14 +60,13 @@ console.log("AUTH/handleAuthentication()");
         localStorage.removeItem("username");
         location.pathname = LOGIN_FAILURE_PAGE;
     }
-    
+
     getProfile() {
-        console.log("AUTH/getProfile()");
         if (localStorage.getItem("id_token")) {
             let idToken = jwtDecode(localStorage.getItem("id_token"));
             const URL = 'http://localhost:3001/api/users/add'
              axios.post(URL, {
-                 user_id: idToken,
+                user_id: idToken,
             })
             .then(function (response) {
                 // console.log(response);
@@ -83,9 +79,8 @@ console.log("AUTH/handleAuthentication()");
         }
         else return {};
     }
-    
+
     updateMetaData(user, newData, accessToken) {
-        console.log("AUTH/updateMetaData()");
         let options = {
             method: "PATCH",
             url: 'https://codepal.auth0.com/api/v2/users/' + user,
@@ -95,7 +90,7 @@ console.log("AUTH/handleAuthentication()");
                 authorization: 'Bearer ' + accessToken
             },
             body:
-            { user_metadata: newData },
+                { user_metadata: newData },
             json: true
         };
         return request(options, function (error, response, body) {
@@ -105,16 +100,16 @@ console.log("AUTH/handleAuthentication()");
             return response;
         });
     }
-    
+
     getToken(cb) {
-        console.log("AUTH/getToken()");
+        console.log("getToken");
         var options = {
             method: 'POST',
             url: 'https://codepal.auth0.com/oauth/token',
             headers: { 'content-type': 'application/json' },
             body: '{"client_id":"9Y1fr7w39W3w93XxNMtJho5Y4wrWnAvF","client_secret":"Tl4DG2J1ffH47xIrwoGFor7FAr_uBLRqio6KLhUMuDhysAXB5viEgNuEsS9zBtOb","audience":"https://codepal.auth0.com/api/v2/","grant_type":"client_credentials"}'
         };
-        
+
         request(options, function (error, response, body) {
             if (error) throw new Error(error);
             body = (JSON.parse(body));
@@ -125,7 +120,6 @@ console.log("AUTH/handleAuthentication()");
     }
     
     getMetaData(user, accessToken, callback) {
-        console.log("AUTH/getMetaData()");
         var options = {
             method: 'GET',
             url: 'https://codepal.auth0.com/api/v2/users/' + user,
@@ -138,5 +132,5 @@ console.log("AUTH/handleAuthentication()");
             callback(body);
         });
     }
-    
+
 } 
