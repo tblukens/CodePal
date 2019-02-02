@@ -19,7 +19,7 @@ const Thread = props => {
 <NavbarForum />
 
 
-       <Card style={{ width: '50rem', margin: '10rem 2rem -7rem 2rem' }}>
+       <Card style={{width: '70%', margin: '15% 2% -10% 2%' }}>
  
   <Card.Body>
     <Card.Title><a href="false" onClick={(e) => {e.preventDefault(); props.setThread(_id)}}><h3>{title}</h3></a></Card.Title>

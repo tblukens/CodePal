@@ -56,7 +56,7 @@ export default class ThreadView extends React.Component {
                 <NavbarForum />
 
 
-                <Card style={{ width: '50rem', margin: '10rem 2rem -7rem 2rem' }}>
+                <Card style={{ width: '70%', margin: '15% 2% 0rem 2%' }}>
 
                     <Card.Body>
                         {/* <Card.Title><a href="false" onClick={(e) => {e.preventDefault(); this.props.setThread(_id)}}>{title}</a></Card.Title> */}
@@ -73,19 +73,20 @@ export default class ThreadView extends React.Component {
 
                 </Card>
 
-                <TextArea
+                <TextArea style={{ margin: '2% 2% 0rem 2%', width: '70%', height: '50vh' }}
                     value={this.state.message}
                     onChange={this.handleInputChange}
                     name="message"
                     placeholder="Enter a message to post." />
-                <FormBtn
+                <FormBtn style={{ float: 'right' }}
                     disabled={
                         !(this.state.user && this.state.message)
                     }
                     onClick={this.handleFormSubmit}>Post Message</FormBtn>
 
 
-                <Button variant="secondary" style={{ margin: '8rem 2rem 0rem 2rem' }} onClick={(e) => { e.preventDefault(); this.props.goBack() }}>GO BACK</Button>
+                <Button variant="secondary" style={{margin: '-1% 2% 1% 2%' }} onClick={(e) => { e.preventDefault(); this.props.goBack() }}>GO BACK</Button>
+            
             </div>
 
 
