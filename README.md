@@ -16,7 +16,7 @@ Live version: https://codepal-plm.herokuapp.com/
 
 [![CodePal](client/public/assets/images/codepal_demo.png)](https://youtube.com)
 
-<h2> About CodePal <h2>
+<h2> About CodePal </h2>
 Are you looking to connect with other programmers? Well, CodePal is the app for you!  CodePal links up coders with similar ideas, skills, and goals, to begin peer-to-peer programming experiences.
 
 <hr></hr>
