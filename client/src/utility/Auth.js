@@ -53,6 +53,7 @@ console.log("AUTH/handleAuthentication()");
     }
     
     logout() {
+
         console.log("AUTH/logout()");
         alert("logging out");
         localStorage.removeItem("access_token");

@@ -28,13 +28,10 @@ class Feature extends React.Component {
                                 <h4 className="sub-title">Simple sign up</h4>
                                 <p className="">Sign up in a few easy steps</p>
                              </li>
+                            
                              <li className="timeline">
-                                <h4 className="sub-title">P2P Programming</h4>
-                                <p className="">Connect with like-minded developers</p>
-                             </li>
-                             <li className="timeline">
-                                <h4 className="sub-title">Learning forum</h4>
-                                <p className="">A place to share ideas and solve problems</p>
+                                <h4 className="sub-title">CodePal Forum</h4>
+                                <p className="">A place to share ideas & problem solve</p>
                              </li>
                           </ul>
                        </div>
@@ -49,16 +46,13 @@ class Feature extends React.Component {
                           <ul className="text-left">
                          
                              <li className="timeline-right">
-                                <h4>Conveninent messaging</h4>
+                                <h4>CodePal Chat</h4>
                                 <p className="">Staying in touch has never been easier</p>
                              </li>
-                             <li className="timeline-right">
-                                <h4>Expand your network</h4>
-                                <p className="">CodePal is more than just coding</p>
-                             </li>
+                            
                              <li className="timeline-right">
                                 <h4>Do what you love</h4>
-                                <p className="">And never code alone</p>
+                                <p className="">Never code alone</p>
                              </li>
                           </ul>
                        </div>

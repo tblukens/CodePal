@@ -13,7 +13,7 @@ class Demo extends React.Component {
 		            <div className="section-title">
 		               <h2 className="coders-nearby">How CodePal Works</h2>
 		               {/* <img src="assets/images/title-line.png" alt="white-line" className="img-fluid"/> */}
-		               <p>The peer-to-peer programming (P2P) experience. Connect with developers from around the world to collaborate on your next project, learn more about your craft, or to expand your professional network.
+		               <p>Connect with developers from around the world to collaborate on your next project, learn more about your craft, or to expand your professional network.
 							</p>
 		            </div>
 		         </div>

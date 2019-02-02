@@ -46,7 +46,7 @@ class Register extends React.Component {
                     alert('User already exists.  Please choose another username')
                     return
                 }
-                alert('User is now registered')
+                // alert('User is now registered')
                 self.props.toggleUser(self.props.self)
 
             })
