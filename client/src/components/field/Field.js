@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './Field.css';
+// import classes from './Field.css';
 const field = (props) => {
 return(
 
@@ -12,13 +12,6 @@ return(
 
 )    
 
-    return (
-        <div className={classes.Field}>
-            <p onClick={props.click}>I'm {props.name} and I am {props.age} years old!</p>
-            <p>{props.children}</p>
-            <input type="text" onChange={props.changed} value={props.name} />
-        </div>
-    )
 };
 
 export default field;
