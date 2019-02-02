@@ -143,6 +143,33 @@ const userSeed = [
     "node": "https://nodejs.org/en/",
     "javascript": "https://www.javascript.com/"
   },
+
+  {
+    "username": "ellenSeedUser",
+    "firstName": "Ella",
+    "lastName": "Ruairi",
+    "photo": "ellen.jpg",
+    "designation": "Gorilla Wrangler",
+    "location": "The Jungle",
+    "skills": "extensive jungle knowledge",
+    "socketIoId": "",
+    "lastLogin": "",
+    "logOfActivity": "",
+    "google": "",
+    "currentMentor": "Duztin",
+    "currentStudent": "Byrdee",
+    "experienceLevel": "has survived not one, but TWO gorilla attacks",
+    "facebook": "https://www.facebook.com/",
+    "twitter": "https://twitter.com/",
+    "linkedIn": "https://linkedin.com/",
+    "gitHub": "https://github.com/",
+    "shortBio": "Pro tip: don't throw bananas at gorillas. At least two gorillas don't approve. Results TBD.",
+    "mongo": "https://www.mongodb.com/",
+    "express": "https://expressjs.com/",
+    "react": "https://reactjs.org/",
+    "node": "https://nodejs.org/en/",
+    "javascript": "https://www.javascript.com/"
+  },
   {
     "username": "blackHatNinjaSeedUser",
     "firstName": "Black Hat",
