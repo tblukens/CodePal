@@ -8,8 +8,8 @@ export default {
         return axios.post('/api/thread/create', thread)
     },
     createPost: function (post) {
-        const { id } = post;
-        return axios.post(`/api/post/create/${id}`, post)
+        const { _id } = post;
+        return axios.post(`/api/post/create/${_id}`, post)
     }
-    
+
 }
