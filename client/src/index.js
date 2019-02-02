@@ -18,18 +18,18 @@ import axios from 'axios';
 //======================================
 //Authentication
 //======================================
-import Auth from './utility/Auth';
-let meta;
-const auth = new Auth();
+// import Auth from './utility/Auth';
+// let meta;
+// const auth = new Auth();
 let callback = res => {
   let userMeta = JSON.parse(res).user_metadata;
   return userMeta;
 };
-let profile = auth.getProfile();
-console.log(profile.sub + ' = Profile Sub');
-auth.getToken(function (token) {
-  meta = auth.getMetaData(profile.sub, token, callback);
-});
+// let profile = auth.getProfile();
+// console.log(profile.sub + ' = Profile Sub');
+// auth.getToken(function (token) {
+//   meta = auth.getMetaData(profile.sub, token, callback);
+// });
 let state = {};
 window.setState = changes => {
   state = Object.assign({}, state, changes);
@@ -56,7 +56,7 @@ window.setState = changes => {
         axios
         .get(`api/users/getuser/${username}`)
         .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             this.setState({
               username: username,
               userInfo: res.data[0]
@@ -71,8 +71,9 @@ window.setState = changes => {
         .catch(err => console.log(err));
     }
     render() {
-      
-      let userInfo = this.state.username;
+      if(this.state.userInfo===null){return false};
+      let userName = this.state.username;
+      let userInfo = this.state.userInfo;
       return (
         <BrowserRouter basename={'/'}>
           <Switch>
@@ -128,7 +129,7 @@ window.setState = changes => {
             <Route
               path={`${process.env.PUBLIC_URL}/thread/:id`}
               render={props => (
-                <ThreadView {...state} userInfo={userInfo}  />
+                <ThreadView {...state} userInfo={userName}  />
               )}
             />
             <Route component={NoMatch} />
@@ -148,8 +149,8 @@ window.setState = changes => {
 
 let initialState = {
   location: location.pathname.replace(/^\/?|\/$/g, ''),
-  meta: meta,
-  auth
+  // meta: meta,
+  // auth
 };
 
 window.setState(initialState);

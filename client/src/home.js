@@ -7,11 +7,11 @@ import Auth from "./utility/Auth";
 
 class Home extends React.Component {
   componentDidMount() {
-    const auth = new Auth();
-    auth.handleAuthentication();
+    // auth.handleAuthentication();
   }
 
   render() {
+    const auth = new Auth();
     document.body.classList.remove("inner-page");
     return (
       <div>
@@ -73,7 +73,7 @@ class Home extends React.Component {
                       </a>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" onClick={this.props.auth.logout}>
+                      <a className="nav-link" onClick={auth.logout}>
                         Sign Out
                       </a>
                     </li>

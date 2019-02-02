@@ -188,7 +188,7 @@ class Team extends React.Component {
                     <div className="team-box">
                         <div className="team-under-box">
                             <div className="team-under-box-button text-white" onClick={() => this.profileClick(val)}>
-                                <i className="fa fa-plus" aria-hidden="true" data-firstName={val.firstName}></i>
+                                <i className="fa fa-plus" aria-hidden="true"></i>
                             </div>
                             <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid" />
                             <div className="team-overlay">
