@@ -43,7 +43,7 @@ class Home extends React.Component {
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link" href="#d">
+                  <a className="nav-link" href={`${process.env.PUBLIC_URL}/forum`}>
                     Forum
                   </a>
                 </li>
@@ -100,7 +100,7 @@ class Home extends React.Component {
                   <div className="slide-text">
                     <div>
                       <h1>
-                        Hello {this.props.user}.
+                        Hello, {this.props.user}.
                         <br />
                       </h1>
                       <h1>

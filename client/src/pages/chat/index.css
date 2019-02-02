@@ -241,6 +241,7 @@ textarea {
 .chat-room-container {
   height: 100%;
   width: 76.25%;
+  background-color: #0b3656;
 }
 @media screen and (max-width: 510px) {
   #side-bar {
@@ -249,6 +250,7 @@ textarea {
   }
   .chat-room-container {
     width: 100%;
+    background-color: #0b3656;
   }
 }
 .chat-room {

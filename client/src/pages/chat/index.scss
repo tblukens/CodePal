@@ -1,18 +1,19 @@
 
-	$primary-color:#3e3e5e;
-	$primary-color-dark:#2e2e4f;
-	$primary-color-light:#5d5d8a;
-	$primary-color-active:#363656;
-	$sent-message-bg-color:#89a1fc;
-	$secondary-color:#484d79;
-	$main-text-color:#cac8ee;
-	$messages-bg:#dcddf5;
-	$received-message-bg-color:#fff;
+	$primary-color:#0b3656;
+	$primary-color-dark:#0b3656;
+	$primary-color-light:#0b3656;
+	$primary-color-active:#0D9584;
+	$primary-color-sidebar-active:#0D7D84;
+	$sent-message-bg-color:#082b44;
+	$secondary-color:#0D9584;
+	$main-text-color:#fff;
+	$messages-bg:#6c8699;
+	$received-message-bg-color:#234a66;
 	$sent-message-color:#fff;
-	$received-message-color:#b3b2ca;
+	$received-message-color:#fff;
 	$success-color:#60d66a;
 	$main-padding-vertical:18px;
-	$main-padding-horizontal:16px;
+	$main-padding-horizontal:18px;
 	$main-padding: $main-padding-vertical $main-padding-horizontal;
 	$error-text: #c92c43;
 	$head-max-height:65px;
@@ -42,7 +43,7 @@ html, body, #root {
 }
 
 input, textarea{
-	font-family: Arial;
+	font-family: sans-serif;
 }
 
 .login{
@@ -54,10 +55,11 @@ input, textarea{
 }
 
 .login-form{
-  $height: 5vw;
+  $height: 4vw;
 	display: flex;
 	justify-content: center;
   flex-direction: column;
+  
   h2{
     font-size: $height;
   }
@@ -68,7 +70,8 @@ input, textarea{
 		border-right: none;
 		height: $height;
 		line-height: $height;
-		font-size: $height;
+		font-size: 30px;
+		color: #0b3656;
 		border-bottom:solid 2px  $received-message-color;
 		transition:all .23s ease-in;
 		&:focus{
@@ -139,7 +142,7 @@ input, textarea{
 		align-items: center;
 		cursor: pointer;
 		&.active{
-			background: $primary-color-active;
+			background: $primary-color-sidebar-active;
 		}
 	}
 	
@@ -210,7 +213,7 @@ input, textarea{
 	.users{
 		@include customscrollbar();
 		
-		overflow-y: scroll;
+		// overflow-y: scroll;
 		background:  $primary-color;
 		flex-grow:1;
 		
@@ -330,6 +333,7 @@ input, textarea{
 .chat-room-container{
 	height: 100%;
 	width: 76.25%;
+	background-color: $primary_color
 }
 @media screen and (max-width: 510px){
 	#side-bar{
@@ -338,6 +342,7 @@ input, textarea{
 	}
 	.chat-room-container{
 		width: 100%;
+		background-color: #0b3656;
 	}
 }
 .chat-room{
@@ -357,7 +362,7 @@ input, textarea{
 		display: grid;
 		flex-grow:1;
 		@include customscrollbar();
-		overflow-y: scroll;
+		// overflow-y: scroll;
 		position: relative;
 
 	.thread{
@@ -517,7 +522,7 @@ input, textarea{
 			transition:all .35s ease-out;
 			
 			&:disabled{
-			opacity: .2;
+			opacity: .3;
 				background:  $primary-color-light;
 			}
 		}

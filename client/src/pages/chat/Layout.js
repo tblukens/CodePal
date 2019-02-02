@@ -25,7 +25,6 @@ export default class Layout extends Component {
 		  user:null,
 		  redirect: false,
 		  registeredUser: this.props.userName
-	  };
 	}
 
 	componentWillMount() {
