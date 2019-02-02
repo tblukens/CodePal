@@ -73,7 +73,7 @@ window.setState = changes => {
     render() {
       if(this.state.userInfo===null){return false};
       let userName = this.state.username;
-      let userInfo = this.state.userInfo;
+      let userInfo = this.state.username;
       return (
         <BrowserRouter basename={'/'}>
           <Switch>
