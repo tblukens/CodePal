@@ -15,101 +15,101 @@ import './pages/chat/index.css';
 
 import axios from 'axios';
 
-  /* eslint no-restricted-globals: 0*/
-  //======================================
-  class Root extends React.Component {
-    state = {
-      username: null,
-      userInfo: null
-    } 
+/* eslint no-restricted-globals: 0*/
+//======================================
+class Root extends React.Component {
+  state = {
+    username: null,
+    userInfo: null
+  }
 
-    logIn = (user) => {
-      console.log(user);
-      localStorage.setItem("username", user)
-      this.setState(
-        {
-          username: user,
-        })
-    }
-    componentWillMount() {
-      axios
+  logIn = (user) => {
+    console.log(user);
+    localStorage.setItem("username", user)
+    this.setState(
+      {
+        username: user,
+      })
+  }
+  componentWillMount() {
+    axios
       .get('http://tbl-chat1.herokuapp.com')
       .then(res => console.log(`${res.data.toUpperCase()}!!!`))
       .catch(err => console.log(err));
-      let user = localStorage.getItem("username")
-      if(user){
-        this.setState({username: user})
-      }
-    }
-    render() {
-      let userName = this.state.username;
-      let userInfo = this.state.username;
-      return (
-        <BrowserRouter basename={'/'}>
-          <Switch>
-            <Route
-              exact
-              path={`${process.env.PUBLIC_URL}/`}
-              render={props => (
-                <App  userInfo={userInfo} />
-              )}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/callback`}
-              render={props => (
-                <Home  userInfo={userInfo} />
-              )}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/home`}
-              render={props => (
-                <Home  userInfo={userInfo} user={this.state.username} />
-              )}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/profiles`}
-              render={props => (
-                <Profiles  userInfo={userInfo} />
-              )}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/chat`}
-              render={props => (
-                <Chat  userName={this.state.username} />
-              )}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/forum`}
-              render={props => (
-                <Forum  userInfo={userInfo} />
-              )}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/passport`}
-              render={props => (
-                <Passport  userInfo={userInfo} login={this.logIn} />
-              )}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/passport-login`}
-              render={props => (
-                <Passport  loginPage={true} userInfo={userInfo} login={this.logIn} />
-              )}
-            />
-            <Route
-              path={`${process.env.PUBLIC_URL}/createthread`}
-              render={props => (
-                <CreateThread  userInfo={userName} />
-              )}
-            />
-            <Route component={NoMatch} />
-          </Switch>
-        </BrowserRouter>
-      );
+    let user = localStorage.getItem("username")
+    if (user) {
+      this.setState({ username: user })
     }
   }
+  render() {
+    let userName = this.state.username;
+    let userInfo = this.state.username;
+    return (
+      <BrowserRouter basename={'/'}>
+        <Switch>
+          <Route
+            exact
+            path={`${process.env.PUBLIC_URL}/`}
+            render={props => (
+              <App userInfo={userInfo} />
+            )}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL}/callback`}
+            render={props => (
+              <Home userInfo={userInfo} />
+            )}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL}/home`}
+            render={props => (
+              <Home userInfo={userInfo} user={this.state.username} />
+            )}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL}/profiles`}
+            render={props => (
+              <Profiles userInfo={userInfo} />
+            )}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL}/chat`}
+            render={props => (
+              <Chat userName={this.state.username} />
+            )}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL}/forum`}
+            render={props => (
+              <Forum userInfo={userInfo} />
+            )}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL}/passport`}
+            render={props => (
+              <Passport userInfo={userInfo} login={this.logIn} />
+            )}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL}/passport-login`}
+            render={props => (
+              <Passport loginPage={true} userInfo={userInfo} login={this.logIn} />
+            )}
+          />
+          <Route
+            path={`${process.env.PUBLIC_URL}/createthread`}
+            render={props => (
+              <CreateThread userInfo={userName} />
+            )}
+          />
+          <Route component={NoMatch} />
+        </Switch>
+      </BrowserRouter>
+    );
+  }
+}
 
-  ReactDOM.render(<Root  />, document.getElementById('root'));
+ReactDOM.render(<Root />, document.getElementById('root'));
 
 
 

@@ -15,8 +15,16 @@ if (process.env.NODE_ENV === 'production') {
 export default class Forum extends React.Component {
   state = {
     threads: [],
-    currentThread: null
+    currentThread: null,
+    user: null,
+    newPostMsg: null
   };
+
+  componentWillMount() {
+    if (this.props.userInfo) {
+      this.setState({ user: this.props.userInfo });
+    }
+  }
 
   componentDidMount() {
     this.loadThreads();
@@ -29,24 +37,27 @@ export default class Forum extends React.Component {
   renderThreads = () => {
     return this.state.threads.map(thread => <Thread thread={thread} key={thread._id} setThread={this.setThread} />);
   };
-  setThread = id => { 
+  setThread = id => {
     axios
-    .get(`${address}/api/thread/get/${id}`)
-    .then(res => {
-      this.setState({ currentThread: res.data })
-    })
-    // .then(thread => <ThreadView thread={thread} />)
-    .catch(err => console.log(err))
-    
+      .get(`${address}/api/thread/get/${id}`)
+      .then(res => {
+        this.setState({ currentThread: res.data })
+      })
+      // .then(thread => <ThreadView thread={thread} />)
+      .catch(err => console.log(err))
+
   };
   clearCurrentThread = () => {
-    this.setState({currentThread: null})
+    this.setState({ currentThread: null })
+    this.loadThreads()
   }
+
+
   loadThread = (thread) => {
-    return <ThreadView info={thread} key={thread._id} goBack={this.clearCurrentThread}/>
+    return <ThreadView info={thread} key={thread._id} goBack={this.clearCurrentThread} />
   }
   render() {
     return <div>
-    {this.state.currentThread !== null ? this.loadThread(this.state.currentThread) : this.renderThreads()}</div>;
+      {this.state.currentThread !== null ? this.loadThread(this.state.currentThread) : this.renderThreads()}</div>;
   }
 }
