@@ -31,8 +31,8 @@ const Card = (props) => {
                                         <ul>
                                             <li className="inner-social"><a href={val.facebook} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-facebook" style="font-size: 1.5em; color: #586082;"></i>' }}></a></li>
                                             <li className="inner-social"><a href={val.twitter} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-twitter" style="font-size: 1.5em; color: #586082;"></i>' }}></a></li>
-                                            <li className="inner-social"><a href={val.linkedin} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-linkedin" style="font-size: 1.5em; color: #586082;"></i>' }}></a></li>
-                                            <li className="inner-social"><a href={val.github} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-github" style="font-size: 1.5em; color: #586082;"></i>' }}></a></li>
+                                            <li className="inner-social"><a href={val.linkedIn} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-linkedin" style="font-size: 1.5em; color: #586082;"></i>' }}></a></li>
+                                            <li className="inner-social"><a href={val.gitHub} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-github" style="font-size: 1.5em; color: #586082;"></i>' }}></a></li>
                                             <li className="inner-social"><a href={val.portfolio} dangerouslySetInnerHTML={{ __html: '<i class="fa fa-laptop" style="font-size: 1.5em; color: #586082;"></i>' }}></a></li>
                                         </ul>
 
