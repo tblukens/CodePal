@@ -19,7 +19,7 @@ class Register extends React.Component {
             'designation',
             'photo',
             'location',
-            'socketIoId',
+            'photo',
             'shortBio',
             // 'lastLogin',
             'logOfActivity',
@@ -55,7 +55,7 @@ class Register extends React.Component {
             });
         function update(value) {
             let id = `#${value}`;
-            let data = $(id).val().trim();
+            let data = $(id).val();
             if (data) {
                 user[value] = data;
             }
@@ -142,9 +142,9 @@ class Register extends React.Component {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="socketIoId.io ID">socket.io ID</label>
+                                <label htmlFor="photo">Photo</label>
                                 <i className="fa fa-user"></i>
-                                <input required="" name="socketIoId" type="text" className="form-control" id="socketIoId" placeholder="socket.io ID" />
+                                <input required="" name="photo" type="text" className="form-control" id="photo" placeholder="Photo" />
                             </div>
 
                             <div className="form-group">
