@@ -15,8 +15,12 @@ export default class ThreadView extends React.Component {
 
         this.state = {
             message: null,
-            user: this.props.info.user
+            user: null
         }
+    }
+    componentWillMount() {
+        console.log(this.props)
+        this.setState({user: this.props.userInfo})
     }
     handleInputChange = event => {
         const { name, value } = event.target;
@@ -38,7 +42,7 @@ export default class ThreadView extends React.Component {
         }
     };
     render() {
-        // console.log(this.props)
+        console.log(this.props)
         // console.log(this.props.info.title)
         return (
             /*  <div>
