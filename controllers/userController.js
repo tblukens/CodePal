@@ -48,36 +48,36 @@ module.exports = {
                     newProfile)
                     .then(dbUser => res.json(dbUser))
                     .catch(err => err);
-            })
-            .catch(err => err);
-
-        //AUTH0 CODE
+                })
+                .catch(err => err);
+            },
+                
+            //AUTH0 CODE
         //get access token
-        getTokenPromise.then(function (accessToken) {
+        // getTokenPromise.then(function (accessToken) {
 
-            //get current profile info
-            getCurrentProfile(user, accessToken).then(function (profile) {
-                let options = {
-                    method: "PATCH",
-                    url: 'https://codepal.auth0.com/api/v2/users/' + user,
-                    headers:
-                    {
-                        'content-type': 'application/json',
-                        authorization: 'Bearer ' + accessToken
-                    },
-                    body:
-                        { user_metadata: newProfile },
-                    json: true
-                };
-                request(options, function (error, response, body) {
-                    if (error) throw new Error(error);
+        //     //get current profile info
+        //     getCurrentProfile(user, accessToken).then(function (profile) {
+        //         let options = {
+        //             method: "PATCH",
+        //             url: 'https://codepal.auth0.com/api/v2/users/' + user,
+        //             headers:
+        //             {
+        //                 'content-type': 'application/json',
+        //                 authorization: 'Bearer ' + accessToken
+        //             },
+        //             body:
+        //                 { user_metadata: newProfile },
+        //             json: true
+        //         };
+        //         request(options, function (error, response, body) {
+        //             if (error) throw new Error(error);
 
-                    console.log("patch : " + response);
-                    res.send(response);
-                });
-            })
-        })
-    },
+        //             console.log("patch : " + response);
+        //             res.send(response);
+        //         });
+        //     })
+        // })
 
     //working fine
     getMetaData: function (req, res) {
