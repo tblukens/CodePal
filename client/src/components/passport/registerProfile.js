@@ -16,12 +16,14 @@ class Register extends React.Component {
             'firstName',
             'lastName',
             'skills',
+            'designation',
+            'photo',
             'location',
             'socketIoId',
             'shortBio',
-            'joinDate',
-            'lastLogin',
+            // 'lastLogin',
             'logOfActivity',
+            'facebook',
             'linkedIn',
             'gitHub',
             'google',
@@ -34,6 +36,7 @@ class Register extends React.Component {
         values.forEach(value => {
             update(value)
         });
+        today();
 
 
         Passport.register(user)
@@ -56,6 +59,24 @@ class Register extends React.Component {
             if (data) {
                 user[value] = data;
             }
+        }
+        function today() {
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+                dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+                mm = '0' + mm;
+            }
+
+            today = mm + '/' + dd + '/' + yyyy;
+            user['joinDate'] = (today);
+
         }
     }
 

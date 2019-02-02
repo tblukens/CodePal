@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 import Auth from "../utility/Auth";
 import axios from "axios";
 import Fields from '../components/Fields'
@@ -11,6 +12,7 @@ let auth = new Auth();
 class Profiles extends React.Component {
    state = {
       props: this.props,
+      redirect: false,
       token: 'test',
       username: null,
       userDetails: null,
@@ -18,12 +20,16 @@ class Profiles extends React.Component {
          { id: "firstName", properName: "First Name", fontAwesome: "fa fa-user", value: null },
          { id: "lastName", properName: "Last Name", fontAwesome: "fa fa-user", value: null },
          { id: 'skills', properName: 'Skills', fontAwesome: "fa fa-tools", value: null },
+         { id: 'designation', properName: 'Designation', fontAwesome: "fa fa-map-marker-alt", value: null },
          { id: 'location', properName: 'Location', fontAwesome: "fa fa-map-marker-alt", value: null },
-         { id: 'socketIoId', properName: 'socket.io Id', fontAwesome: "fa fa-id-card-alt", value: null },
+         { id: 'photo', properName: 'Photo', fontAwesome: "fa fa-map-marker-alt", value: null },
+         // { id: 'socketIoId', properName: 'socket.io Id', fontAwesome: "fa fa-id-card-alt", value: null },
          { id: 'shortBio', properName: 'Short Bio', fontAwesome: "fa fa-book", value: null },
-         { id: 'joinDate', properName: 'Join Date', fontAwesome: "fa fa-birthday-cake", value: null },
-         { id: 'lastLogin', properName: 'Last Login', fontAwesome: "fa fa-user-clock", value: null },
-         { id: 'logOfActivity', properName: 'Log Of Activity', fontAwesome: "fa fa-list-alt", value: null },
+         // { id: 'joinDate', properName: 'Join Date', fontAwesome: "fa fa-birthday-cake", value: null },
+         // { id: 'lastLogin', properName: 'Last Login', fontAwesome: "fa fa-user-clock", value: null },
+         // { id: 'logOfActivity', properName: 'Log Of Activity', fontAwesome: "fa fa-list-alt", value: null },
+         { id: 'facebook', properName: 'Facebook', fontAwesome: "fa fa-map-marker-alt", value: null },
+         { id: 'twitter', properName: 'Twitter', fontAwesome: "fa fa-map-marker-alt", value: null },
          { id: 'linkedIn', properName: 'Linked In', fontAwesome: "fa fa-linkedin", value: null },
          { id: 'gitHub', properName: 'Git Hub', fontAwesome: "fa fa-github", value: null },
          { id: 'google', properName: 'Google', fontAwesome: "fa fa-google", value: null },
@@ -93,19 +99,22 @@ class Profiles extends React.Component {
       let profile = {}
 
       let values = [
+         'designation',
          'firstName',
          'lastName',
          'skills',
          'location',
-         'socketIoId',
+         // 'socketIoId',
          'shortBio',
-         'joinDate',
-         'lastLogin',
-         'logOfActivity',
+         // 'joinDate',
+         // 'lastLogin',
+         // 'logOfActivity',
          'linkedIn',
+         'facebook',
          'gitHub',
          'google',
          'portfolio',
+         'photo',
          'currentMentor',
          'currentStudent',
          'experienceLevel'
@@ -128,7 +137,7 @@ class Profiles extends React.Component {
          .then((response) => {
             alert("Profile Updated Successfully!")
             this.getUser();
-
+            this.setState({ redirect: true })
          })
          .catch(function (error) {
             console.log(error);
@@ -142,13 +151,18 @@ class Profiles extends React.Component {
       }
    }
 
-
+   renderRedirect() {
+      if (this.state.redirect) {
+         return <Redirect to='/home' />
+      }
+   }
 
    render() {
       document.body.classList.remove('inner-page');
 
       return (
-         <section className="auth-page">
+         < section className="auth-page" >
+            {this.renderRedirect()}
             <div className="animation-circle-inverse">
                <i></i>
                <i></i>
@@ -170,99 +184,6 @@ class Profiles extends React.Component {
 
                      <Fields fields={this.state.fields} changed={this.handleInputChange} />
 
-                     <div className="form-group">
-                        <label htmlFor="firstName">First name</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="firstName" type="text" className="form-control" id="firstName" placeholder="First name" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="lastName">Last name</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="lastName" type="text" className="form-control" id="lastName" placeholder="Last name" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="skills">Skills</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="skills" type="text" className="form-control" id="skills" placeholder="Skills" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="location">Location</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="location" type="text" className="form-control" id="location" placeholder="Location" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="socketIoId.io ID">socket.io ID</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="socketIoId" type="text" className="form-control" id="socketIoId" placeholder="socket.io ID" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="shortBio Bio">Short Bio</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="shortBio" type="text" className="form-control" id="shortBio" placeholder="Short Bio" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="joinDate Date">Join Date</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="joinDate" type="text" className="form-control" id="joinDate" placeholder="Join Date" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="lastLogin Log-in">Last Log-in</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="lastLogin" type="text" className="form-control" id="lastLogin" placeholder="Last Log-in" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="logOfActivity of activity (just log-in timestamps for now)">Log of activity</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="logOfActivity" type="text" className="form-control" id="logOfActivity" placeholder="Log of activity (just log-in timestamps for now)" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="linkedIn"> LinkedIn</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="linkedIn" type="text" className="form-control" id="linkedIn" placeholder=" LinkedIn" />
-                     </div>
-                     <div className="form-group">
-                        <label htmlFor="gitHub"> GitHub</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="gitHub" type="text" className="form-control" id="gitHub" placeholder=" GitHub" />
-                     </div>
-                     <div className="form-group">
-                        <label htmlFor="google">Google</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="google" type="text" className="form-control" id="google" placeholder="Google" />
-                     </div>
-                     <div className="form-group">
-                        <label htmlFor="portfolio">Portfolio</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="portfolio" type="text" className="form-control" id="portfolio" placeholder="Portfolio" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="currentMentor">Current Mentor</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="currentMentor" type="text" className="form-control" id="currentMentor" placeholder="Current Mentor" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="currentStudent">Current Student</label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="currentStudent" type="text" className="form-control" id="currentStudent" placeholder="Current Student" />
-                     </div>
-
-                     <div className="form-group">
-                        <label htmlFor="experienceLevel">experience level (edited) </label>
-                        <i className="fa fa-user"></i>
-                        <input required="" name="experienceLevel" type="text" className="form-control" id="experienceLevel" placeholder="Experience Level" />
-                     </div>
-
                      <div className="form-group mb-0">
                         <button className="btn-theme" onClick={this.profileSubmit.bind(this)} type="submit">Update Profile</button>
                      </div>
@@ -274,7 +195,7 @@ class Profiles extends React.Component {
                   </form>
                </div>
             </div>
-         </section>
+         </section >
       );
    }
 }
