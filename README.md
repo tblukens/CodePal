@@ -12,6 +12,10 @@ Live version: https://codepal-plm.herokuapp.com/
 
 <hr></hr>
 
+<h2> Full demo | Click below </h2>
+
+[![CodePal](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/demo-pic.jpg)](https://youtu.be/Df99eQtTL6I)
+
 <h2> About CodePal </h2>
 
 Connecting with developers has never been easier. Form a study group, a startup, or set out to disrupt the entire industry. The future belongs to you with CodePal. 
