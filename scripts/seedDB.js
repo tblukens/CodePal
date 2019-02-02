@@ -15,7 +15,7 @@ const userSeed = [
     "lastName": "Benefiel",
     "photo": "mike.jpg",
     "designation": "Front End Developer",
-    "location":"",
+    "location": "",
     "skills": "",
     "socketIoId": "",
     "lastLogin": "",
@@ -42,7 +42,7 @@ const userSeed = [
     "lastName": "Knoll",
     "photo": "spencer.jpg",
     "designation": "Front End Developer",
-    "location":"",
+    "location": "",
     "skills": "",
     "socketIoId": "",
     "lastLogin": "",
@@ -69,7 +69,7 @@ const userSeed = [
     "lastName": "Watkins",
     "photo": "dustin.jpg",
     "designation": "Back End Developer",
-    "location":"Lee's Summit",
+    "location": "Lee's Summit",
     "skills": "What is Node?",
     "socketIoId": "",
     "lastLogin": "",
@@ -96,7 +96,7 @@ const userSeed = [
     "lastName": "Lukens",
     "photo": "tim.jpg",
     "designation": "Back End Developer",
-    "location":"",
+    "location": "",
     "skills": "",
     "socketIoId": "",
     "lastLogin": "",
@@ -123,7 +123,7 @@ const userSeed = [
     "lastName": "Dude",
     "photo": "3.jpg",
     "designation": "Captain",
-    "location":"",
+    "location": "",
     "skills": "",
     "socketIoId": "",
     "lastLogin": "",
@@ -149,7 +149,7 @@ const userSeed = [
     "lastName": "Ninja",
     "photo": "4.jpg",
     "designation": "Backroom Dealer",
-    "location":"",
+    "location": "",
     "skills": "",
     "socketIoId": "",
     "lastLogin": "",
@@ -175,7 +175,7 @@ const userSeed = [
     "lastName": "Mouse",
     "photo": "tutter.jpg",
     "designation": "Just a Mouse",
-    "location":"Hole-in-the-wall",
+    "location": "Hole-in-the-wall",
     "skills": "Tuttering Around",
     "socketIoId": "",
     "lastLogin": "",
@@ -200,15 +200,15 @@ const userSeed = [
 
 db.User
   .remove({})
-  .then(() =>
-   db.User.insertMany(userSeed)
-   )
-  .then(data => {
-    console.log(data);
-    console.log(data.result.n + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+  .then(res =>
+    db.User.insertMany(userSeed)
+      .then(data => {
+        console.log(data);
+        console.log(data.result.n + " records inserted!");
+        process.exit(0);
+      })
+      .catch(err => {
+        console.error(err);
+        process.exit(1);
+      })
+  )

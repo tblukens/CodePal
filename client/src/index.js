@@ -40,7 +40,7 @@ window.setState = changes => {
       username: null,
       userInfo: null
     }
-    
+
     logIn = (user) => {
       console.log(user);
       localStorage.setItem("username", user)
@@ -48,14 +48,14 @@ window.setState = changes => {
         {
           username: user,
         })
-      }
-      componentWillMount() {
-        let username = localStorage.getItem("username");
-        if (username) {
-          console.log("Getting User Info for " + username);
+    }
+    componentWillMount() {
+      let username = localStorage.getItem("username");
+      if (username) {
+        console.log("Getting User Info for " + username);
         axios
-        .get(`api/users/getuser/${username}`)
-        .then((res) => {
+          .get(`api/users/getuser/${username}`)
+          .then((res) => {
             // console.log(res.data);
             this.setState({
               username: username,
@@ -71,7 +71,7 @@ window.setState = changes => {
         .catch(err => console.log(err));
     }
     render() {
-      if(this.state.userInfo===null){return false};
+      // if (this.state.userInfo === null) { return false };
       let userName = this.state.username;
       let userInfo = this.state.username;
       return (
@@ -81,55 +81,54 @@ window.setState = changes => {
               exact
               path={`${process.env.PUBLIC_URL}/`}
               render={props => (
-                <App {...this.state.userInfo} userInfo={userInfo}  />
+                <App {...this.state.userInfo} userInfo={userInfo} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/callback`}
               render={props => (
-                <Home {...state} userInfo={userInfo}  />
+                <Home {...state} userInfo={userInfo} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/home`}
               render={props => (
-                <Home {...state} userInfo={userInfo}  user={this.state.username} />
+                <Home {...state} userInfo={userInfo} user={this.state.username} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/profiles`}
               render={props => (
-                <Profiles {...state} userInfo={userInfo}  />
+                <Profiles {...state} userInfo={userInfo} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/chat`}
               render={props => (
-                <Chat {...state} userName={this.state.username}  />
+                <Chat {...state} userName={this.state.username} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/forum`}
               render={props => (
-                <Forum {...state} userInfo={userInfo}  />
+                <Forum {...state} userInfo={userInfo} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/passport`}
               render={props => (
-                <Passport {...state} userInfo={userInfo}  login={this.logIn} />
+                <Passport {...state} userInfo={userInfo} login={this.logIn} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/passport-login`}
               render={props => (
-                <Passport {...state} loginPage={true} userInfo={userInfo}  login={this.logIn} />
+                <Passport {...state} loginPage={true} userInfo={userInfo} login={this.logIn} />
               )}
             />
             <Route
               path={`${process.env.PUBLIC_URL}/createthread`}
               render={props => (
-                <ThreadView {...state} userInfo={userName}  />
                 <CreateThread {...state} userInfo={userName} />
               )}
             />
