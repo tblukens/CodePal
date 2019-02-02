@@ -3,6 +3,7 @@ import axios from 'axios';
 import Thread from '../../components/forum/thread';
 import ThreadView from '../../components/forum/threadview';
 import ForumAPI from '../../utility/ForumAPI'
+import { Button } from 'react-bootstrap';
 
 let address;
 
@@ -58,6 +59,7 @@ export default class Forum extends React.Component {
   }
   render() {
     return <div>
+    <Button variant="success" style={{margin: '10% 2% 1% 2.5%', backgroundColor:"#0d9584" }} href={`${process.env.PUBLIC_URL}/createthread`}>Create Post</Button>
       {this.state.currentThread !== null ? this.loadThread(this.state.currentThread) : this.renderThreads()}</div>;
   }
 }
