@@ -4,23 +4,33 @@ var Schema = mongoose.Schema;
 
 var UserSchema = new Schema(
   {
-    username: String,
-    firstName: String,
-    lastName: String,
-    skills: String,
-    location: String,
-    socketIoId: String,
-    shortBio: String,
-    joinDate: String,
-    lastLogin: String,
-    logOfActivity: String,
-    linkedIn: String,
-    gitHub: String,
-    google: String,
-    portfolio: String,
-    currentMentor: String,
-    currentStudent: String,
-    experienceLevel: String
+    "username": {
+      type: String,
+      required: "Username is Required"
+    },
+    "firstName": String,
+    "lastName": String,
+    "photo": String,
+    "designation": String,
+    "skills": String,
+    "location": String,
+    "socketIoId": String,
+    "shortBio": String,
+    "joinDate": {
+      type: Date,
+      default: Date.now
+    },
+    "lastLogin": String,
+    "logOfActivity": String,
+    "linkedIn": String,
+    "facebook": String,
+    "twitter": String,
+    "gitHub": String,
+    "google": String,
+    "portfolio": String,
+    "currentMentor": String,
+    "currentStudent": String,
+    "experienceLevel": String
   }
 );
 
