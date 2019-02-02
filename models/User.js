@@ -10,7 +10,10 @@ var UserSchema = new Schema(
     },
     "firstName": String,
     "lastName": String,
-    "photo": String,
+    "photo": {
+      type: String,
+      default: "1.jpg"
+    },
     "designation": String,
     "skills": String,
     "location": String,

@@ -25,12 +25,14 @@ class passportPage extends React.Component {
     toggleExistingUser() {
         this.setState({ isExistingUser: true })
     }
+    componentWillMount() {
+        if (this.props.loginPage) {
+            this.setState({ isExistingUser: true })
+        }
+    }
 
     render() {
         let isExistingUser = this.state.isExistingUser;
-        if (this.props.loginPage) {
-            isExistingUser = true;
-        }
 
         document.body.classList.remove('inner-page');
         return (<div>

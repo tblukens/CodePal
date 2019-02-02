@@ -148,7 +148,7 @@ const userSeed = [
     "username": "ellenSeedUser",
     "firstName": "Ella",
     "lastName": "Ruairi",
-    "photo": "ellen.jpg",
+    "photo": "1.jpg",
     "designation": "Gorilla Wrangler",
     "location": "The Jungle",
     "skills": "extensive jungle knowledge",

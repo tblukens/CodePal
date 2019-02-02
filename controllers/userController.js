@@ -100,11 +100,12 @@ module.exports = {
 
 
     //not working, 400 error 
-    createUser: (req, res) => {
+    createUser: function (req, res)  {
+        
         console.log("Inside API createUser");
         console.log(req.body);
         db.User.create(req.body)
-            .then(dbUser => res.json(dbUser))
+            .then(dbUser => console.log((dbUser)))
             .catch(err => console.log(err));
 
     },
