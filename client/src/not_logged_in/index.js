@@ -117,10 +117,10 @@ class App extends React.Component {
                 <div className="home-contain">
                   <div className="fadeInLeft-land-caption">
                     <h2 className="landing-caption text-white">
-                      The P2P coding experience
+                      Never code alone
                     </h2>
                     <p className="landing-text text-white">
-                      CodePal is a journey, not a destination{" "}
+                      <em>The journey of a thousand miles begins with one step</em>{" "}
                     </p>
                     {!this.state.showUser ? (
                       <div className="landing-btn">
@@ -162,9 +162,8 @@ class App extends React.Component {
               <div className="col-md-12">
                 <div className="Copyright-section">
                   <p>
-                    Copyright © 2018 Pirate Lives Matter and the Coding Ninjas |
-                    All Rights Reserved | Designed By Pirate Dude from Dodge
-                    Ball
+                    Copyright © 2019 Pirate Lives Matter | Mike B., Spencer K., Tim L., Dustin W.
+                    
                   </p>
                 </div>
               </div>
