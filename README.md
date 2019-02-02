@@ -74,7 +74,7 @@ Never code alone. CodePal is about networking and forming groups to learn and bu
 
 - Welcome to CodePal! Conveniently sign up or log in.
 
-[Step #1](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/Demo-step-one.gif "Step #1")
+![Step #1](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/Demo-step-one.gif "Step #1")
 
 - Make sure to fill out your profile so you can network with fellow developers. **need to finish later
 
@@ -82,7 +82,7 @@ Never code alone. CodePal is about networking and forming groups to learn and bu
 
 - Start by connecting with coders nearby. 
 
-[Step #3](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/demo-step-three.gif "Step #3")
+![Step #3](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/demo-step-three.gif "Step #3")
 
 - Expand your mind by visiting the CodePal Forum. **Need to finish later
 
@@ -90,5 +90,5 @@ Never code alone. CodePal is about networking and forming groups to learn and bu
 
 - Been trying to debug that line of code for way too long? Drop in the CodePal Chat to find an immediate solution to your problem.
 
-[Step #5](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/demo-step-5.gif "Step #5")
+![Step #5](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/demo-step-5.gif "Step #5")
 
