@@ -175,7 +175,7 @@ class Profiles extends React.Component {
             </div>
             <div className="auth-card">
                <div className="text-center">
-                  <h2>Welcome {this.state.username}</h2>
+                  <h2>Welcome, {this.state.username}</h2>
 
                   <p>Update your profile information to begin connecting with coders from around the world.</p>
                </div>

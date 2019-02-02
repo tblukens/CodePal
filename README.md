@@ -78,7 +78,7 @@ Never code alone. CodePal is about networking and forming groups to learn and bu
 
 - Make sure to fill out your profile so you can network with fellow developers. **need to finish later
 
-<!-- ![Step #2](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/public/img/step1.gif "Step #2") -->
+![Step #2](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/demo-step-two.gif "Step #2")
 
 - Start by connecting with coders nearby. 
 
@@ -86,7 +86,7 @@ Never code alone. CodePal is about networking and forming groups to learn and bu
 
 - Expand your mind by visiting the CodePal Forum. **Need to finish later
 
-<!-- ![Step #4](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/public/img/step1.gif "Step #4") -->
+![Step #4](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/demo-step-four.gif "Step #4")
 
 - Been trying to debug that line of code for way too long? Drop in the CodePal Chat to find an immediate solution to your problem.
 
