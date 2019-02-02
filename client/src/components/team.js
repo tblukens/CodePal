@@ -9,34 +9,36 @@ class Team extends React.Component {
         currentUser: null,
         allUsers: {}
     }
-    componentWillMount(){
+    componentWillMount() {
         this.populateUsers()
     }
-populateUsers(){
-    axios({
-        url: '/api/users/allusers/',
-        method: 'get',
-     })
-        .then((response) => {
-
-           this.setState({ allUsers: response.data })
-           // map((detail,i)=>{
-           //    console.log(detail);
-           // })
-
+    populateUsers(val) {
+        axios({
+            url: '/api/users/allusers/',
+            method: 'get',
         })
-        .catch(function (error) {
-           console.log(error);
-        });
-}
-    exitHandler(self){
-        self.setState({"currentUser":null})
+            .then((response) => {
+
+                this.setState({ allUsers: response.data,
+                currentUser: val })
+                // map((detail,i)=>{
+                //    console.log(detail);
+                // })
+
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+    exitHandler(self) {
+        self.setState({ "currentUser": null })
     }
 
     profileClick(val) {
-        this.setState({"currentUser": val})
+        this.populateUsers(val)
     }
     render() {
+        if(isEmpty(this.state.allUsers)){return false}
         // OwlCarousel Option for Team Members
         const options = {
             0: {
@@ -67,15 +69,16 @@ populateUsers(){
         // Dynamic Team Members Easy to Update
         let data = [
             {
-                "name": "Michael Benefiel",
+                "firstName": "Michael",
+                "lastName": "Benefiel",
                 "designation": "Front End Developer",
                 "photo": "mike.jpg",
-                "facebook": "https: //www.facebook.com/",
+                "facebook": "https://www.facebook.com/",
                 "twitter": "https://twitter.com/",
-                "linkedin": "https://linkedin.com/",
-                "github": "https://github.com/",
+                "linkedIn": "https://linkedin.com/",
+                "gitHub": "https://github.com/",
                 "portfolio": "https://mjbenefiel.github.io",
-                "desc": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
+                "shortBio": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
                 "mongo": "https://www.mongodb.com/",
                 "express": "https://expressjs.com/",
                 "react": "https://reactjs.org/",
@@ -83,15 +86,16 @@ populateUsers(){
                 "javascript": "https://www.javascript.com/"
             },
             {
-                "name": "Spencer Knoll",
+                "firstName": "Spencer",
+                "lastName": "Knoll",
                 "designation": "Front End Developer",
                 "photo": "spencer.jpg",
-                "facebook": "https: //www.facebook.com/",
+                "facebook": "https://www.facebook.com/",
                 "twitter": "https://twitter.com/",
-                "linkedin": "https://linkedin.com/",
-                "github": "https://github.com/",
+                "linkedIn": "https://linkedin.com/",
+                "gitHub": "https://github.com/",
                 "portfolio": "https://github.com/sp-knoll-86",
-                "desc": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
+                "shortBio": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
                 "mongo": "https://www.mongodb.com/",
                 "express": "https://expressjs.com/",
                 "react": "https://reactjs.org/",
@@ -99,15 +103,16 @@ populateUsers(){
                 "javascript": "https://www.javascript.com/"
             },
             {
-                "name": "Dustin Watkins",
+                "firstName": "Dustin",
+                "lastName": "Watkins",
                 "designation": "Back End Developer",
                 "photo": "dustin.jpg",
-                "facebook": "https: //www.facebook.com/",
+                "facebook": "https://www.facebook.com/",
                 "twitter": "https://twitter.com/",
-                "linkedin": "https://linkedin.com/",
-                "github": "https://github.com/",
+                "linkedIn": "https://linkedin.com/",
+                "gitHub": "https://github.com/",
                 "portfolio": "https://watkins656.github.io/",
-                "desc": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
+                "shortBio": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
                 "mongo": "https://www.mongodb.com/",
                 "express": "https://expressjs.com/",
                 "react": "https://reactjs.org/",
@@ -115,15 +120,16 @@ populateUsers(){
                 "javascript": "https://www.javascript.com/"
             },
             {
-                "name": "Tim Lukens",
+                "firstName": "Tim",
+                "lastName": "Lukens",
                 "designation": "Back End Developer",
                 "photo": "tim.jpg",
-                "facebook": "https: //www.facebook.com/",
+                "facebook": "https://www.facebook.com/",
                 "twitter": "https://twitter.com/",
-                "linkedin": "https://linkedin.com/",
-                "github": "https://github.com/",
+                "linkedIn": "https://linkedin.com/",
+                "gitHub": "https://github.com/",
                 "portfolio": "https://timlukens.com/",
-                "desc": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
+                "shortBio": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
                 "mongo": "https://www.mongodb.com/",
                 "express": "https://expressjs.com/",
                 "react": "https://reactjs.org/",
@@ -131,14 +137,15 @@ populateUsers(){
                 "javascript": "https://www.javascript.com/"
             },
             {
-                "name": "Pirate Dude",
+                "firstName": "Pirate",
+                "lastName": "Dude",
                 "designation": "Captain",
                 "photo": "4.jpg",
-                "facebook": "https: //www.facebook.com/",
+                "facebook": "https://www.facebook.com/",
                 "twitter": "https://twitter.com/",
-                "linkedin": "https://linkedin.com/",
-                "github": "https://github.com/",
-                "desc": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
+                "linkedIn": "https://linkedin.com/",
+                "gitHub": "https://github.com/",
+                "shortBio": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
                 "mongo": "https://www.mongodb.com/",
                 "express": "https://expressjs.com/",
                 "react": "https://reactjs.org/",
@@ -146,14 +153,15 @@ populateUsers(){
                 "javascript": "https://www.javascript.com/"
             },
             {
-                "name": "Black Hat Ninja",
+                "firstName": "Black Hat",
+                "lastName": "Ninja",
                 "designation": "Backroom Dealer",
                 "photo": "3.jpg",
-                "facebook": "https: //www.facebook.com/",
+                "facebook": "https://www.facebook.com/",
                 "twitter": "https://twitter.com/",
-                "linkedin": "https://linkedin.com/",
-                "github": "https://github.com/",
-                "desc": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
+                "linkedIn": "https://linkedin.com/",
+                "gitHub": "https://github.com/",
+                "shortBio": "Coding ninja, skilled in the art and craft of guruing and slicing fruit",
                 "mongo": "https://www.mongodb.com/",
                 "express": "https://expressjs.com/",
                 "react": "https://reactjs.org/",
@@ -162,14 +170,25 @@ populateUsers(){
             }
         ]
 
+        function isEmpty(obj) {
+            for(var key in obj) {
+                if(obj.hasOwnProperty(key))
+                    return false;
+            }
+            return true;
+        }
+        if (!isEmpty(this.state.allUsers)) {
+            console.log(this.state.allUsers);
+            data = (this.state.allUsers)
+        }
         // Dynamic Team Members Data Loop
         let DataList = data.map((val, i) => {
             return (
                 <div className="item" key={i}>
                     <div className="team-box">
                         <div className="team-under-box">
-                            <div className="team-under-box-button text-white" onClick={()=>this.profileClick(val)}>
-                                <i className="fa fa-plus" aria-hidden="true" data-name={val.name}></i>
+                            <div className="team-under-box-button text-white" onClick={() => this.profileClick(val)}>
+                                <i className="fa fa-plus" aria-hidden="true" data-firstName={val.firstName}></i>
                             </div>
                             <img src={`assets/images/${val.photo}`} alt="1" className="img-fluid" />
                             <div className="team-overlay">
@@ -205,24 +224,24 @@ populateUsers(){
                             </div>
                         </div>
                         <div className="col-md-12">
-                        {this.state.currentUser ? 
-                            <Card currentUser={this.state.currentUser} self={this} exitHandler={this.exitHandler}>
+                            {this.state.currentUser ?
+                                <Card currentUser={this.state.currentUser} self={this} exitHandler={this.exitHandler}>
 
-                            </Card>
-                            :
-                            <OwlCarousel
-                            className="team-slider-rtl owl-carousel owl-theme"
-                            loop={true}
-                            margin={30}
-                            nav={false}
-                            dots={false}
-                            responsive={options}
-                            info={true}
-                            
-                            >
-                                {DataList}
-                            </OwlCarousel>
-                        }
+                                </Card>
+                                :
+                                <OwlCarousel
+                                    className="team-slider-rtl owl-carousel owl-theme"
+                                    loop={true}
+                                    margin={30}
+                                    nav={false}
+                                    dots={false}
+                                    responsive={options}
+                                    info={true}
+
+                                >
+                                    {DataList}
+                                </OwlCarousel>
+                            }
                         </div>
                     </div>
                 </div>

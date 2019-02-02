@@ -43,6 +43,7 @@ window.setState = changes => {
     
     logIn = (user) => {
       console.log(user);
+      localStorage.setItem("username", user)
       this.setState(
         {
           username: user,

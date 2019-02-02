@@ -3,6 +3,7 @@ const Card = (props) => {
 
 
     let val = props.currentUser;
+    console.log(val);
     // Dynamic Team Members Data Loop
 
     return (
@@ -36,7 +37,7 @@ const Card = (props) => {
                                         </ul>
 
                                     </h3>
-                                    <p>{val.desc}</p>
+                                    <p>{val.shortBio}</p>
                                 </div>
                             </div>
                         </div>

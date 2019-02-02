@@ -20,12 +20,16 @@ class Profiles extends React.Component {
          { id: "firstName", properName: "First Name", fontAwesome: "fa fa-user", value: null },
          { id: "lastName", properName: "Last Name", fontAwesome: "fa fa-user", value: null },
          { id: 'skills', properName: 'Skills', fontAwesome: "fa fa-tools", value: null },
+         { id: 'designation', properName: 'Designation', fontAwesome: "fa fa-map-marker-alt", value: null },
          { id: 'location', properName: 'Location', fontAwesome: "fa fa-map-marker-alt", value: null },
-         { id: 'socketIoId', properName: 'socket.io Id', fontAwesome: "fa fa-id-card-alt", value: null },
+         { id: 'photo', properName: 'Photo', fontAwesome: "fa fa-map-marker-alt", value: null },
+         // { id: 'socketIoId', properName: 'socket.io Id', fontAwesome: "fa fa-id-card-alt", value: null },
          { id: 'shortBio', properName: 'Short Bio', fontAwesome: "fa fa-book", value: null },
-         { id: 'joinDate', properName: 'Join Date', fontAwesome: "fa fa-birthday-cake", value: null },
-         { id: 'lastLogin', properName: 'Last Login', fontAwesome: "fa fa-user-clock", value: null },
-         { id: 'logOfActivity', properName: 'Log Of Activity', fontAwesome: "fa fa-list-alt", value: null },
+         // { id: 'joinDate', properName: 'Join Date', fontAwesome: "fa fa-birthday-cake", value: null },
+         // { id: 'lastLogin', properName: 'Last Login', fontAwesome: "fa fa-user-clock", value: null },
+         // { id: 'logOfActivity', properName: 'Log Of Activity', fontAwesome: "fa fa-list-alt", value: null },
+         { id: 'facebook', properName: 'Facebook', fontAwesome: "fa fa-map-marker-alt", value: null },
+         { id: 'twitter', properName: 'Twitter', fontAwesome: "fa fa-map-marker-alt", value: null },
          { id: 'linkedIn', properName: 'Linked In', fontAwesome: "fa fa-linkedin", value: null },
          { id: 'gitHub', properName: 'Git Hub', fontAwesome: "fa fa-github", value: null },
          { id: 'google', properName: 'Google', fontAwesome: "fa fa-google", value: null },
@@ -95,19 +99,22 @@ class Profiles extends React.Component {
       let profile = {}
 
       let values = [
+         'designation',
          'firstName',
          'lastName',
          'skills',
          'location',
-         'socketIoId',
+         // 'socketIoId',
          'shortBio',
-         'joinDate',
-         'lastLogin',
-         'logOfActivity',
+         // 'joinDate',
+         // 'lastLogin',
+         // 'logOfActivity',
          'linkedIn',
+         'facebook',
          'gitHub',
          'google',
          'portfolio',
+         'photo',
          'currentMentor',
          'currentStudent',
          'experienceLevel'
@@ -154,8 +161,8 @@ class Profiles extends React.Component {
       document.body.classList.remove('inner-page');
 
       return (
-         < section className = "auth-page" >
-         { this.renderRedirect() }
+         < section className="auth-page" >
+            {this.renderRedirect()}
             <div className="animation-circle-inverse">
                <i></i>
                <i></i>
