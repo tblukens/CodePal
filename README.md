@@ -17,6 +17,7 @@ Live version: https://codepal-plm.herokuapp.com/
 [![CodePal](client/public/assets/images/codepal_demo.png)](https://youtube.com)
 
 <h2> About CodePal </h2>
+
 Connecting with developers has never been easier. Form a study group, a startup, or set out to disrupt the entire industry. The future belongs to you with CodePal. 
 
 Many times online communities like freeCodeCamp are great for sharing knowledge and experience; however, the user's social experience really stops there. CodePal makes it easier for developers from across the globe to "pair up" or "meet up" to begin a coding journey together. This is different from a mentor/apprentice type of relationship. Like-minded programmers can determine if their skills and goals are aligned enough to kick off a new adventure together, or with a group.
@@ -73,7 +74,7 @@ Never code alone. CodePal is about networking and forming groups to learn and bu
 
 - Welcome to CodePal! Conveniently sign up or log in.
 
-<!-- ![Step #1](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/public/img/step1.gif "Step #1") -->
+[Step #1](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/Demo-step-one.gif "Step #1")
 
 - Make sure to fill out your profile so you can network with fellow developers. **need to finish later
 
@@ -81,7 +82,7 @@ Never code alone. CodePal is about networking and forming groups to learn and bu
 
 - Start by connecting with coders nearby. 
 
-<!-- ![Step #3](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/public/img/step1.gif "Step #3") -->
+[Step #3](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/demo-step-three.gif "Step #3")
 
 - Expand your mind by visiting the CodePal Forum. **Need to finish later
 
@@ -89,5 +90,5 @@ Never code alone. CodePal is about networking and forming groups to learn and bu
 
 - Been trying to debug that line of code for way too long? Drop in the CodePal Chat to find an immediate solution to your problem.
 
-<!-- ![Step #5](https://raw.githubusercontent.com/mjbenefiel/Garage-Sailor/master/public/img/step1.gif "Step #5") -->
+[Step #5](https://raw.githubusercontent.com/tblukens/CodePal/master/client/public/assets/images/demo-step-5.gif "Step #5")
 
