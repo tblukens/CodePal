@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import Auth from "../utility/Auth";
 import axios from "axios";
 import Fields from '../components/Fields'
-import _ from "underscore";
+// import _ from "underscore";
 // import Profile from "../components/profile";
 // import request from "request";
 let auth = new Auth();
