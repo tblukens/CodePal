@@ -17,8 +17,7 @@ export default class Forum extends React.Component {
   state = {
     threads: [],
     currentThread: null,
-    user: null,
-    newPostMsg: null
+    user: null
   };
 
   componentWillMount() {
@@ -36,7 +35,8 @@ export default class Forum extends React.Component {
       .catch(err => console.log(err));
   }
   renderThreads = () => {
-    return this.state.threads.map(thread => <Thread thread={thread} key={thread._id} setThread={this.setThread} />);
+    const userInfo = this.state.user;
+    return this.state.threads.map(thread => <Thread thread={thread} key={thread._id} setThread={this.setThread} userInfo={userInfo} />);
   };
   setThread = id => {
     axios
@@ -55,7 +55,7 @@ export default class Forum extends React.Component {
 
 
   loadThread = (thread) => {
-    return <ThreadView info={thread} key={thread._id} goBack={this.clearCurrentThread} />
+    return <ThreadView info={thread} key={thread._id} goBack={this.clearCurrentThread} userInfo={this.state.user}/>
   }
   render() {
     return <div>
